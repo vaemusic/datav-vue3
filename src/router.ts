@@ -8,7 +8,12 @@
 
  import { createRouter, createWebHashHistory, RouterOptions } from 'vue-router'
 
- const routes = [{
+ const routes = [
+  {
+    title: '/',
+    name: 'Index',
+    redirect: '/components/Decoration1'
+  },{
     title: '按钮',
     name: 'Button',
     path: '/components/Button',
