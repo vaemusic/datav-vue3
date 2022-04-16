@@ -1,0 +1,44 @@
+[
+  {
+    "compName": "Button",
+    "compZhName": "按钮",
+    "compDesc": "这是一个按钮",
+    "compClassName": "button"
+  },
+  {
+    "compName": "Foo",
+    "compZhName": "测试组件",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "foo"
+  },
+  {
+    "compName": "Decoration1",
+    "compZhName": "装饰1",
+    "compDesc": "装饰-1",
+    "compClassName": "decoration1"
+  },
+  {
+    "compName": "Decoration2",
+    "compZhName": "装饰2",
+    "compDesc": "装饰2组件",
+    "compClassName": "decoration2"
+  },
+  {
+    "compName": "BorderBox1",
+    "compZhName": "边框1",
+    "compDesc": "边框1",
+    "compClassName": "border-box1"
+  },
+  {
+    "compName": "BorderBox2",
+    "compZhName": "边框2",
+    "compDesc": "边框2",
+    "compClassName": "border-box2"
+  },
+  {
+    "compName": "FullScreenContainer",
+    "compZhName": "全屏容器",
+    "compDesc": "全屏容器",
+    "compClassName": "full-screen-container"
+  }
+]
