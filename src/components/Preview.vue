@@ -68,7 +68,7 @@ const previewSourceCode = computed(() => {
         await import(/* @vite-ignore */ `../../packages/${props.compName}/docs/${props.demoName}.vue?raw`)
       ).default;
     } else {
-      sourceCode.value = await fetch(`${isDev ? '' : '/MY-Kit'}/packages/${props.compName}/docs/${props.demoName}.vue`).then((res) => res.text());
+      sourceCode.value = await fetch(`${isDev ? '' : '/datav-vue3'}/packages/${props.compName}/docs/${props.demoName}.vue`).then((res) => res.text());
     }
   }
   await nextTick();
