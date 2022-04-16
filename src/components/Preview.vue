@@ -50,7 +50,7 @@ const previewSourceCode = computed(() => {
 })
 
   watch(isDark,(newVal)=>{
-    document.getElementById("theme").href = `/src/assets/prism${newVal?'':'1'}.css`;
+    document.getElementById("theme").href = `prism${newVal?'':'1'}.css`;
   })
 
  onMounted(async () => {
@@ -58,7 +58,7 @@ const previewSourceCode = computed(() => {
   link.type = "text/css";
   link.id = "theme";
   link.rel = "stylesheet";
-  link.href = `/src/assets/prism${isDark.value?'':'1'}.css`;
+  link.href = `prism${isDark.value?'':'1'}.css`;
   document.getElementsByTagName("head")[0].appendChild(link);
 
 
