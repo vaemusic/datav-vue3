@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   ...baseConfig,
-  base: '/docs',
+  base: '/datav-vue3',
   build: {
     outDir: 'docs',
   },
