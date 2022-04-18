@@ -8,15 +8,15 @@ import type { RouterOptions } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [ {
-  title: '按钮',
-  name: 'Button',
-  path: '/components/Button',
-  component: () => import('packages/Button/docs/README.md'),
+  title: '数字翻牌器',
+  name: 'DigitalFlop',
+  path: '/components/DigitalFlop',
+  component: () => import('packages/DigitalFlop/docs/README.md'),
 }, {
-  title: '测试组件',
-  name: 'Foo',
-  path: '/components/Foo',
-  component: () => import('packages/Foo/docs/README.md'),
+  title: '全屏容器',
+  name: 'FullScreenContainer',
+  path: '/components/FullScreenContainer',
+  component: () => import('packages/FullScreenContainer/docs/README.md'),
 }, {
   title: '装饰1',
   name: 'Decoration1',
@@ -43,10 +43,30 @@ const routes = [ {
   path: '/components/Decoration5',
   component: () => import('packages/Decoration5/docs/README.md'),
 }, {
+  title: '装饰6',
+  name: 'Decoration6',
+  path: '/components/Decoration6',
+  component: () => import('packages/Decoration6/docs/README.md'),
+}, {
+  title: '装饰7',
+  name: 'Decoration7',
+  path: '/components/Decoration7',
+  component: () => import('packages/Decoration7/docs/README.md'),
+}, {
+  title: '装饰8',
+  name: 'Decoration8',
+  path: '/components/Decoration8',
+  component: () => import('packages/Decoration8/docs/README.md'),
+}, {
   title: '边框1',
   name: 'BorderBox1',
   path: '/components/BorderBox1',
   component: () => import('packages/BorderBox1/docs/README.md'),
+}, {
+  title: '边框2',
+  name: 'BorderBox2',
+  path: '/components/BorderBox2',
+  component: () => import('packages/BorderBox2/docs/README.md'),
 }, {
   title: '边框3',
   name: 'BorderBox3',
@@ -58,15 +78,25 @@ const routes = [ {
   path: '/components/BorderBox4',
   component: () => import('packages/BorderBox4/docs/README.md'),
 }, {
-  title: '边框2',
-  name: 'BorderBox2',
-  path: '/components/BorderBox2',
-  component: () => import('packages/BorderBox2/docs/README.md'),
+  title: '边框5',
+  name: 'BorderBox5',
+  path: '/components/BorderBox5',
+  component: () => import('packages/BorderBox5/docs/README.md'),
 }, {
-  title: '全屏容器',
-  name: 'FullScreenContainer',
-  path: '/components/FullScreenContainer',
-  component: () => import('packages/FullScreenContainer/docs/README.md'),
+  title: '边框6',
+  name: 'BorderBox6',
+  path: '/components/BorderBox6',
+  component: () => import('packages/BorderBox6/docs/README.md'),
+}, {
+  title: '边框7',
+  name: 'BorderBox7',
+  path: '/components/BorderBox7',
+  component: () => import('packages/BorderBox7/docs/README.md'),
+}, {
+  title: '边框8',
+  name: 'BorderBox8',
+  path: '/components/BorderBox8',
+  component: () => import('packages/BorderBox8/docs/README.md'),
 }]
 
 const routerConfig = {

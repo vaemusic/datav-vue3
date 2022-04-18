@@ -1,6 +1,6 @@
 <template>
-  <div class="dv-foo">
-    我是测试组件组件
+  <div class="dv-decoration6">
+    我是装饰6组件
   </div>
 </template>
 
@@ -9,4 +9,5 @@
 </script>
 
 <style scoped>
+
 </style>

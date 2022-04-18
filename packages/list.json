@@ -1,74 +1,134 @@
 [
   {
-    "compName": "Button",
-    "compZhName": "按钮",
-    "compDesc": "这是一个按钮",
-    "compClassName": "button"
+    "compType": "NoChildren",
+    "compName": "DigitalFlop",
+    "compZhName": "数字翻牌器",
+    "compDesc": "数字翻牌器",
+    "compClassName": "digital-flop"
   },
   {
-    "compName": "Foo",
-    "compZhName": "测试组件",
-    "compDesc": "默认：这是一个新组件",
-    "compClassName": "foo"
-  },
-  {
-    "compName": "Decoration1",
-    "compZhName": "装饰1",
-    "compDesc": "装饰-1",
-    "compClassName": "decoration1"
-  },
-  {
-    "compName": "Decoration2",
-    "compZhName": "装饰2",
-    "compDesc": "装饰2组件",
-    "compClassName": "decoration2"
-  },
-  {
-    "compName": "Decoration3",
-    "compZhName": "装饰3",
-    "compDesc": "装饰3",
-    "compClassName": "decoration3"
-  },
-  {
-    "compName": "Decoration4",
-    "compZhName": "装饰4",
-    "compDesc": "装饰4",
-    "compClassName": "decoration4"
-  },
-  {
-    "compName": "Decoration5",
-    "compZhName": "装饰5",
-    "compDesc": "装饰5",
-    "compClassName": "decoration5"
-  },
-  {
-    "compName": "BorderBox1",
-    "compZhName": "边框1",
-    "compDesc": "边框1",
-    "compClassName": "border-box1"
-  },
-  {
-    "compName": "BorderBox2",
-    "compZhName": "边框2",
-    "compDesc": "边框2",
-    "compClassName": "border-box2"
-  },
-  {
-    "compName": "BorderBox3",
-    "compZhName": "边框3",
-    "compDesc": "边框3",
-    "compClassName": "border-box3"
-  },
-  {
-    "compName": "BorderBox4",
-    "compZhName": "边框4",
-    "compDesc": "边框4",
-    "compClassName": "border-box4"
-  },
-  {
+    "compType": "NoChildren",
     "compName": "FullScreenContainer",
     "compZhName": "全屏容器",
     "compDesc": "全屏容器",
     "compClassName": "full-screen-container"
+  },
+  {
+    "compType": "装饰",
+    "children": [
+      {
+        "compType": "装饰",
+        "compName": "Decoration1",
+        "compZhName": "装饰1",
+        "compDesc": "装饰-1",
+        "compClassName": "decoration1"
+      },
+      {
+        "compType": "装饰",
+        "compName": "Decoration2",
+        "compZhName": "装饰2",
+        "compDesc": "装饰2组件",
+        "compClassName": "decoration2"
+      },
+      {
+        "compType": "装饰",
+        "compName": "Decoration3",
+        "compZhName": "装饰3",
+        "compDesc": "装饰3",
+        "compClassName": "decoration3"
+      },
+      {
+        "compType": "装饰",
+        "compName": "Decoration4",
+        "compZhName": "装饰4",
+        "compDesc": "装饰4",
+        "compClassName": "decoration4"
+      },
+      {
+        "compType": "装饰",
+        "compName": "Decoration5",
+        "compZhName": "装饰5",
+        "compDesc": "装饰5",
+        "compClassName": "decoration5"
+      },
+      {
+        "compType": "装饰",
+        "compName": "Decoration6",
+        "compZhName": "装饰6",
+        "compDesc": "装饰6",
+        "compClassName": "decoration6"
+      },
+      {
+        "compType": "装饰",
+        "compName": "Decoration7",
+        "compZhName": "装饰7",
+        "compDesc": "装饰7",
+        "compClassName": "decoration7"
+      },
+      {
+        "compType": "装饰",
+        "compName": "Decoration8",
+        "compZhName": "装饰8",
+        "compDesc": "装饰8",
+        "compClassName": "decoration8"
+      }
+    ]
+  },
+  {
+    "compType": "边框",
+    "children": [
+      {
+        "compName": "BorderBox1",
+        "compZhName": "边框1",
+        "compDesc": "边框1",
+        "compClassName": "border-box1"
+      },
+      {
+        "compName": "BorderBox2",
+        "compZhName": "边框2",
+        "compDesc": "边框2",
+        "compClassName": "border-box2"
+      },
+      {
+        "compName": "BorderBox3",
+        "compZhName": "边框3",
+        "compDesc": "边框3",
+        "compClassName": "border-box3"
+      },
+      {
+        "compName": "BorderBox4",
+        "compZhName": "边框4",
+        "compDesc": "边框4",
+        "compClassName": "border-box4"
+      },
+      {
+        "compType": "边框",
+        "compName": "BorderBox5",
+        "compZhName": "边框5",
+        "compDesc": "边框5",
+        "compClassName": "border-box5"
+      },
+      {
+        "compType": "边框",
+        "compName": "BorderBox6",
+        "compZhName": "边框6",
+        "compDesc": "边框6",
+        "compClassName": "border-box6"
+      },
+      {
+        "compType": "边框",
+        "compName": "BorderBox7",
+        "compZhName": "边框7",
+        "compDesc": "边框7",
+        "compClassName": "border-box7"
+      },
+      {
+        "compType": "边框",
+        "compName": "BorderBox8",
+        "compZhName": "边框8",
+        "compDesc": "边框8",
+        "compClassName": "border-box8"
+      }
+    ]
   }
 ]

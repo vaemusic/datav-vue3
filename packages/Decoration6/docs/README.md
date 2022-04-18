@@ -6,12 +6,12 @@ import demo from './demo.vue'
 
 <!-- 正文开始 -->
 
-# 测试组件
+# 装饰6
 
-默认：这是一个新组件
+装饰6
 
 ## 基础用法
-<Preview comp-name="Foo" demo-name="demo">
+<Preview comp-name="Decoration6" demo-name="demo">
   <demo />
 </Preview>
 
