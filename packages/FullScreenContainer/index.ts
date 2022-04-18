@@ -1,12 +1,12 @@
-import { App, Plugin } from 'vue';
-import FullScreenContainer from './src/index.vue';
+import type { App, Plugin } from 'vue'
+import FullScreenContainer from './src/index.vue'
 
 export const FullScreenContainerPlugin: Plugin = {
   install(app: App) {
-    app.component('dv-full-screen-container', FullScreenContainer);
+    app.component('DvFullScreenContainer', FullScreenContainer)
   },
-};
+}
 
 export {
   FullScreenContainer,
-};
+}

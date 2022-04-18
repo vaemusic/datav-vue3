@@ -7,8 +7,7 @@ import Vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
-import Markdown from 'vite-plugin-md';
-
+import Markdown from 'vite-plugin-md'
 
 export default defineConfig({
   resolve: {

@@ -1,47 +1,46 @@
+import type { Ref } from 'vue'
+import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { debounce, observerDomResize } from './index'
-import { ref, nextTick,Ref, onMounted, onUnmounted } from 'vue'
 const autoResize = (dom: Ref<HTMLElement | null>, onResize?: () => void, afterAutoResizeMixinInit?: () => void) => {
-  
-  let width = ref(0);
-  let height = ref(0);
-  
-  let debounceInitWHFun: () => void;
-  let domObserver: MutationObserver | null = null;
-  let domHtml: HTMLElement | null = null;
-  
-  const initWH = (resize = true) => {    
-    return new Promise(resolve => {
+  const width = ref(0)
+  const height = ref(0)
+
+  let debounceInitWHFun: () => void
+  let domObserver: MutationObserver | null = null
+  let domHtml: HTMLElement | null = null
+
+  const initWH = (resize = true) => {
+    return new Promise((resolve) => {
       nextTick(() => {
-        console.log('我是dom-----', dom.value);
-        domHtml = dom.value;
+        console.log('我是dom-----', dom.value)
+        domHtml = dom.value
         width.value = dom.value ? dom.value.clientWidth : 0
-        height.value = dom.value ? dom.value.clientHeight : 0;
+        height.value = dom.value ? dom.value.clientHeight : 0
 
         console.log('width and height', height.value, width.value)
-        if (!dom.value) {
+        if (!dom.value)
           console.warn('DataV: Failed to get dom node, component rendering may be abnormal!')
-        } else if (!width.value || !height.value) {
-          console.warn('DataV: Component width or height is 0px, rendering abnormality may occur!')
-        }
 
-        if (typeof onResize === 'function' && resize) onResize()
+        else if (!width.value || !height.value)
+          console.warn('DataV: Component width or height is 0px, rendering abnormality may occur!')
+
+        if (typeof onResize === 'function' && resize)
+          onResize()
         resolve(true)
       })
     })
-  };
+  }
   const getDebounceInitWHFun = () => {
-
     debounceInitWHFun = debounce(100, initWH, this)
-  };
+  }
   const bindDomResizeCallback = () => {
-
-    domObserver = observerDomResize(domHtml!!, debounceInitWHFun)
+    domObserver = observerDomResize(domHtml!, debounceInitWHFun)
 
     window.addEventListener('resize', debounceInitWHFun)
-  };
+  }
   const unbindDomResizeCallback = () => {
-
-    if (!domObserver) return
+    if (!domObserver)
+      return
 
     domObserver.disconnect()
     domObserver.takeRecords()
@@ -50,22 +49,22 @@ const autoResize = (dom: Ref<HTMLElement | null>, onResize?: () => void, afterAu
     window.removeEventListener('resize', debounceInitWHFun)
   }
 
-  const autoResizeMixinInit = async () => {
-
+  const autoResizeMixinInit = async() => {
     await initWH(false)
 
     getDebounceInitWHFun()
 
     bindDomResizeCallback()
 
-    if (typeof afterAutoResizeMixinInit === 'function') afterAutoResizeMixinInit()
-  };
+    if (typeof afterAutoResizeMixinInit === 'function')
+      afterAutoResizeMixinInit()
+  }
 
-  onMounted(()=>{
+  onMounted(() => {
     autoResizeMixinInit()
   })
 
-  onUnmounted(()=>{
+  onUnmounted(() => {
     unbindDomResizeCallback()
   })
 
@@ -75,4 +74,4 @@ const autoResize = (dom: Ref<HTMLElement | null>, onResize?: () => void, afterAu
   }
 }
 
-export default autoResize;
+export default autoResize

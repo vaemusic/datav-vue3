@@ -1,26 +1,27 @@
 <template>
-
   <div class="dv-kit-doc">
     <aside>
-      <router-link v-for="(link, index) in data.links" :key="index" :to="link.path">{{ link.name }}</router-link>
+      <router-link v-for="(link, index) in data.links" :key="index" :to="link.path">
+        {{ link.name }}
+      </router-link>
     </aside>
     <main>
       <div flex="~" justify-end py1 pr25>
         <Footer />
       </div>
-      <router-view></router-view>
+      <router-view />
     </main>
   </div>
 </template>
 
 <script setup>
-import ComponentList from 'packages/list.json';
+import ComponentList from 'packages/list.json'
 
 const data = reactive({
   links: ComponentList.map(item => ({
     path: `/components/${item.compName}`,
-    name: item.compZhName
-  }))
+    name: item.compZhName,
+  })),
 })
 </script>
 

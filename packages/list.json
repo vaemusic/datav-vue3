@@ -24,6 +24,24 @@
     "compClassName": "decoration2"
   },
   {
+    "compName": "Decoration3",
+    "compZhName": "装饰3",
+    "compDesc": "装饰3",
+    "compClassName": "decoration3"
+  },
+  {
+    "compName": "Decoration4",
+    "compZhName": "装饰4",
+    "compDesc": "装饰4",
+    "compClassName": "decoration4"
+  },
+  {
+    "compName": "Decoration5",
+    "compZhName": "装饰5",
+    "compDesc": "装饰5",
+    "compClassName": "decoration5"
+  },
+  {
     "compName": "BorderBox1",
     "compZhName": "边框1",
     "compDesc": "边框1",
@@ -34,6 +52,18 @@
     "compZhName": "边框2",
     "compDesc": "边框2",
     "compClassName": "border-box2"
+  },
+  {
+    "compName": "BorderBox3",
+    "compZhName": "边框3",
+    "compDesc": "边框3",
+    "compClassName": "border-box3"
+  },
+  {
+    "compName": "BorderBox4",
+    "compZhName": "边框4",
+    "compDesc": "边框4",
+    "compClassName": "border-box4"
   },
   {
     "compName": "FullScreenContainer",

@@ -9,7 +9,4 @@
 </script>
 
 <style scoped>
-.dv-foo {
-  
-}
 </style>

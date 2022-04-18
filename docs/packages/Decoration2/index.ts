@@ -1,12 +1,12 @@
-import { App, Plugin } from 'vue';
-import Decoration2 from './src/index.vue';
+import type { App, Plugin } from 'vue'
+import Decoration2 from './src/index.vue'
 
 export const Decoration2Plugin: Plugin = {
   install(app: App) {
-    app.component('dv-decoration2', Decoration2);
+    app.component('DvDecoration2', Decoration2)
   },
-};
+}
 
 export {
   Decoration2,
-};
+}

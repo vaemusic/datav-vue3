@@ -1,15 +1,15 @@
-
+/* eslint-disable prefer-rest-params */
 export function randomExtend(minNum: number, maxNum: number) {
-  if (arguments.length === 1) {
+  if (arguments.length === 1)
     return parseInt((Math.random() * minNum + 1).toString(), 10)
-  } else {
+
+  else
     return parseInt((Math.random() * (maxNum - minNum + 1) + minNum).toString(), 10)
-  }
 }
 
 export function debounce<T>(delay: number, callback: (...args: T[]) => void, vm: T) {
   let lastTime: NodeJS.Timeout
-  return function () {
+  return function() {
     clearTimeout(lastTime)
     lastTime = setTimeout(() => {
       callback.call(vm, ...arguments)
@@ -35,14 +35,14 @@ export function getPointDistance(pointOne: number[], pointTwo: number[]) {
 }
 
 export function uuid(hasHyphen?: boolean) {
-  return (hasHyphen ? 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx' : 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx').replace(/[xy]/g, function (c) {
+  return (hasHyphen ? 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx' : 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx').replace(/[xy]/g, (c) => {
     const r = Math.random() * 16 | 0
-    const v = c == 'x' ? r : (r & 0x3 | 0x8)
+    const v = c === 'x' ? r : (r & 0x3 | 0x8)
     return v.toString(16)
   })
 }
 
-export function deepMerge (target:any, merged:any) {
+export function deepMerge(target: any, merged: any) {
   for (const key in merged) {
     if (target[key] && typeof target[key] === 'object') {
       deepMerge(target[key], merged[key])
@@ -68,23 +68,25 @@ export function deepMerge (target:any, merged:any) {
  * @param {Boolean} recursion   Whether to use recursive cloning
  * @return {Object|Array} Clone object
  */
-export function deepClone(object:any, recursion:boolean) {
-  if (!object) return object;
-  const {parse,stringify} = JSON
-  if (!recursion) return parse(stringify(object));
-  let clonedObj: { [x: string]: any } = object instanceof Array ? [] : {};
+export function deepClone(object: any, recursion: boolean) {
+  if (!object)
+    return object
+  const { parse, stringify } = JSON
+  if (!recursion)
+    return parse(stringify(object))
+  const clonedObj: Record<string, any> = object instanceof Array ? [] : {}
 
   if (object && typeof object === 'object') {
     for (const key in object) {
-      if (object.hasOwnProperty(key)) {
-        if (object[key] && typeof object[key] === 'object') {
-          clonedObj[key] = deepClone(object[key], true);
-        } else {
-          clonedObj[key] = object[key];
-        }
+      if (Object.prototype.hasOwnProperty.call(object, key)) {
+        if (object[key] && typeof object[key] === 'object')
+          clonedObj[key] = deepClone(object[key], true)
+
+        else
+          clonedObj[key] = object[key]
       }
     }
   }
 
-  return clonedObj;
+  return clonedObj
 }

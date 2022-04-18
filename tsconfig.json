@@ -22,5 +22,5 @@
       "@*": ["src/*"]
     }
   },
-  "exclude": ["dist", "node_modules","docs"]
+  "exclude": ["dist", "node_modules", "docs", "script"]
 }

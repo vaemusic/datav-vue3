@@ -1,7 +1,7 @@
 <template>
   <div id="dv-full-screen-container" ref="fullScreenContainer">
     <template v-if="state.ready">
-      <slot></slot>
+      <slot />
     </template>
   </div>
 </template>
@@ -15,15 +15,8 @@ const state = reactive({
   allWidth: 0,
   scale: 0,
   datavRoot: '',
-  ready: false
+  ready: false,
 })
-
-const afterAutoResizeMixinInit = () => {
-  initConfig()
-  setAppScale()
-
-  state.ready = true
-}
 
 const initConfig = () => {
   const { width, height } = screen
@@ -44,6 +37,13 @@ const setAppScale = () => {
 
 const onResize = () => {
   setAppScale()
+}
+
+const afterAutoResizeMixinInit = () => {
+  initConfig()
+  setAppScale()
+
+  state.ready = true
 }
 
 autoResize(fullScreenContainer, onResize, afterAutoResizeMixinInit)

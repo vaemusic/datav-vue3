@@ -1,5 +1,5 @@
-import baseConfig from './base.config';
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'
+import baseConfig from './base.config'
 
 export default defineConfig({
   ...baseConfig,
@@ -7,4 +7,4 @@ export default defineConfig({
   build: {
     outDir: 'docs',
   },
-});
+})

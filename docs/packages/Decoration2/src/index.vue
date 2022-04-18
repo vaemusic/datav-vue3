@@ -1,14 +1,18 @@
 <template>
-  <div class="dv-decoration-2" ref="decoration2">
+  <div ref="decoration2" class="dv-decoration-2">
     <svg :width="`${width}px`" :height="`${height}px`">
       <rect :x="state.x" :y="state.y" :width="state.w" :height="state.h" :fill="state.mergedColor[0]">
-        <animate :attributeName="reverse ? 'height' : 'width'" from="0" :to="reverse ? height : width"
-          :dur="`${dur}s`" calcMode="spline" keyTimes="0;1" keySplines=".42,0,.58,1" repeatCount="indefinite" />
+        <animate
+          :attributeName="reverse ? 'height' : 'width'" from="0" :to="reverse ? height : width"
+          :dur="`${dur}s`" calcMode="spline" keyTimes="0;1" keySplines=".42,0,.58,1" repeatCount="indefinite"
+        />
       </rect>
 
       <rect :x="state.x" :y="state.y" width="1" height="1" :fill="state.mergedColor[1]">
-        <animate :attributeName="reverse ? 'y' : 'x'" from="0" :to="reverse ? height : width"
-          :dur="`${dur}s`" calcMode="spline" keyTimes="0;1" keySplines="0.42,0,0.58,1" repeatCount="indefinite" />
+        <animate
+          :attributeName="reverse ? 'y' : 'x'" from="0" :to="reverse ? height : width"
+          :dur="`${dur}s`" calcMode="spline" keyTimes="0;1" keySplines="0.42,0,0.58,1" repeatCount="indefinite"
+        />
       </rect>
     </svg>
   </div>
@@ -16,22 +20,21 @@
 
 <script lang="ts" setup>
 import autoResize from 'packages/utils/autoResize'
-import { deepMerge } from 'packages/utils'
-import { deepClone } from 'packages/utils'
+import { deepClone, deepMerge } from 'packages/utils'
 
 const props = defineProps({
   color: {
     type: Array,
-    default: () => ([])
+    default: () => ([]),
   },
   reverse: {
     type: Boolean,
-    default: false
+    default: false,
   },
   dur: {
     type: Number,
-    default: 6
-  }
+    default: 6,
+  },
 })
 
 const decoration2 = ref<HTMLElement | null>(null)
@@ -43,17 +46,22 @@ const state = reactive({
   defaultColor: ['#3faacb', '#fff'],
   mergedColor: [],
 })
-watch(() => props.color, () => {
-  mergeColor()
-})
 
-watch(() => props.reverse, () => {
-  calcSVGData()
-})
+const mergeColor = () => {
+  state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
+}
 
-const afterAutoResizeMixinInit = () => {
+const onResize = () => {
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   calcSVGData()
 }
+
+const afterAutoResizeMixinInit = () => {
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+  calcSVGData()
+}
+
+const { width, height } = autoResize(decoration2, onResize, afterAutoResizeMixinInit)
 
 const calcSVGData = () => {
   if (props.reverse) {
@@ -61,7 +69,8 @@ const calcSVGData = () => {
     state.h = height.value
     state.x = width.value / 2
     state.y = 0
-  } else {
+  }
+  else {
     state.w = width.value
     state.h = 1
     state.x = 0
@@ -69,15 +78,13 @@ const calcSVGData = () => {
   }
 }
 
-const onResize = () => {
+watch(() => props.color, () => {
+  mergeColor()
+})
+
+watch(() => props.reverse, () => {
   calcSVGData()
-}
-
-const { width, height } = autoResize(decoration2,onResize,afterAutoResizeMixinInit)
-
-const mergeColor = () => {
-  state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
-}
+})
 
 onMounted(() => {
   mergeColor()

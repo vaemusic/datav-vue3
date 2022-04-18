@@ -1,10 +1,10 @@
-import { App, Plugin } from 'vue';
-import Button from './src/index.vue';
+import type { App, Plugin } from 'vue'
+import Button from './src/index.vue'
 
 export const ButtonPlugin: Plugin = {
   install(app: App) {
-    app.component('dv-button', Button);
+    app.component('DvButton', Button)
   },
-};
+}
 
-export { Button };
+export { Button }

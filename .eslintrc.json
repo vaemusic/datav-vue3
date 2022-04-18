@@ -1,0 +1,16 @@
+{
+  "extends": "@antfu",
+  "rules": {
+    "array-bracket-spacing": 0,
+    "no-console": 0,
+    "vue/component-tags-order": [
+      "error",
+      {
+        "order": [["template", "script"], "style"]
+      }
+    ]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  }
+}
