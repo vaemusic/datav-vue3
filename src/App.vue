@@ -4,7 +4,7 @@
       <!-- <router-link v-for="(link, index) in data.links" :key="index" :to="link.path">
         {{ link.name }}
       </router-link> -->
-      <DvMenu :list="ComponentList" active-index="1"/>
+      <DvMenu :list="ComponentList" active-index="1" />
     </aside>
     <main>
       <div flex="~" justify-end py1 pr25>

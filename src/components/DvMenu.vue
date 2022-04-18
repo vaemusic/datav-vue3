@@ -5,10 +5,14 @@
         <span>{{ item.compZhName }}</span>
       </el-menu-item>
       <el-sub-menu v-for="item in hasChidrenList" :key="item.compName" :index="item.compType">
-        <template #title>{{ item.compType }}</template>
-        <el-menu-item v-for="childrenItem in item.children" :key="childrenItem.compName" :index="childrenItem.compName">{{
-          childrenItem.compZhName
-        }}</el-menu-item>
+        <template #title>
+          {{ item.compType }}
+        </template>
+        <el-menu-item v-for="childrenItem in item.children" :key="childrenItem.compName" :index="childrenItem.compName">
+          {{
+            childrenItem.compZhName
+          }}
+        </el-menu-item>
       </el-sub-menu>
     </el-menu>
   </div>
