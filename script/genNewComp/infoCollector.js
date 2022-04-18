@@ -18,6 +18,16 @@ module.exports = async() => {
   const meta = await inquirer
     .prompt([
       {
+        type: 'list',
+        name: 'compType',
+        message: '请选择组件类型(NoChildren代表没有分组组件):',
+        choices: [
+          'NoChildren',
+          '边框',
+          '装饰',
+        ],
+      },
+      {
         type: 'input',
         message: '请输入你要新建的组件名（纯英文，大写开头）：',
         name: 'compName',

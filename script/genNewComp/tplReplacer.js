@@ -41,9 +41,18 @@ const listJsonTplReplacer = (meta) => {
   const listFilePath = '../../packages/list.json'
   const listFileTpl = fs.readFileSync(resolve(__dirname, listFilePath), 'utf-8')
   const listFileContent = JSON.parse(listFileTpl)
-  listFileContent.push(meta)
+  if(meta.compType!='NoChildren'){
+    listFileContent.forEach(item=>{
+      if(item.compType===meta.compType){
+        item.children.push(meta)
+      }
+    })
+  }else{
+    listFileContent.unshift(meta)
+  }
+  
   const newListFileContentFile = JSON.stringify(listFileContent, null, 2)
-  fs.writeFile(resolve(__dirname, listFilePath), newListFileContentFile, (err) => {
+  fs.writeFile(resolve(__dirname, listFilePath), newListFileContentFile.join(('\n')), (err) => {
     if (err)
       console.log(err)
   })
@@ -57,12 +66,20 @@ const routerTplReplacer = (listFileContent) => {
   const routerFileTpl = fs.readFileSync(resolve(__dirname, routerFileFrom), 'utf-8')
   const routerMeta = {
     routes: listFileContent.map((comp) => {
+      if(comp.compType==='NoChildren'){
       return ` {
   title: '${comp.compZhName}',
   name: '${comp.compName}',
   path: '/components/${comp.compName}',
   component: () => import('packages/${comp.compName}/docs/README.md'),
-}`
+}`}else{
+    return comp.children.map((child) => ` {
+  title: '${child.compZhName}',
+  name: '${child.compName}',
+  path: '/components/${child.compName}',
+  component: () => import('packages/${child.compName}/docs/README.md'),
+}`)
+      }
     }),
   }
   const routerFileContent = handlebars.compile(routerFileTpl, { noEscape: true })(routerMeta)
@@ -78,9 +95,27 @@ const installTsTplReplacer = (listFileContent) => {
   const installFileTo = '../../packages/index.ts' // 这里没有写错，别慌
   const installFileTpl = fs.readFileSync(resolve(__dirname, installFileFrom), 'utf-8')
   const installMeta = {
-    importPlugins: listFileContent.map(({ compName }) => `import { ${compName}Plugin } from './${compName}'`).join('\n'),
-    installPlugins: listFileContent.map(({ compName }) => `${compName}Plugin.install?.(app)`).join('\n    '),
-    exportPlugins: listFileContent.map(({ compName }) => `export * from './${compName}'`).join('\n'),
+    importPlugins: listFileContent.map((item) => {
+      if(item.compType==='NoChildren'){
+        return `import { ${item.compName}Plugin } from './${item.compName}'`
+      }else{
+        return item.children.map((child) => `import { ${child.compName}Plugin } from './${child.compName}'`).join('\n')
+      }
+    }).join('\n'),
+    installPlugins: listFileContent.map((item) => {
+      if(item.compType==='NoChildren'){
+        return `    ${item.compName}Plugin.install?.(app)`
+      }else{
+        return item.children.map((child) => `   ${child.compName}Plugin.install?.(app)`).join('\n')
+      }
+    }).join('\n    '),
+    exportPlugins: listFileContent.map((item) =>{
+      if(item.compType==='NoChildren'){
+        return `export * from './${item.compName}'`
+      }else{
+        return item.children.map((child) => `export * from './${child.compName}'`).join('\n')
+      }
+    }).join('\n'),
   }
   const installFileContent = handlebars.compile(installFileTpl, { noEscape: true })(installMeta)
   fs.outputFile(resolve(__dirname, installFileTo), installFileContent, (err) => {
