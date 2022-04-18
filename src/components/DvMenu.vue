@@ -15,13 +15,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { MenuItem } from '@/types'
-
-
 const router = useRouter()
 
 const props = defineProps<{
-  list: Array<MenuItem>
+  list: Array<any>
   activeIndex: string
 }>()
 
