@@ -1,3 +1,5 @@
+import type { Point } from 'packages/types'
+
 /* eslint-disable prefer-rest-params */
 export function randomExtend(minNum: number, maxNum: number) {
   if (arguments.length === 1)
@@ -32,6 +34,43 @@ export function getPointDistance(pointOne: number[], pointTwo: number[]) {
   const minusY = Math.abs(pointOne[1] - pointTwo[1])
 
   return Math.sqrt(minusX * minusX + minusY * minusY)
+}
+
+function filterNonNumber(array: Array<number>) {
+  return array.filter((n) => {
+    return typeof n === 'number'
+  })
+}
+
+function mulAdd(nums: Array<number>) {
+  nums = filterNonNumber(nums)
+  return nums.reduce((all, num) => {
+    return all + num
+  }, 0)
+}
+
+function getTwoPointDistance(pointOne: Point, pointTwo: Point) {
+  const minusX = Math.abs(pointOne.x - pointTwo.x)
+  const minusY = Math.abs(pointOne.y - pointTwo.y)
+  return Math.sqrt(minusX * minusX + minusY * minusY)
+}
+
+export function getPolylineLength(points: Array<Point>) {
+  const lineSegments = new Array(points.length - 1).fill(0).map((foo, i) => {
+    return [points[i], points[i + 1]]
+  })
+  const lengths = lineSegments.map((item) => {
+    return getTwoPointDistance(item[0], item[1])
+  })
+  return mulAdd(lengths)
+}
+
+function PointToString(point: Point) {
+  return `${point.x},${point.y}`
+}
+
+export function PointsToString(points: Array<Point>) {
+  return points.map(PointToString).join(' ')
 }
 
 export function uuid(hasHyphen?: boolean) {
