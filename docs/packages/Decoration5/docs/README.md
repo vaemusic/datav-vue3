@@ -6,16 +6,16 @@ import demo from './demo.vue'
 
 <!-- 正文开始 -->
 
-# 装饰1
+# 装饰5
 
-装饰-1
+装饰5
 
 ## 基础用法
-<Preview comp-name="Decoration1" demo-name="demo">
+<Preview comp-name="Decoration5" demo-name="demo">
   <demo />
 </Preview>
 
 ## 属性
 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填
 :-: | :-: | :-: | :-: | :-: | :-:
-`color` | 边框颜色(以下所有组件都有此颜色参数) | Array | - | `['#4fd2dd', '#235fa7']` | 否 
+`dur` | 单次动画时长(秒) | Number | - | `1.2` | 否 
