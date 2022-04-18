@@ -16,6 +16,7 @@
     "@babel/runtime": "^7.17.9",
     "@jiaminghi/c-render": "^0.4.3",
     "@vueuse/core": "^8.2.5",
+    "element-plus": "^2.1.9",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14"
   },

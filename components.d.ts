@@ -4,6 +4,13 @@
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    DvMenu: typeof import('./src/components/DvMenu.vue')['default']
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
+    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Preview: typeof import('./src/components/Preview.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
