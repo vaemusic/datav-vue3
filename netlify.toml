@@ -3,7 +3,7 @@
   NODE_VERSION = "16"
 
 [build]
-  publish = "docs"
+  base = "docs/"
   command = ""
 
 [[redirects]]
