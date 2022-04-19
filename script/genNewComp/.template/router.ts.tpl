@@ -7,7 +7,10 @@
 import type { RouterOptions } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-const routes = [{{ routes }}]
+const routes = [{
+  path: '/',
+  redirect: '/components/DigitalFlop',
+},{{ routes }}]
 
 const routerConfig = {
   history: createWebHashHistory(),
