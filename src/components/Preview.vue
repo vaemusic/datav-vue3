@@ -50,7 +50,7 @@ onMounted(async() => {
       ).default
     }
     else {
-      sourceCode.value = await fetch(`${isDev ? '' : '/'}/packages/${props.compName}/docs/${props.demoName}.vue`).then(res => res.text())
+      sourceCode.value = await fetch(`/packages/${props.compName}/docs/${props.demoName}.vue`).then(res => res.text())
     }
   }
   await nextTick()
