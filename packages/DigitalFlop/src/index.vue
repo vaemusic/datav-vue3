@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import CRender from '@jiaminghi/c-render'
 import '@jiaminghi/charts/lib/extend/index'
 import { deepClone, deepMerge } from 'packages/utils'
@@ -12,7 +12,7 @@ import { deepClone, deepMerge } from 'packages/utils'
 const props = defineProps({
   config: {
     type: Object,
-    default: () => ({}),
+    default: () => {},
   },
 })
 
@@ -87,9 +87,8 @@ const state = reactive({
   graph: null,
 })
 
-watch(() => props, (newVal) => {
+watch(() => props.config, (newVal) => {
   update()
-  console.log('watch config')
 }, { deep: true })
 
 onMounted(() => {
@@ -161,7 +160,7 @@ function update() {
 
   mergeConfig()
 
-  if (!graph)
+  if (!state.graph)
     return
 
   const { animationCurve, animationFrame } = state.mergedConfig
