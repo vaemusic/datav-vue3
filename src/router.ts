@@ -7,7 +7,10 @@
 import type { RouterOptions } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-const routes = [ {
+const routes = [{
+  path: '/',
+  redirect: '/components/DigitalFlop',
+}, {
   title: '数字翻牌器',
   name: 'DigitalFlop',
   path: '/components/DigitalFlop',
@@ -57,6 +60,11 @@ const routes = [ {
   name: 'Decoration8',
   path: '/components/Decoration8',
   component: () => import('packages/Decoration8/docs/README.md'),
+}, {
+  title: '装饰9',
+  name: 'Decoration9',
+  path: '/components/Decoration9',
+  component: () => import('packages/Decoration9/docs/README.md'),
 }, {
   title: '边框1',
   name: 'BorderBox1',
