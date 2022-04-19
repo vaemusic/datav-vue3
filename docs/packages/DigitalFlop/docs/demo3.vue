@@ -8,11 +8,12 @@
 import { DigitalFlopConfigType } from '../src/type';
 
 let config1: DigitalFlopConfigType = reactive({
-  number: [100],
-  content: '{nt}个',
+  number: [10, 100],
+  content: '{nt}个{nt}元',
 })
 
 const changeConfig = () => {
   config1.number[0] += Math.random() * 100
+  config1.number[1] += Math.random() * 100
 }
 </script>

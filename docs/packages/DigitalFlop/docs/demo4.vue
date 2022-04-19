@@ -7,9 +7,19 @@
 <script lang="ts" setup>
 import { DigitalFlopConfigType } from '../src/type';
 
+function formatter (number: number) {
+  const numbers = number.toString().split('').reverse()
+  const segs = []
+
+  while (numbers.length) segs.push(numbers.splice(0, 3).join(''))
+
+  return segs.join(',').split('').reverse().join('')
+}
+
 let config1: DigitalFlopConfigType = reactive({
-  number: [100],
+  number: [123456],
   content: '{nt}个',
+  formatter
 })
 
 const changeConfig = () => {
