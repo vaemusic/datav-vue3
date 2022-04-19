@@ -15,6 +15,7 @@
   "dependencies": {
     "@babel/runtime": "^7.17.9",
     "@jiaminghi/c-render": "^0.4.3",
+    "@jiaminghi/charts": "^0.2.18",
     "@vueuse/core": "^8.2.5",
     "element-plus": "^2.1.9",
     "vue": "^3.2.31",
