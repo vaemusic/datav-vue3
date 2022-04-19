@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-    <el-menu :unique-opened="true" :default-active="activeIndex" class="el-menu-demo" mode="vertical" @select="handleSelect">
+    <el-menu :background-color="`${isDark?'#121212':'#fff'}`" :text-color="`${!isDark?'#121212':'#fff'}`" :unique-opened="true" :default-active="activeIndex" class="el-menu-demo" mode="vertical" @select="handleSelect">
       <el-menu-item v-for="item in noneChidrenList" :key="item.compName" :index="item.compName">
         <span>{{ item.compZhName }}</span>
       </el-menu-item>
@@ -19,6 +19,7 @@
 </template>
 
 <script lang="ts" setup>
+import { isDark } from '@/composables'
 const router = useRouter()
 
 const props = defineProps<{
@@ -41,5 +42,8 @@ const handleSelect = (e: string) => {
 }
 </script>
 
-<style>
+<style scoped>
+:deep(.el-menu){
+  border-right:none;
+}
 </style>

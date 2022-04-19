@@ -5,7 +5,7 @@
     </section>
 
     <div v-show="codeVisible" class="source-code">
-      <pre :class="`${isDark?'dark':''} language-html`"><code class="language-html">{{ previewSourceCode }}</code></pre>
+      <pre :class="language-html"><code class="language-html">{{ previewSourceCode }}</code></pre>
     </div>
 
     <div class="preview-bottom">
@@ -16,13 +16,7 @@
 
 <script setup>
 import Prism from 'prismjs'
-// import '../assets/prism.css'
-import { isDark } from '@/composables'
-
-// if(isDark){
-// }else{
-//   import '../assets/prism1.css';
-// }
+import '../assets/prism.css'
 
 const isDev = import.meta.env.MODE === 'development'
 
@@ -48,18 +42,7 @@ const previewSourceCode = computed(() => {
   return sourceCode.value.replace(/'\.\.\/\.\.\/index'/g, '\'@tencent/my-kit\'')
 })
 
-watch(isDark, (newVal) => {
-  document.getElementById('theme').href = `prism${newVal ? '' : '1'}.css`
-})
-
 onMounted(async() => {
-  const link = document.createElement('link')
-  link.type = 'text/css'
-  link.id = 'theme'
-  link.rel = 'stylesheet'
-  link.href = `prism${isDark.value ? '' : '1'}.css`
-  document.getElementsByTagName('head')[0].appendChild(link)
-
   if (props.compName && props.demoName) {
     if (isDev) {
       sourceCode.value = (
@@ -85,8 +68,6 @@ const showSourceCode = () => {
 </script>
 
 <style lang="less">
-// @import '@/assets/prism.css';
-
 pre {
   line-height: 0;
 }
