@@ -46,11 +46,11 @@ onMounted(async() => {
   if (props.compName && props.demoName) {
     if (isDev) {
       sourceCode.value = (
-        await import(/* @vite-ignore */ `../../packages/${props.compName}/docs/${props.demoName}.vue?raw`)
+        await import(/* @vite-ignore */ `../../packages/components/${props.compName}/docs/${props.demoName}.vue?raw`)
       ).default
     }
     else {
-      sourceCode.value = await fetch(`/packages/${props.compName}/docs/${props.demoName}.vue`).then(res => res.text())
+      sourceCode.value = await fetch(`/packages/components/${props.compName}/docs/${props.demoName}.vue`).then(res => res.text())
     }
   }
   await nextTick()

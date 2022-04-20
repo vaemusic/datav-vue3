@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 // import { createRouter, createWebHistory } from 'vue-router'
 // import routes from 'virtual:generated-pages'
-import MyKit from '../packages'
+import DataVVue3Plugin from '../packages'
 import router from './router'
 import App from './App.vue'
 
@@ -20,5 +20,5 @@ const app = createApp(App)
 // })
 app.component('Preview', Preview)
 app.use(router)
-app.use(MyKit)
+app.use(DataVVue3Plugin)
 app.mount('#app')

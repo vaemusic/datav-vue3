@@ -125,7 +125,7 @@ const mergeColor = () => {
   state.mergedColor = deepMerge(deepClone(defaultColor, true), props.color || [])
 }
 
-watch(props.color, () => {
+watch(() => props.color, () => {
   mergeColor()
 })
 

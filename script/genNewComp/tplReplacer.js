@@ -6,21 +6,21 @@ const getTplFilePath = meta => ({
   // docs 目录
   readme: {
     from: './.template/docs/README.md.tpl',
-    to: `../../packages/${meta.compName}/docs/README.md`,
+    to: `../../packages/components/${meta.compName}/docs/README.md`,
   },
   demo: {
     from: './.template/docs/demo.vue.tpl',
-    to: `../../packages/${meta.compName}/docs/demo.vue`,
+    to: `../../packages/components/${meta.compName}/docs/demo.vue`,
   },
   // src 目录
   vue: {
     from: './.template/src/index.vue.tpl',
-    to: `../../packages/${meta.compName}/src/index.vue`,
+    to: `../../packages/components/${meta.compName}/src/index.vue`,
   },
   // 根目录
   install: {
     from: './.template/index.ts.tpl',
-    to: `../../packages/${meta.compName}/index.ts`,
+    to: `../../packages/components/${meta.compName}/index.ts`,
   },
 })
 
@@ -71,7 +71,7 @@ const routerTplReplacer = (listFileContent) => {
   title: '${comp.compZhName}',
   name: '${comp.compName}',
   path: '/components/${comp.compName}',
-  component: () => import('packages/${comp.compName}/docs/README.md'),
+  component: () => import('packages/components/${comp.compName}/docs/README.md'),
 }`
       }
       else {
@@ -79,7 +79,7 @@ const routerTplReplacer = (listFileContent) => {
   title: '${child.compZhName}',
   name: '${child.compName}',
   path: '/components/${child.compName}',
-  component: () => import('packages/${child.compName}/docs/README.md'),
+  component: () => import('packages/components/${child.compName}/docs/README.md'),
 }`)
       }
     }),
@@ -99,10 +99,10 @@ const installTsTplReplacer = (listFileContent) => {
   const installMeta = {
     importPlugins: listFileContent.map((item) => {
       if (item.compType === 'NoChildren')
-        return `import { ${item.compName}Plugin } from './${item.compName}'`
+        return `import { ${item.compName}Plugin } from './components/${item.compName}'`
 
       else
-        return item.children.map(child => `import { ${child.compName}Plugin } from './${child.compName}'`).join('\n')
+        return item.children.map(child => `import { ${child.compName}Plugin } from './components/${child.compName}'`).join('\n')
     }).join('\n'),
     installPlugins: listFileContent.map((item) => {
       if (item.compType === 'NoChildren')
@@ -113,10 +113,10 @@ const installTsTplReplacer = (listFileContent) => {
     }).join('\n    '),
     exportPlugins: listFileContent.map((item) => {
       if (item.compType === 'NoChildren')
-        return `export * from './${item.compName}'`
+        return `export * from './components/${item.compName}'`
 
       else
-        return item.children.map(child => `export * from './${child.compName}'`).join('\n')
+        return item.children.map(child => `export * from './components/${child.compName}'`).join('\n')
     }).join('\n'),
   }
   const installFileContent = handlebars.compile(installFileTpl, { noEscape: true })(installMeta)
@@ -132,5 +132,5 @@ module.exports = (meta) => {
   routerTplReplacer(listFileContent)
   installTsTplReplacer(listFileContent)
 
-  console.log(`组件新建完毕，请前往 packages/${meta.compName} 目录进行开发`)
+  console.log(`组件新建完毕，请前往 packages/components/${meta.compName} 目录进行开发`)
 }
