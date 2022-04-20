@@ -5,7 +5,7 @@
     </section>
 
     <div v-show="codeVisible" class="source-code">
-      <pre :class="language-html"><code class="language-html">{{ previewSourceCode }}</code></pre>
+      <pre class="language-html"><code class="language-html">{{ previewSourceCode }}</code></pre>
     </div>
 
     <div class="preview-bottom">
