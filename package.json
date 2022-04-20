@@ -26,7 +26,6 @@
   ],
   "scripts": {
     "build": "vite build --config ./build/base.config.ts",
-    "build:pkg": "pkgroll --src ./packages",
     "dev": "vite --port 3333 --open --config ./build/base.config.ts",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
@@ -34,7 +33,6 @@
     "test": "vitest",
     "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && @powershell ./cpdir.ps1",
     "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts",
-    "build:rollup": "node ./build-rollup/index.js",
     "gen": "node ./script/genNewComp/index.js"
   },
   "dependencies": {
@@ -61,7 +59,6 @@
     "inquirer": "^8.2.0",
     "jsdom": "^19.0.0",
     "less": "^4.1.2",
-    "pkgroll": "^1.0.3",
     "pnpm": "^6.32.6",
     "prismjs": "^1.27.0",
     "typescript": "^4.6.3",
