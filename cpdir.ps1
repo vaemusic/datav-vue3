@@ -1,0 +1,1 @@
+copy -r .\packages .\docs

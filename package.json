@@ -8,7 +8,7 @@
     "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "test": "vitest",
-    "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && node script/copyDir.js",
+    "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && @powershell ./cpdir.ps1",
     "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts",
     "gen": "node ./script/genNewComp/index.js"
   },
