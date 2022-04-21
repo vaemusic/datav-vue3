@@ -36,6 +36,19 @@ export function getPointDistance(pointOne: number[], pointTwo: number[]) {
   return Math.sqrt(minusX * minusX + minusY * minusY)
 }
 
+/**
+ * @description Get the coordinates of the specified radian on the circle
+ * @param {Number} x      Circle x coordinate
+ * @param {Number} y      Circle y coordinate
+ * @param {Number} radius Circle radius
+ * @param {Number} radian Specfied radian
+ * @return {Array} Postion of point
+ */
+
+export function getCircleRadianPoint(x: number, y: number, radius: number, radian: number) {
+  return [x + Math.cos(radian) * radius, y + Math.sin(radian) * radius]
+}
+
 function filterNonNumber(array: Array<number>) {
   return array.filter((n) => {
     return typeof n === 'number'
