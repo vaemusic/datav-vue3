@@ -85,6 +85,20 @@
         "compZhName": "装饰10",
         "compDesc": "装饰10",
         "compClassName": "decoration10"
+      },
+      {
+        "compType": "装饰",
+        "compName": "Decoration11",
+        "compZhName": "装饰11",
+        "compDesc": "装饰11",
+        "compClassName": "decoration11"
+      },
+      {
+        "compType": "装饰",
+        "compName": "Decoration12",
+        "compZhName": "装饰12",
+        "compDesc": "装饰12",
+        "compClassName": "decoration12"
       }
     ]
   },

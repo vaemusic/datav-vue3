@@ -73,6 +73,16 @@ const routes = [{
   path: '/components/Decoration10',
   component: () => import('packages/components/Decoration10/docs/README.md'),
 }, {
+  title: '装饰11',
+  name: 'Decoration11',
+  path: '/components/Decoration11',
+  component: () => import('packages/components/Decoration11/docs/README.md'),
+}, {
+  title: '装饰12',
+  name: 'Decoration12',
+  path: '/components/Decoration12',
+  component: () => import('packages/components/Decoration12/docs/README.md'),
+}, {
   title: '边框1',
   name: 'BorderBox1',
   path: '/components/BorderBox1',
