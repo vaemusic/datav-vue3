@@ -8,8 +8,10 @@ import type { RouterOptions } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [{
+  title: '首页',
   path: '/',
-  redirect: '/components/DigitalFlop',
+  name: 'Index',
+  component: () => import('@/pages/README.md'),
 },{{ routes }}]
 
 const routerConfig = {

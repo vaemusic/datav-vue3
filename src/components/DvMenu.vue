@@ -1,6 +1,9 @@
 <template>
   <div class="menu">
     <el-menu :background-color="`${isDark?'#121212':'#fff'}`" :text-color="`${!isDark?'#121212':'#fff'}`" :unique-opened="true" :default-active="activeIndex" class="el-menu-demo" mode="vertical" @select="handleSelect">
+      <el-menu-item key="index" index="Index">
+        <span>首页</span>
+      </el-menu-item>
       <el-menu-item v-for="item in noneChidrenList" :key="item.compName" :index="item.compName">
         <span>{{ item.compZhName }}</span>
       </el-menu-item>

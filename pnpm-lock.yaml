@@ -20,6 +20,7 @@ specifiers:
   inquirer: ^8.2.0
   jsdom: ^19.0.0
   less: ^4.1.2
+  markdown-it-prism: ^2.2.4
   pnpm: ^6.32.6
   prismjs: ^1.27.0
   typescript: ^4.6.3
@@ -60,6 +61,7 @@ devDependencies:
   inquirer: registry.npmmirror.com/inquirer/8.2.2
   jsdom: 19.0.0
   less: registry.npmmirror.com/less/4.1.2
+  markdown-it-prism: registry.npmmirror.com/markdown-it-prism/2.2.4
   pnpm: 6.32.6
   prismjs: registry.npmmirror.com/prismjs/1.27.0
   typescript: 4.6.3
@@ -4568,6 +4570,15 @@ packages:
     dev: true
     optional: true
 
+  registry.npmmirror.com/markdown-it-prism/2.2.4:
+    resolution: {integrity: sha512-7oQVppKjiZqVQo7s7eLTIs3o/0hdvqAWDW8lvRel6eUCGD4iXjKbSZjvdHZFA2ZnCkQUF47kbvtWZDVQrv7zyQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/markdown-it-prism/-/markdown-it-prism-2.2.4.tgz}
+    name: markdown-it-prism
+    version: 2.2.4
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      prismjs: registry.npmmirror.com/prismjs/1.28.0
+    dev: true
+
   registry.npmmirror.com/markdown-it/12.3.2:
     resolution: {integrity: sha512-TchMembfxfNVpHkbtriWltGWc+m3xszaRD0CZup7GFFhzIgQqxIfn3eGj1yZpfuflzPvfkt611B2Q/Bsk1YnGg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/markdown-it/-/markdown-it-12.3.2.tgz}
     name: markdown-it
@@ -4858,6 +4869,13 @@ packages:
     resolution: {integrity: sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/prismjs/-/prismjs-1.27.0.tgz}
     name: prismjs
     version: 1.27.0
+    engines: {node: '>=6'}
+    dev: true
+
+  registry.npmmirror.com/prismjs/1.28.0:
+    resolution: {integrity: sha512-8aaXdYvl1F7iC7Xm1spqSaY/OJBpYW3v+KJ+F17iYxvdc8sfjW194COK5wVhMZX45tGteiBQgdvD/nhxcRwylw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/prismjs/-/prismjs-1.28.0.tgz}
+    name: prismjs
+    version: 1.28.0
     engines: {node: '>=6'}
     dev: true
 

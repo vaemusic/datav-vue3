@@ -47,7 +47,13 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
     Unocss(),
-    Markdown(),
+    Markdown({
+      markdownItSetup(md) {
+        // add code syntax highlighting with Prism
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        md.use(require('markdown-it-prism'))
+      },
+    }),
   ],
 
   // https://github.com/vitest-dev/vitest
