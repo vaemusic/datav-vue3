@@ -28,31 +28,33 @@ import { BorderBox5Plugin } from './components/BorderBox5'
 import { BorderBox6Plugin } from './components/BorderBox6'
 import { BorderBox7Plugin } from './components/BorderBox7'
 import { BorderBox8Plugin } from './components/BorderBox8'
+import { BorderBox9Plugin } from './components/BorderBox9'
 
 const DataVVue3Plugin: Plugin = {
   install(app: App) {
-    DigitalFlopPlugin.install?.(app)
-    FullScreenContainerPlugin.install?.(app)
-    Decoration1Plugin.install?.(app)
-    Decoration2Plugin.install?.(app)
-    Decoration3Plugin.install?.(app)
-    Decoration4Plugin.install?.(app)
-    Decoration5Plugin.install?.(app)
-    Decoration6Plugin.install?.(app)
-    Decoration7Plugin.install?.(app)
-    Decoration8Plugin.install?.(app)
-    Decoration9Plugin.install?.(app)
-    Decoration10Plugin.install?.(app)
-    Decoration11Plugin.install?.(app)
-    Decoration12Plugin.install?.(app)
-    BorderBox1Plugin.install?.(app)
-    BorderBox2Plugin.install?.(app)
-    BorderBox3Plugin.install?.(app)
-    BorderBox4Plugin.install?.(app)
-    BorderBox5Plugin.install?.(app)
-    BorderBox6Plugin.install?.(app)
-    BorderBox7Plugin.install?.(app)
-    BorderBox8Plugin.install?.(app)
+        DigitalFlopPlugin.install?.(app)
+        FullScreenContainerPlugin.install?.(app)
+       Decoration1Plugin.install?.(app)
+   Decoration2Plugin.install?.(app)
+   Decoration3Plugin.install?.(app)
+   Decoration4Plugin.install?.(app)
+   Decoration5Plugin.install?.(app)
+   Decoration6Plugin.install?.(app)
+   Decoration7Plugin.install?.(app)
+   Decoration8Plugin.install?.(app)
+   Decoration9Plugin.install?.(app)
+   Decoration10Plugin.install?.(app)
+   Decoration11Plugin.install?.(app)
+   Decoration12Plugin.install?.(app)
+       BorderBox1Plugin.install?.(app)
+   BorderBox2Plugin.install?.(app)
+   BorderBox3Plugin.install?.(app)
+   BorderBox4Plugin.install?.(app)
+   BorderBox5Plugin.install?.(app)
+   BorderBox6Plugin.install?.(app)
+   BorderBox7Plugin.install?.(app)
+   BorderBox8Plugin.install?.(app)
+   BorderBox9Plugin.install?.(app)
   },
 }
 
@@ -80,3 +82,4 @@ export * from './components/BorderBox5'
 export * from './components/BorderBox6'
 export * from './components/BorderBox7'
 export * from './components/BorderBox8'
+export * from './components/BorderBox9'
