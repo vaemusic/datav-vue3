@@ -1,6 +1,13 @@
 [
   {
     "compType": "NoChildren",
+    "compName": "ActiveRingChart",
+    "compZhName": "动态环图",
+    "compDesc": "动态环图",
+    "compClassName": "active-ring-chart"
+  },
+  {
+    "compType": "NoChildren",
     "compName": "DigitalFlop",
     "compZhName": "数字翻牌器",
     "compDesc": "数字翻牌器",

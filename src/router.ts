@@ -13,6 +13,11 @@ const routes = [{
   name: 'Index',
   component: () => import('@/pages/README.md'),
 }, {
+  title: '动态环图',
+  name: 'ActiveRingChart',
+  path: '/components/ActiveRingChart',
+  component: () => import('packages/components/ActiveRingChart/docs/README.md'),
+}, {
   title: '数字翻牌器',
   name: 'DigitalFlop',
   path: '/components/DigitalFlop',
