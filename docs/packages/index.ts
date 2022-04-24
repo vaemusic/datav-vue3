@@ -6,6 +6,8 @@
 import type { App, Plugin } from 'vue'
 import 'uno.css'
 
+import { ChartsPlugin } from './components/Charts'
+import { CapsuleChartPlugin } from './components/CapsuleChart'
 import { ActiveRingChartPlugin } from './components/ActiveRingChart'
 import { DigitalFlopPlugin } from './components/DigitalFlop'
 import { FullScreenContainerPlugin } from './components/FullScreenContainer'
@@ -33,6 +35,8 @@ import { BorderBox9Plugin } from './components/BorderBox9'
 
 const DataVVue3Plugin: Plugin = {
   install(app: App) {
+        ChartsPlugin.install?.(app)
+        CapsuleChartPlugin.install?.(app)
         ActiveRingChartPlugin.install?.(app)
         DigitalFlopPlugin.install?.(app)
         FullScreenContainerPlugin.install?.(app)
@@ -62,6 +66,8 @@ const DataVVue3Plugin: Plugin = {
 
 export default DataVVue3Plugin
 
+export * from './components/Charts'
+export * from './components/CapsuleChart'
 export * from './components/ActiveRingChart'
 export * from './components/DigitalFlop'
 export * from './components/FullScreenContainer'

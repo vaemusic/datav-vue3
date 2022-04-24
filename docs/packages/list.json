@@ -1,6 +1,20 @@
 [
   {
     "compType": "NoChildren",
+    "compName": "Charts",
+    "compZhName": "图表",
+    "compDesc": "图表",
+    "compClassName": "charts"
+  },
+  {
+    "compType": "NoChildren",
+    "compName": "CapsuleChart",
+    "compZhName": "胶囊柱图",
+    "compDesc": "胶囊柱图",
+    "compClassName": "capsule-chart"
+  },
+  {
+    "compType": "NoChildren",
     "compName": "ActiveRingChart",
     "compZhName": "动态环图",
     "compDesc": "动态环图",
