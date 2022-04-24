@@ -30,6 +30,7 @@ specifiers:
   vite: ^2.9.1
   vite-plugin-copy: ^0.1.6
   vite-plugin-dts: ^1.0.5
+  vite-plugin-libcss: ^1.0.5
   vite-plugin-md: ^0.12.4
   vite-plugin-pages: ^0.22.0
   vitest: ^0.9.3
@@ -71,6 +72,7 @@ devDependencies:
   vite: 2.9.1_less@4.1.2
   vite-plugin-copy: registry.npmmirror.com/vite-plugin-copy/0.1.6
   vite-plugin-dts: registry.npmmirror.com/vite-plugin-dts/1.0.5_vite@2.9.1
+  vite-plugin-libcss: registry.npmmirror.com/vite-plugin-libcss/1.0.5_vite@2.9.1
   vite-plugin-md: registry.npmmirror.com/vite-plugin-md/0.12.4_vite@2.9.1
   vite-plugin-pages: 0.22.0_vite@2.9.1
   vitest: 0.9.3_jsdom@19.0.0+less@4.1.2
@@ -5339,6 +5341,17 @@ packages:
       vite: 2.9.1_less@4.1.2
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  registry.npmmirror.com/vite-plugin-libcss/1.0.5_vite@2.9.1:
+    resolution: {integrity: sha512-NUQwWhn9j8fpRBwHeDr35a3TuRP0xvdIHtJni+3DcnPcq4Vrg+G5A3ZtCJ8y2EC83G97tBJ36svPdiIVuBEfsQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite-plugin-libcss/-/vite-plugin-libcss-1.0.5.tgz}
+    id: registry.npmmirror.com/vite-plugin-libcss/1.0.5
+    name: vite-plugin-libcss
+    version: 1.0.5
+    peerDependencies:
+      vite: ^2
+    dependencies:
+      vite: 2.9.1_less@4.1.2
     dev: true
 
   registry.npmmirror.com/vite-plugin-md/0.12.4_vite@2.9.1:

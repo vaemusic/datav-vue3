@@ -1,6 +1,6 @@
 {
   "name": "@kjgl77/datav-vue3",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Datav for vue3+vite",
   "packageManager": "pnpm@6.32.3",
   "author": "kjgl77 <745385015@qq.com>",
@@ -21,6 +21,10 @@
       "require": "./dist/datav-vue3.es.js",
       "import": "./dist/datav-vue3.es.js",
       "types": "./dist/packages/index.d.ts"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "files": [
@@ -71,6 +75,7 @@
     "vite": "^2.9.1",
     "vite-plugin-copy": "^0.1.6",
     "vite-plugin-dts": "^1.0.5",
+    "vite-plugin-libcss": "^1.0.5",
     "vite-plugin-md": "^0.12.4",
     "vite-plugin-pages": "^0.22.0",
     "vitest": "^0.9.3",

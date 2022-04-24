@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
+import libCss from 'vite-plugin-libcss'
 import baseConfig from './base.config'
 
 export default defineConfig({
@@ -26,5 +27,6 @@ export default defineConfig({
   plugins: [
     ...(baseConfig as any).plugins,
     dts(),
+    libCss(),
   ],
 })
