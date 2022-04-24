@@ -2,11 +2,17 @@
 
 由于之前大佬写的 [DataV](http://datav.jiaminghi.com/) 不支持Vue3 Vite2.x，现部分代码用Vue3+TS重构。
 
-[预览地址](https://datav-vue3.netlify.app)：https://datav-vue3.netlify.app
+[文档地址](https://datav-vue3.netlify.app)：https://datav-vue3.netlify.app
 
 [Gitee地址](https://gitee.com/kjgl77/datav-vue3)：https://gitee.com/kjgl77/datav-vue3
 
 [Github地址](https://github.com/vaemusic/datav-vue3)：https://github.com/vaemusic/datav-vue3
+
+[Demo预览地址](https://datav-vue3-demo.netlify.app/)：https://datav-vue3-demo.netlify.app/
+
+[Demo Gitee地址](https://gitee.com/kjgl77/electronic-file)：https://gitee.com/kjgl77/electronic-file
+
+[Demo Github地址](https://github.com/vaemusic/electronic-file)：https://github.com/vaemusic/electronic-file
 
 ## 使用方法
 - 安装，此处使用pnpm工具，也可以yarn,npm等
