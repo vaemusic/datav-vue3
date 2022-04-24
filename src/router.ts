@@ -13,6 +13,11 @@ const routes = [{
   name: 'Index',
   component: () => import('@/pages/README.md'),
 }, {
+  title: '图表',
+  name: 'Charts',
+  path: '/components/Charts',
+  component: () => import('packages/components/Charts/docs/README.md'),
+}, {
   title: '胶囊柱图',
   name: 'CapsuleChart',
   path: '/components/CapsuleChart',
