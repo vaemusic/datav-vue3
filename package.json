@@ -7,15 +7,13 @@
   "private": "true",
   "homepage": "https://github.com/vaemusic/datav-vue3",
   "scripts": {
-    "build": "vite build --config ./build/base.config.ts",
-    "dev": "vite --port 3333 --open --config ./build/base.config.ts",
+    "dev": "pnpm run --filter @kjgl77/docs dev",
+    "build:docs": "pnpm run --filter @kjgl77/docs build:doc",
+    "build:lib": "pnpm run --filter @kjgl77/datav-vue3 build:lib",
+    "gen": "node ./script/genNewComp/index.js",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
-    "preview": "vite preview",
-    "test": "vitest",
-    "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && @powershell ./cpdir.ps1",
-    "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts",
-    "gen": "node ./script/genNewComp/index.js"
+    "test": "vitest"
   },
   "dependencies": {
     "vue": "^3.2.31"
