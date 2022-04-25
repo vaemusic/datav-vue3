@@ -6,21 +6,21 @@ const getTplFilePath = meta => ({
   // docs 目录
   readme: {
     from: './.template/docs/README.md.tpl',
-    to: `../../packages/components/${meta.compName}/docs/README.md`,
+    to: `../../packages/docs/src/components/${meta.compName}/docs/README.md`,
   },
   demo: {
     from: './.template/docs/demo.vue.tpl',
-    to: `../../packages/components/${meta.compName}/docs/demo.vue`,
+    to: `../../packages/docs/src/components/${meta.compName}/docs/demo.vue`,
   },
   // src 目录
   vue: {
     from: './.template/src/index.vue.tpl',
-    to: `../../packages/components/${meta.compName}/src/index.vue`,
+    to: `../../packages/datav-vue3/components/${meta.compName}/src/index.vue`,
   },
   // 根目录
   install: {
     from: './.template/index.ts.tpl',
-    to: `../../packages/components/${meta.compName}/index.ts`,
+    to: `../../packages/datav-vue3/components/${meta.compName}/index.ts`,
   },
 })
 
@@ -38,7 +38,7 @@ const compFilesTplReplacer = (meta) => {
 
 // 读取 packages/list.json 并更新
 const listJsonTplReplacer = (meta) => {
-  const listFilePath = '../../packages/list.json'
+  const listFilePath = '../../packages/datav-vue3/list.json'
   const listFileTpl = fs.readFileSync(resolve(__dirname, listFilePath), 'utf-8')
   const listFileContent = JSON.parse(listFileTpl)
   if (meta.compType !== 'NoChildren') {
@@ -62,7 +62,7 @@ const listJsonTplReplacer = (meta) => {
 // 更新 router.ts
 const routerTplReplacer = (listFileContent) => {
   const routerFileFrom = './.template/router.ts.tpl'
-  const routerFileTo = '../../src/router.ts'
+  const routerFileTo = '../../packages/docs/src/router.ts'
   const routerFileTpl = fs.readFileSync(resolve(__dirname, routerFileFrom), 'utf-8')
   const routerMeta = {
     routes: listFileContent.map((comp) => {
@@ -71,7 +71,7 @@ const routerTplReplacer = (listFileContent) => {
   title: '${comp.compZhName}',
   name: '${comp.compName}',
   path: '/components/${comp.compName}',
-  component: () => import('packages/components/${comp.compName}/docs/README.md'),
+  component: () => import('@/src/components/${comp.compName}/docs/README.md'),
 }`
       }
       else {
@@ -79,7 +79,7 @@ const routerTplReplacer = (listFileContent) => {
   title: '${child.compZhName}',
   name: '${child.compName}',
   path: '/components/${child.compName}',
-  component: () => import('packages/components/${child.compName}/docs/README.md'),
+  component: () => import('@/src/components/${child.compName}/docs/README.md'),
 }`)
       }
     }),
@@ -94,13 +94,12 @@ const routerTplReplacer = (listFileContent) => {
 // 更新 install.ts
 const installTsTplReplacer = (listFileContent) => {
   const installFileFrom = './.template/install.ts.tpl'
-  const installFileTo = '../../packages/index.ts' // 这里没有写错，别慌
+  const installFileTo = '../../packages/datav-vue3/index.ts' // 这里没有写错，别慌
   const installFileTpl = fs.readFileSync(resolve(__dirname, installFileFrom), 'utf-8')
   const installMeta = {
     importPlugins: listFileContent.map((item) => {
       if (item.compType === 'NoChildren')
         return `import { ${item.compName}Plugin } from './components/${item.compName}'`
-
       else
         return item.children.map(child => `import { ${child.compName}Plugin } from './components/${child.compName}'`).join('\n')
     }).join('\n'),
@@ -132,5 +131,5 @@ module.exports = (meta) => {
   routerTplReplacer(listFileContent)
   installTsTplReplacer(listFileContent)
 
-  console.log(`组件新建完毕，请前往 packages/components/${meta.compName} 目录进行开发`)
+  console.log(`组件新建完毕，请前往 packages/datav-vue3/components/${meta.compName} 目录进行开发`)
 }

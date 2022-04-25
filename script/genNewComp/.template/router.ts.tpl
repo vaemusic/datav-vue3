@@ -11,7 +11,7 @@ const routes = [{
   title: '首页',
   path: '/',
   name: 'Index',
-  component: () => import('@/pages/README.md'),
+  component: () => import('./pages/README.md'),
 },{{ routes }}]
 
 const routerConfig = {

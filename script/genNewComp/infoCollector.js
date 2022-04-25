@@ -2,7 +2,7 @@ const { resolve } = require('path')
 const inquirer = require('inquirer')
 const fs = require('fs-extra')
 
-const listFilePath = '../../packages/list.json'
+const listFilePath = '../../packages/datav-vue3/list.json'
 
 const RegxMap = {
   IS_COMP_NAME: /^[A-Z]/,
