@@ -4,7 +4,7 @@
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Demo: typeof import('./src/components/docs/demo.vue')['default']
+    Demo: typeof import('./src/components/ActiveRingChart/docs/demo.vue')['default']
     Demo2: typeof import('./src/components/DigitalFlop/docs/demo2.vue')['default']
     Demo3: typeof import('./src/components/DigitalFlop/docs/demo3.vue')['default']
     Demo4: typeof import('./src/components/DigitalFlop/docs/demo4.vue')['default']

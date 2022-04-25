@@ -3,7 +3,7 @@
   NODE_VERSION = "16"
 
 [build]
-  base = "docs/"
+  base = "packages/docs/docs/"
   command = ""
 
 [[redirects]]
