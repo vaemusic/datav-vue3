@@ -4,11 +4,9 @@
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Demo: typeof import('./src/components/ActiveRingChart/docs/demo.vue')['default']
-    Demo2: typeof import('./src/components/DigitalFlop/docs/demo2.vue')['default']
-    Demo3: typeof import('./src/components/DigitalFlop/docs/demo3.vue')['default']
-    Demo4: typeof import('./src/components/DigitalFlop/docs/demo4.vue')['default']
     DvMenu: typeof import('./src/components/DvMenu.vue')['default']
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
