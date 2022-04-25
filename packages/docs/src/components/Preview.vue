@@ -46,7 +46,7 @@ onMounted(async() => {
   if (props.compName && props.demoName) {
     if (isDev) {
       sourceCode.value = (
-        await import(/* @vite-ignore */ `./${props.compName}/docs/${props.demoName}.vue?raw`)
+        await import(/* @vite-ignore */ `../pages/${props.compName}/docs/${props.demoName}.vue?raw`)
       ).default
     }
     else {

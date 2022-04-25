@@ -6,11 +6,11 @@ const getTplFilePath = meta => ({
   // docs 目录
   readme: {
     from: './.template/docs/README.md.tpl',
-    to: `../../packages/docs/src/components/${meta.compName}/docs/README.md`,
+    to: `../../packages/docs/src/pages/${meta.compName}/docs/README.md`,
   },
   demo: {
     from: './.template/docs/demo.vue.tpl',
-    to: `../../packages/docs/src/components/${meta.compName}/docs/demo.vue`,
+    to: `../../packages/docs/src/pages/${meta.compName}/docs/demo.vue`,
   },
   // src 目录
   vue: {
@@ -71,7 +71,7 @@ const routerTplReplacer = (listFileContent) => {
   title: '${comp.compZhName}',
   name: '${comp.compName}',
   path: '/components/${comp.compName}',
-  component: () => import('@/src/components/${comp.compName}/docs/README.md'),
+  component: () => import('@/src/pages/${comp.compName}/docs/README.md'),
 }`
       }
       else {
@@ -79,7 +79,7 @@ const routerTplReplacer = (listFileContent) => {
   title: '${child.compZhName}',
   name: '${child.compName}',
   path: '/components/${child.compName}',
-  component: () => import('@/src/components/${child.compName}/docs/README.md'),
+  component: () => import('@/src/pages/${child.compName}/docs/README.md'),
 }`)
       }
     }),
