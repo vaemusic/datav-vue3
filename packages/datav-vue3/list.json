@@ -184,6 +184,13 @@
         "compZhName": "边框9",
         "compDesc": "边框9",
         "compClassName": "border-box9"
+      },
+      {
+        "compType": "边框",
+        "compName": "BorderBox10",
+        "compZhName": "边框10",
+        "compDesc": "边框10",
+        "compClassName": "border-box10"
       }
     ]
   }
