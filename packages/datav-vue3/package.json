@@ -1,0 +1,62 @@
+{
+  "name": "@kjgl77/datav-vue3",
+  "version": "0.2.0",
+  "description": "Datav for vue3+vite",
+  "packageManager": "pnpm@6.32.3",
+  "author": "kjgl77 <745385015@qq.com>",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vue3",
+    "datav",
+    "data-view",
+    "data-view vue3"
+  ],
+  "homepage": "https://github.com/vaemusic/datav-vue3",
+  "main": "./dist/datav-vue3.es.js",
+  "module": "./dist/datav-vue3.es.js",
+  "types": "./dist/packages/datav-vue3/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/datav-vue3.es.js",
+      "import": "./dist/datav-vue3.es.js",
+      "types": "./dist/packages/datav-vue3/index.d.ts"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:lib": "vue-tsc --noEmit && vite build --config ../../build/lib.config.ts",
+    "lint": "eslint .",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@jiaminghi/c-render": "^0.4.3",
+    "@jiaminghi/charts": "^0.2.18"
+  },
+  "devDependencies": {
+    "@jiaminghi/fs": "^0.1.1",
+    "less": "^4.1.2",
+    "vite-plugin-dts": "^1.0.5",
+    "vite-plugin-libcss": "^1.0.5"
+  },
+  "eslintConfig": {
+    "extends": "@antfu"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaemusic/datav-vue3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vaemusic/datav-vue3/issues"
+  }
+}

@@ -3,17 +3,13 @@
 import path from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-// import Pages from 'vite-plugin-pages'
-import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import Unocss from 'unocss/vite'
-import Markdown from 'vite-plugin-md'
+// import Pages from 'vite-plugin-pages'
 
 export default defineConfig({
   resolve: {
     alias: {
-      '@': `${path.resolve(__dirname, '../src')}/`,
+      '@': `${path.resolve(__dirname, '../packages/docs')}/`,
       'packages': `${path.resolve(__dirname, '../packages')}/`,
     },
   },
@@ -23,10 +19,6 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/],
     }),
 
-    // https://github.com/hannoeru/vite-plugin-pages
-    // Pages(),
-
-    // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: [
         'vue',
@@ -34,26 +26,11 @@ export default defineConfig({
         'vue-router',
         '@vueuse/core',
       ],
-      resolvers: [ElementPlusResolver()],
       dts: true,
     }),
+    // https://github.com/hannoeru/vite-plugin-pages
+    // Pages(),
 
-    // https://github.com/antfu/vite-plugin-components
-    Components({
-      resolvers: [ElementPlusResolver()],
-      dts: true,
-    }),
-
-    // https://github.com/antfu/unocss
-    // see unocss.config.ts for config
-    Unocss(),
-    Markdown({
-      markdownItSetup(md) {
-        // add code syntax highlighting with Prism
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
-        md.use(require('markdown-it-prism'))
-      },
-    }),
   ],
 
   // https://github.com/vitest-dev/vitest

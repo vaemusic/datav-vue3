@@ -1,0 +1,16 @@
+<template>
+  <div style="width:800px;height:200px;" flex="~ " justify-center items-center bg-dark>
+    <dv-digital-flop :config="config1"/>
+    <el-button @click="changeConfig">增加数据</el-button>
+  </div>
+</template>
+<script lang="ts" setup>
+let config1 = reactive({
+  number: [100],
+  content: '{nt}个',
+})
+
+const changeConfig = () => {
+  config1.number[0] += Math.random() * 100
+}
+</script>

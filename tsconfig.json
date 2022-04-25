@@ -16,11 +16,15 @@
     "allowJs": true,
     "types": [
       "vite/client",
-      "vite-plugin-pages/client"
+      "vite-plugin-pages/client",
+      "node"
     ],
     "paths": {
-      "@*": ["src/*"]
-    }
+      "@*": ["src/*"],
+      "@kjgl77/datav-vue3/*": ["packages/datav-vue3/*"],
+      "@kjgl77/docs/*": ["packages/docs/*"]
+    },
+    "outDir":  "./"
   },
   "exclude": ["dist", "node_modules", "docs", "script"]
 }
