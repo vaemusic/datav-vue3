@@ -13,6 +13,11 @@ const routes = [{
   name: 'Index',
   component: () => import('./pages/README.md'),
 }, {
+  title: '轮播表',
+  name: 'ScrollBoard',
+  path: '/components/ScrollBoard',
+  component: () => import('@/src/pages/ScrollBoard/docs/README.md'),
+}, {
   title: '图表',
   name: 'Charts',
   path: '/components/Charts',

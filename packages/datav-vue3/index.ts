@@ -5,6 +5,7 @@
  */
 import type { App, Plugin } from 'vue'
 
+import { ScrollBoardPlugin } from './components/ScrollBoard'
 import { ChartsPlugin } from './components/Charts'
 import { CapsuleChartPlugin } from './components/CapsuleChart'
 import { ActiveRingChartPlugin } from './components/ActiveRingChart'
@@ -36,6 +37,7 @@ import { BorderBox11Plugin } from './components/BorderBox11'
 
 const DataVVue3Plugin: Plugin = {
   install(app: App) {
+    ScrollBoardPlugin.install?.(app)
     ChartsPlugin.install?.(app)
     CapsuleChartPlugin.install?.(app)
     ActiveRingChartPlugin.install?.(app)
@@ -69,6 +71,7 @@ const DataVVue3Plugin: Plugin = {
 
 export default DataVVue3Plugin
 
+export * from './components/ScrollBoard'
 export * from './components/Charts'
 export * from './components/CapsuleChart'
 export * from './components/ActiveRingChart'

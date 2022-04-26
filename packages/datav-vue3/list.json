@@ -1,6 +1,13 @@
 [
   {
     "compType": "NoChildren",
+    "compName": "ScrollBoard",
+    "compZhName": "轮播表",
+    "compDesc": "轮播表",
+    "compClassName": "scroll-board"
+  },
+  {
+    "compType": "NoChildren",
     "compName": "Charts",
     "compZhName": "图表",
     "compDesc": "图表",
