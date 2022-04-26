@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "path": "packages/datav-vue3",
+      "name": "src",
+    },
+    {
+      "path": "packages/docs",
+      "name": "docs",
+    },
+    {
+      "path": "./",
+      "name": "root",
+    }
+  ]
+}
