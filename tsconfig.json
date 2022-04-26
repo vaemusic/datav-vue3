@@ -26,5 +26,5 @@
     },
     "outDir":  "./"
   },
-  "exclude": ["dist", "node_modules", "docs", "script"]
+  "exclude": ["packages/datav-vue3/dist", "packages/docs/docs", "node_modules", "script"]
 }
