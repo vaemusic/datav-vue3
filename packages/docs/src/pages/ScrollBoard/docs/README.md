@@ -25,6 +25,8 @@ import demo3 from './demo3.vue'
 </Preview>
 
 ## 利用updateRows更新数据
+如果想要不断追加行数据，又不想从出现push出现的问题，可以使用此方法更新行数据，不会导致从头轮播，也可以设置下次滚动的起始行。
+
 `updateRows`更新数据需要替换掉整个config里的data数据，详情见下方demo代码
 
 <Preview comp-name="ScrollBoard" demo-name="demo3">
@@ -57,7 +59,15 @@ hoverPause |	悬浮暂停轮播 |	Boolean |	--- |	true
 - [2] align可以配置每一列的对齐方式，可选值有`'left'|'center'|'right'`，默认值为'left'。
 
 ## 事件
-事件名 | 说明 | 参数列表 | 参数说明
-:-: | :-: | :-: | :-:
-`click` | 点击事件 | $event | 原生的 dom event
-`customEvent` | 自定义事件 | [a, b, c] | a：参数一；b：参数二；c：参数三
+事件名 | 说明 | 参数列表 
+:-: | :-: | :-: 
+`click` | 行或单元格点击事件 | 见下方表
+`mouseover` | 鼠标移入事件 | 同`click`
+
+### 事件参数说明
+参数 | 说明 | 类型 | 可选值 | 默认值 
+:-: | :-: | :-: | :-: | :-: 
+row |	所在行数据 |	`Array<String>` |	--- |	---
+ceil |	单元格数据 |	`Array<Array>` |	--- |	`[]`
+rowIndex |	行索引 |	Number |	--- |	---
+columnIndex |	列索引 |	Number |	--- |	---

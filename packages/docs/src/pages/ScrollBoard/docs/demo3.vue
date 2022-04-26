@@ -11,6 +11,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+import type { ScrollBoard } from '@kjgl77/datav-vue3/index'
 const config = reactive({
   header: ['列1', '列2', '列3'],
   data: [
@@ -53,10 +54,11 @@ const clickHandler = (e: any) => {
   console.log(e)
 }
 
-const scrollBoard = ref(null)
+const scrollBoard = ref<InstanceType<typeof ScrollBoard>>(null)
 
 const updateRows = () => {
   if (scrollBoard.value)
+    // 此处可以传第二个参数 index，指定下次滚动的起始行
     scrollBoard.value.updateRows(data2)
 }
 </script>
