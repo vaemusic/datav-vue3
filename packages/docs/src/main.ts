@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 // import { createRouter, createWebHistory } from 'vue-router'
 // import routes from 'virtual:generated-pages'
-import DataVVue3Plugin from '@kjgl77/datav-vue3'
+// import DataVVue3Plugin from '@kjgl77/datav-vue3'
+import DataVVue3Plugin from '../../datav-vue3/index'
 import router from './router'
 import App from './App.vue'
 
