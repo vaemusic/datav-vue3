@@ -8,7 +8,7 @@
   "homepage": "https://github.com/vaemusic/datav-vue3",
   "scripts": {
     "dev": "vite --port 3333 --open --config ../../build/doc.config.ts",
-    "build:doc": "vue-tsc --noEmit && vite build --config ../../build/doc.config.ts",
+    "build:doc": "vue-tsc --noEmit && vite build --config ../../build/doc.config.ts  && @powershell ./cpdir.ps1",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit"
   },
