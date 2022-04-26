@@ -4,33 +4,8 @@
   "description": "Datav for vue3+vite",
   "packageManager": "pnpm@6.32.3",
   "author": "kjgl77 <745385015@qq.com>",
-  "license": "MIT",
   "private": "true",
-  "keywords": [
-    "vue",
-    "vue3",
-    "datav",
-    "data-view",
-    "data-view vue3"
-  ],
   "homepage": "https://github.com/vaemusic/datav-vue3",
-  "main": "./dist/datav-vue3.es.js",
-  "module": "./dist/datav-vue3.es.js",
-  "types": "./dist/packages/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/datav-vue3.es.js",
-      "import": "./dist/datav-vue3.es.js",
-      "types": "./dist/packages/index.d.ts"
-    },
-    "./dist/style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev": "vite --port 3333 --open --config ../../build/doc.config.ts",
     "build:doc": "vue-tsc --noEmit && vite build --config ../../build/doc.config.ts",
