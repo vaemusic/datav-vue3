@@ -24,7 +24,7 @@
       "@kjgl77/datav-vue3/*": ["packages/datav-vue3/*"],
       "@kjgl77/docs/*": ["packages/docs/*"]
     },
-    "outDir":  "./"
+    "outDir": "./"
   },
   "exclude": ["packages/datav-vue3/dist", "packages/docs/docs", "node_modules", "script"]
 }
