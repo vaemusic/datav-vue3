@@ -13,6 +13,11 @@ const routes = [{
   name: 'Index',
   component: () => import('./pages/README.md'),
 }, {
+  title: '飞线图',
+  name: 'FlylineChart',
+  path: '/components/FlylineChart',
+  component: () => import('@/src/pages/FlylineChart/docs/README.md'),
+}, {
   title: '轮播表',
   name: 'ScrollBoard',
   path: '/components/ScrollBoard',

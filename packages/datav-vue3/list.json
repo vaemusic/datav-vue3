@@ -1,6 +1,13 @@
 [
   {
     "compType": "NoChildren",
+    "compName": "FlylineChart",
+    "compZhName": "飞线图",
+    "compDesc": "飞线图",
+    "compClassName": "flyline-chart"
+  },
+  {
+    "compType": "NoChildren",
     "compName": "ScrollBoard",
     "compZhName": "轮播表",
     "compDesc": "轮播表",
