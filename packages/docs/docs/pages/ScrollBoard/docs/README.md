@@ -33,7 +33,7 @@ import demo3 from './demo3.vue'
   <demo3 />
 </Preview>
 
-- 更多实例见<a href="http://datav.jiaminghi.com/guide/scrollBoard.html" target="_blank">DataV ScrollBoard</a>
+- 更多示例见<a href="http://datav.jiaminghi.com/guide/scrollBoard.html" target="_blank">DataV ScrollBoard</a>
 
 ## 属性
 参数 | 说明 | 类型 | 可选值 | 默认值 

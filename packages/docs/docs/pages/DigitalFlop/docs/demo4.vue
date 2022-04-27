@@ -1,11 +1,13 @@
 <template>
   <div style="width:800px;height:200px;" flex="~ " justify-center items-center bg-dark>
-    <dv-digital-flop :config="config1"/>
-    <button btn @click="changeConfig">增加数据</button>
+    <dv-digital-flop :config="config1" />
+    <button btn @click="changeConfig">
+      增加数据
+    </button>
   </div>
 </template>
 <script lang="ts" setup>
-function formatter (number: number) {
+function formatter(number: number) {
   const numbers = number.toString().split('').reverse()
   const segs = []
 
@@ -14,10 +16,10 @@ function formatter (number: number) {
   return segs.join(',').split('').reverse().join('')
 }
 
-let config1 = reactive({
+const config1 = reactive({
   number: [123456],
   content: '{nt}个',
-  formatter
+  formatter,
 })
 
 const changeConfig = () => {

@@ -21,17 +21,7 @@
 const cityName = ref('')
 const cityValue = ref(58)
 
-const addData = () => {
-  if (!cityName.value || !cityValue.value)
-    return
-
-  conf.data.push({
-    name: cityName.value,
-    value: parseInt(cityValue.value),
-  })
-}
-
-let conf = reactive({
+const conf = reactive({
   lineWidth: 24,
   digitalFlopStyle: {
     fill: 'pink',
@@ -55,4 +45,14 @@ let conf = reactive({
     },
   ],
 })
+
+const addData = () => {
+  if (!cityName.value || !cityValue.value)
+    return
+
+  conf.data.push({
+    name: cityName.value,
+    value: parseInt(cityValue.value),
+  })
+}
 </script>
