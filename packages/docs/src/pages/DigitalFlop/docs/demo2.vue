@@ -1,14 +1,16 @@
 <template>
   <div style="width:800px;height:200px;" flex="~ " justify-center items-center bg-dark>
-    <dv-digital-flop :config="config1"/>
-    <el-button @click="changeConfig">增加数据</el-button>
+    <dv-digital-flop :config="config1" />
+    <button btn @click="changeConfig">
+      增加数据
+    </button>
   </div>
 </template>
 <script lang="ts" setup>
-let config1 = reactive({
+const config1 = reactive({
   number: [100.28],
   content: '{nt}个',
-  toFixed: 2
+  toFixed: 2,
 })
 
 const changeConfig = () => {

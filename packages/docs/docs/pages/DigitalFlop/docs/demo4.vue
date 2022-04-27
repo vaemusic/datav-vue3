@@ -1,7 +1,7 @@
 <template>
   <div style="width:800px;height:200px;" flex="~ " justify-center items-center bg-dark>
     <dv-digital-flop :config="config1"/>
-    <el-button @click="changeConfig">增加数据</el-button>
+    <button btn @click="changeConfig">增加数据</button>
   </div>
 </template>
 <script lang="ts" setup>

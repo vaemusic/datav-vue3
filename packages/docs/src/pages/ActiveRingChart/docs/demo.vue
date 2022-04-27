@@ -6,10 +6,12 @@
         城市： <el-input v-model="cityName" />
       </div>
       <div>
-        Value： <el-input type="number" v-model="cityValue" />
+        Value： <el-input v-model="cityValue" type="number" />
       </div>
       <div pt5>
-        <el-button @click="addData">添加数据</el-button>
+        <button btn @click="addData">
+          添加数据
+        </button>
       </div>
     </div>
   </div>
@@ -19,38 +21,38 @@
 const cityName = ref('')
 const cityValue = ref(58)
 
-const addData = ()=>{
-  if(!cityName.value || !cityValue.value){
+const addData = () => {
+  if (!cityName.value || !cityValue.value)
     return
-  }
+
   conf.data.push({
     name: cityName.value,
-    value: parseInt(cityValue.value)
+    value: parseInt(cityValue.value),
   })
 }
 
 let conf = reactive({
   lineWidth: 24,
-  digitalFlopStyle:{
-    fill: 'pink'
+  digitalFlopStyle: {
+    fill: 'pink',
   },
-  data:[
+  data: [
     {
       name: '杭州',
       value: 98,
     },
     {
       name: '金华',
-      value: 150
+      value: 150,
     },
     {
       name: '宁波',
-      value: 62
+      value: 62,
     },
     {
       name: '太原',
-      value: 54
-    }
-  ]
+      value: 54,
+    },
+  ],
 })
 </script>
