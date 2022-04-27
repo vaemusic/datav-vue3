@@ -15,6 +15,13 @@
   },
   {
     "compType": "NoChildren",
+    "compName": "ScrollRankingBoard",
+    "compZhName": "排名轮播表",
+    "compDesc": "排名轮播表",
+    "compClassName": "scroll-ranking-board"
+  },
+  {
+    "compType": "NoChildren",
     "compName": "ScrollBoard",
     "compZhName": "轮播表",
     "compDesc": "轮播表",
