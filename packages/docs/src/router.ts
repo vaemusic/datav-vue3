@@ -13,6 +13,11 @@ const routes = [{
   name: 'Index',
   component: () => import('./pages/README.md'),
 }, {
+  title: '飞线图增强版',
+  name: 'FlylineChartEnhanced',
+  path: '/components/FlylineChartEnhanced',
+  component: () => import('@/src/pages/FlylineChartEnhanced/docs/README.md'),
+}, {
   title: '飞线图',
   name: 'FlylineChart',
   path: '/components/FlylineChart',

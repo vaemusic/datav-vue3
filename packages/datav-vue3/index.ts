@@ -5,6 +5,7 @@
  */
 import type { App, Plugin } from 'vue'
 
+import { FlylineChartEnhancedPlugin } from './components/FlylineChartEnhanced'
 import { FlylineChartPlugin } from './components/FlylineChart'
 import { ScrollBoardPlugin } from './components/ScrollBoard'
 import { ChartsPlugin } from './components/Charts'
@@ -38,41 +39,43 @@ import { BorderBox11Plugin } from './components/BorderBox11'
 
 const DataVVue3Plugin: Plugin = {
   install(app: App) {
-    FlylineChartPlugin.install?.(app)
-    ScrollBoardPlugin.install?.(app)
-    ChartsPlugin.install?.(app)
-    CapsuleChartPlugin.install?.(app)
-    ActiveRingChartPlugin.install?.(app)
-    DigitalFlopPlugin.install?.(app)
-    FullScreenContainerPlugin.install?.(app)
-    Decoration1Plugin.install?.(app)
-    Decoration2Plugin.install?.(app)
-    Decoration3Plugin.install?.(app)
-    Decoration4Plugin.install?.(app)
-    Decoration5Plugin.install?.(app)
-    Decoration6Plugin.install?.(app)
-    Decoration7Plugin.install?.(app)
-    Decoration8Plugin.install?.(app)
-    Decoration9Plugin.install?.(app)
-    Decoration10Plugin.install?.(app)
-    Decoration11Plugin.install?.(app)
-    Decoration12Plugin.install?.(app)
-    BorderBox1Plugin.install?.(app)
-    BorderBox2Plugin.install?.(app)
-    BorderBox3Plugin.install?.(app)
-    BorderBox4Plugin.install?.(app)
-    BorderBox5Plugin.install?.(app)
-    BorderBox6Plugin.install?.(app)
-    BorderBox7Plugin.install?.(app)
-    BorderBox8Plugin.install?.(app)
-    BorderBox9Plugin.install?.(app)
-    BorderBox10Plugin.install?.(app)
-    BorderBox11Plugin.install?.(app)
+        FlylineChartEnhancedPlugin.install?.(app)
+        FlylineChartPlugin.install?.(app)
+        ScrollBoardPlugin.install?.(app)
+        ChartsPlugin.install?.(app)
+        CapsuleChartPlugin.install?.(app)
+        ActiveRingChartPlugin.install?.(app)
+        DigitalFlopPlugin.install?.(app)
+        FullScreenContainerPlugin.install?.(app)
+       Decoration1Plugin.install?.(app)
+   Decoration2Plugin.install?.(app)
+   Decoration3Plugin.install?.(app)
+   Decoration4Plugin.install?.(app)
+   Decoration5Plugin.install?.(app)
+   Decoration6Plugin.install?.(app)
+   Decoration7Plugin.install?.(app)
+   Decoration8Plugin.install?.(app)
+   Decoration9Plugin.install?.(app)
+   Decoration10Plugin.install?.(app)
+   Decoration11Plugin.install?.(app)
+   Decoration12Plugin.install?.(app)
+       BorderBox1Plugin.install?.(app)
+   BorderBox2Plugin.install?.(app)
+   BorderBox3Plugin.install?.(app)
+   BorderBox4Plugin.install?.(app)
+   BorderBox5Plugin.install?.(app)
+   BorderBox6Plugin.install?.(app)
+   BorderBox7Plugin.install?.(app)
+   BorderBox8Plugin.install?.(app)
+   BorderBox9Plugin.install?.(app)
+   BorderBox10Plugin.install?.(app)
+   BorderBox11Plugin.install?.(app)
   },
 }
 
 export default DataVVue3Plugin
 
+export * from './components/FlylineChartEnhanced'
 export * from './components/FlylineChart'
 export * from './components/ScrollBoard'
 export * from './components/Charts'

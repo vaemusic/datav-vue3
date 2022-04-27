@@ -29,7 +29,7 @@ dv-flyline-chart DEV:
 Click Position is [100, 100]
 Relative Position is [0.10, 0.10]
 ```
-组件默认使用相对坐标，应选用Relative Position，关闭相对坐标模式，则需要使用Click Position，如何开启和关闭相对坐标模式请查阅config属性。
+组件默认使用相对坐标，应选用`Relative Position`，关闭相对坐标模式，则需要使用`Click Position`，如何开启和关闭相对坐标模式请查阅`config属性`。
 
 ## config属性
 参数 | 说明 | 类型 | 可选值 | 默认值
