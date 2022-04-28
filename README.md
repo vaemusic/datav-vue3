@@ -1,5 +1,9 @@
 # DataV Vue3+TS+Vite版
 
+[![Author](https://img.shields.io/badge/Author-kjgl77-red.svg "Author")](https://github.com/vaemusic "Author")       [![LICENSE](https://img.shields.io/github/license/vaemusic/datav-vue3 "LICENSE")](https://github.com/vaemusic/datav-vue3/blob/master/LICENSE "LICENSE")
+
+[![NPM](https://nodei.co/npm/@kjgl77/datav-vue3.png?mini=true)](https://www.npmjs.com/package/@kjgl77/datav-vue3)
+
 由于之前大佬写的 [DataV](http://datav.jiaminghi.com/) 不支持Vue3 Vite2.x，现部分代码用Vue3+TS重构。
 
 [文档地址](https://datav-vue3.netlify.app)：https://datav-vue3.netlify.app
