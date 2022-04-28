@@ -5,6 +5,7 @@
  */
 import type { App, Plugin } from 'vue'
 
+import { ConicalColumnChartPlugin } from './components/ConicalColumnChart'
 import { PercentPondPlugin } from './components/PercentPond'
 import { WaterLevelPondPlugin } from './components/WaterLevelPond'
 import { LoadingPlugin } from './components/Loading'
@@ -45,7 +46,8 @@ import { BorderBox13Plugin } from './components/BorderBox13'
 
 const DataVVue3Plugin: Plugin = {
   install(app: App) {
-        PercentPondPlugin.install?.(app)
+        ConicalColumnChartPlugin.install?.(app)
+    PercentPondPlugin.install?.(app)
     WaterLevelPondPlugin.install?.(app)
     LoadingPlugin.install?.(app)
     FlylineChartEnhancedPlugin.install?.(app)
@@ -87,6 +89,7 @@ const DataVVue3Plugin: Plugin = {
 
 export default DataVVue3Plugin
 
+export * from './components/ConicalColumnChart'
 export * from './components/PercentPond'
 export * from './components/WaterLevelPond'
 export * from './components/Loading'

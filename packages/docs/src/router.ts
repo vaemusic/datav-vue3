@@ -13,6 +13,11 @@ const routes = [{
   name: 'Index',
   component: () => import('./pages/README.md'),
 }, {
+  title: '锥形柱图',
+  name: 'ConicalColumnChart',
+  path: '/components/ConicalColumnChart',
+  component: () => import('@/src/pages/ConicalColumnChart/docs/README.md'),
+}, {
   title: '进度池',
   name: 'PercentPond',
   path: '/components/PercentPond',

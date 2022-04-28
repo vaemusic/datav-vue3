@@ -1,6 +1,13 @@
 [
   {
     "compType": "NoChildren",
+    "compName": "ConicalColumnChart",
+    "compZhName": "锥形柱图",
+    "compDesc": "锥形柱图",
+    "compClassName": "conical-column-chart"
+  },
+  {
+    "compType": "NoChildren",
     "compName": "PercentPond",
     "compZhName": "进度池",
     "compDesc": "进度池",
