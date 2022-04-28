@@ -177,6 +177,11 @@ const routes = [{
   name: 'BorderBox12',
   path: '/components/BorderBox12',
   component: () => import('@/src/pages/BorderBox12/docs/README.md'),
+}, {
+  title: '边框13',
+  name: 'BorderBox13',
+  path: '/components/BorderBox13',
+  component: () => import('@/src/pages/BorderBox13/docs/README.md'),
 }]
 
 const routerConfig = {

@@ -38,6 +38,7 @@ import { BorderBox9Plugin } from './components/BorderBox9'
 import { BorderBox10Plugin } from './components/BorderBox10'
 import { BorderBox11Plugin } from './components/BorderBox11'
 import { BorderBox12Plugin } from './components/BorderBox12'
+import { BorderBox13Plugin } from './components/BorderBox13'
 
 const DataVVue3Plugin: Plugin = {
   install(app: App) {
@@ -74,6 +75,7 @@ const DataVVue3Plugin: Plugin = {
     BorderBox10Plugin.install?.(app)
     BorderBox11Plugin.install?.(app)
     BorderBox12Plugin.install?.(app)
+    BorderBox13Plugin.install?.(app)
   },
 }
 
@@ -112,3 +114,4 @@ export * from './components/BorderBox9'
 export * from './components/BorderBox10'
 export * from './components/BorderBox11'
 export * from './components/BorderBox12'
+export * from './components/BorderBox13'

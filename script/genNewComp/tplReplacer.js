@@ -105,11 +105,11 @@ const installTsTplReplacer = (listFileContent) => {
     }).join('\n'),
     installPlugins: listFileContent.map((item) => {
       if (item.compType === 'NoChildren')
-        return `    ${item.compName}Plugin.install?.(app)`
+        return `${item.compName}Plugin.install?.(app)`
 
       else
-        return item.children.map(child => `   ${child.compName}Plugin.install?.(app)`).join('\n')
-    }).join('\n    '),
+        return item.children.map(child => `    ${child.compName}Plugin.install?.(app)`).join('\n')
+    }).join('\n'),
     exportPlugins: listFileContent.map((item) => {
       if (item.compType === 'NoChildren')
         return `export * from './components/${item.compName}'`

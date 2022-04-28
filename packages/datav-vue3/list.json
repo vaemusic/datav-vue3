@@ -233,6 +233,13 @@
         "compZhName": "边框12",
         "compDesc": "边框12",
         "compClassName": "border-box12"
+      },
+      {
+        "compType": "边框",
+        "compName": "BorderBox13",
+        "compZhName": "边框13",
+        "compDesc": "边框13",
+        "compClassName": "border-box13"
       }
     ]
   }
