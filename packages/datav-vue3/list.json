@@ -1,6 +1,13 @@
 [
   {
     "compType": "NoChildren",
+    "compName": "Loading",
+    "compZhName": "加载",
+    "compDesc": "加载",
+    "compClassName": "loading"
+  },
+  {
+    "compType": "NoChildren",
     "compName": "FlylineChartEnhanced",
     "compZhName": "飞线图增强版",
     "compDesc": "飞线图增强版",

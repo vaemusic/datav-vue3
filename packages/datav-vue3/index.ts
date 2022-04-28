@@ -5,6 +5,7 @@
  */
 import type { App, Plugin } from 'vue'
 
+import { LoadingPlugin } from './components/Loading'
 import { FlylineChartEnhancedPlugin } from './components/FlylineChartEnhanced'
 import { FlylineChartPlugin } from './components/FlylineChart'
 import { ScrollRankingBoardPlugin } from './components/ScrollRankingBoard'
@@ -42,6 +43,7 @@ import { BorderBox13Plugin } from './components/BorderBox13'
 
 const DataVVue3Plugin: Plugin = {
   install(app: App) {
+    LoadingPlugin.install?.(app)
     FlylineChartEnhancedPlugin.install?.(app)
     FlylineChartPlugin.install?.(app)
     ScrollRankingBoardPlugin.install?.(app)
@@ -81,6 +83,7 @@ const DataVVue3Plugin: Plugin = {
 
 export default DataVVue3Plugin
 
+export * from './components/Loading'
 export * from './components/FlylineChartEnhanced'
 export * from './components/FlylineChart'
 export * from './components/ScrollRankingBoard'
