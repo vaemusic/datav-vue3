@@ -13,6 +13,11 @@ const routes = [{
   name: 'Index',
   component: () => import('./pages/README.md'),
 }, {
+  title: '进度池',
+  name: 'PercentPond',
+  path: '/components/PercentPond',
+  component: () => import('@/src/pages/PercentPond/docs/README.md'),
+}, {
   title: '水位图',
   name: 'WaterLevelPond',
   path: '/components/WaterLevelPond',

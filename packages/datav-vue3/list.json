@@ -1,6 +1,13 @@
 [
   {
     "compType": "NoChildren",
+    "compName": "PercentPond",
+    "compZhName": "进度池",
+    "compDesc": "进度池",
+    "compClassName": "percent-pond"
+  },
+  {
+    "compType": "NoChildren",
     "compName": "WaterLevelPond",
     "compZhName": "水位图",
     "compDesc": "水位图",

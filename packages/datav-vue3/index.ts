@@ -5,6 +5,7 @@
  */
 import type { App, Plugin } from 'vue'
 
+import { PercentPondPlugin } from './components/PercentPond'
 import { WaterLevelPondPlugin } from './components/WaterLevelPond'
 import { LoadingPlugin } from './components/Loading'
 import { FlylineChartEnhancedPlugin } from './components/FlylineChartEnhanced'
@@ -44,7 +45,8 @@ import { BorderBox13Plugin } from './components/BorderBox13'
 
 const DataVVue3Plugin: Plugin = {
   install(app: App) {
-        WaterLevelPondPlugin.install?.(app)
+        PercentPondPlugin.install?.(app)
+    WaterLevelPondPlugin.install?.(app)
     LoadingPlugin.install?.(app)
     FlylineChartEnhancedPlugin.install?.(app)
     FlylineChartPlugin.install?.(app)
@@ -85,6 +87,7 @@ const DataVVue3Plugin: Plugin = {
 
 export default DataVVue3Plugin
 
+export * from './components/PercentPond'
 export * from './components/WaterLevelPond'
 export * from './components/Loading'
 export * from './components/FlylineChartEnhanced'
