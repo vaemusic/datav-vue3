@@ -13,11 +13,6 @@ const routes = [{
   name: 'Index',
   component: () => import('./pages/README.md'),
 }, {
-  title: '排名轮播表',
-  name: 'ScrollRankingBoard',
-  path: '/components/ScrollRankingBoard',
-  component: () => import('@/src/pages/ScrollRankingBoard/docs/README.md'),
-}, {
   title: '飞线图增强版',
   name: 'FlylineChartEnhanced',
   path: '/components/FlylineChartEnhanced',
@@ -27,6 +22,11 @@ const routes = [{
   name: 'FlylineChart',
   path: '/components/FlylineChart',
   component: () => import('@/src/pages/FlylineChart/docs/README.md'),
+}, {
+  title: '排名轮播表',
+  name: 'ScrollRankingBoard',
+  path: '/components/ScrollRankingBoard',
+  component: () => import('@/src/pages/ScrollRankingBoard/docs/README.md'),
 }, {
   title: '轮播表',
   name: 'ScrollBoard',
@@ -172,6 +172,11 @@ const routes = [{
   name: 'BorderBox11',
   path: '/components/BorderBox11',
   component: () => import('@/src/pages/BorderBox11/docs/README.md'),
+}, {
+  title: '边框12',
+  name: 'BorderBox12',
+  path: '/components/BorderBox12',
+  component: () => import('@/src/pages/BorderBox12/docs/README.md'),
 }]
 
 const routerConfig = {
