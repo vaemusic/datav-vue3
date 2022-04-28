@@ -27,7 +27,7 @@ import demo3 from './demo3.vue'
   <demo3 />
 </Preview>
 
-## 属性
+## config属性
 参数 | 说明 | 类型 | 可选值 | 默认值
 :-: | :-: | :-: | :-: | :-:
 data |	水位位置 `[1]` |	`Arrya<Number>` |	--- |	`[]`
