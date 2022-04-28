@@ -240,7 +240,7 @@ const props = defineProps({
 })
 
 const id = uuid()
-const borderBox11 = ref<HTMLElement | null>(null)
+const borderBox11 = ref(null)
 
 const { width, height } = autoResize(borderBox11)
 
