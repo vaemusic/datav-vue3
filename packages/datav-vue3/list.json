@@ -1,6 +1,13 @@
 [
   {
     "compType": "NoChildren",
+    "compName": "WaterLevelPond",
+    "compZhName": "水位图",
+    "compDesc": "水位图",
+    "compClassName": "water-level-pond"
+  },
+  {
+    "compType": "NoChildren",
     "compName": "Loading",
     "compZhName": "加载",
     "compDesc": "加载",
