@@ -126,7 +126,7 @@ const digitalFlop = computed(() => {
   let displayValue
 
   if (showOriginValue) {
-    displayValue = value[activeIndex]
+    displayValue = value[state.activeIndex]
   }
   else {
     const sum = value.reduce((all, v) => all + v, 0)
