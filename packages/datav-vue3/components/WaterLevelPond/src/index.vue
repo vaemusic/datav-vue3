@@ -344,6 +344,7 @@ async function animationWave(repeat = 1) {
     width: calc(~"100% - 16px");
     height: calc(~"100% - 16px");
     box-sizing: border-box;
+    display: inline;
   }
 }
 </style>
