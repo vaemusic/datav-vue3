@@ -260,7 +260,7 @@ function calcHeaderData() {
   let { header } = state.mergedConfig
   const { index, indexHeader } = state.mergedConfig
   if (!header.length) {
-    this.header = []
+    header = []
 
     return
   }
