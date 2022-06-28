@@ -1,5 +1,5 @@
 <template>
-  <div style="width:50rem;height:25rem;" flex="~ col" justify-center items-center bg-dark>
+  <div w50rem h25rem flex="~ col" justify-center items-center bg-dark>
     <div>
       <dv-capsule-chart :config="config" style="width:25rem;height:15rem" />
     </div>

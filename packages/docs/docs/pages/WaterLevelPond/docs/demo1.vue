@@ -1,5 +1,5 @@
 <template>
-  <div style="width:800px;height:290px;" py10 flex="~ col" justify-center items-center bg-dark>
+  <div w800px h290px py10 flex="~ col" justify-center items-center bg-dark>
     <div>
       <dv-water-level-pond :config="config" style="width:150px;height:200px" />
     </div>

@@ -1,7 +1,7 @@
 <template>
-  <div style="width:50rem;height:18rem;" p3 flex="~ " justify-center items-center bg-dark>
+  <div demo-bg>
     <dv-border-box-13>
-      <div w50rem h18rem color-white flex justify-center items-center>
+      <div dv-bg>
         dv-border-box-13
       </div>
     </dv-border-box-13>

@@ -1,5 +1,5 @@
 <template>
-  <div style="width:800px;height:200px;" flex="~ " justify-center items-center bg-dark>
+  <div small-bg>
     <dv-decoration-9 style="width:150px;height:150px;">
       <div color-green font-600 class="content" bg="~ dark/0">
         66%

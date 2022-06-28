@@ -1,5 +1,5 @@
 <template>
-  <div style="width:50rem;height:24rem;" p3 flex="~ col" justify-center items-center bg-dark>
+  <div w50rem h24rem p3 flex="~ col" justify-center items-center bg-dark>
     <div>
       <dv-scroll-ranking-board :config="config" style="width:500px;height:300px" />
     </div>

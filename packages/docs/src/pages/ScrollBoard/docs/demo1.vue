@@ -1,5 +1,5 @@
 <template>
-  <div style="width:50rem;height:18rem;" p3 flex="~ " justify-center items-center bg-dark>
+  <div demo-bg>
     <dv-scroll-board :config="config" style="width:500px;height:220px" @mouseover="mouseoverHandler" @click="clickHandler" />
   </div>
 </template>

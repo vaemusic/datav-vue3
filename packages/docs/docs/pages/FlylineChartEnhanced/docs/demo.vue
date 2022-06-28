@@ -1,5 +1,5 @@
 <template>
-  <div w200 h160 flex="~ " justify-center items-center bg-dark>
+  <div w200 h160 flex justify-center items-center bg-dark>
     <div w740px h600px>
       <dv-flyline-chart-enhanced :config="config" :dev="true" style="width:100%;height:100%;" />
     </div>

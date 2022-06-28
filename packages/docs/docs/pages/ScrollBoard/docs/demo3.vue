@@ -1,5 +1,5 @@
 <template>
-  <div style="width:50rem;height:20rem;" p5 flex="~ col" justify-center items-center bg-dark>
+  <div w50rem h20rem p5 flex="~ col" justify-center items-center bg-dark>
     <div pt5>
       <dv-scroll-board ref="scrollBoard" :config="config" style="width:500px;height:220px" @mouseover="mouseoverHandler" @click="clickHandler" />
     </div>

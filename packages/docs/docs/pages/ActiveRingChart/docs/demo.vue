@@ -1,5 +1,5 @@
 <template>
-  <div style="width:50rem;height:34rem;" flex="~ col" justify-center items-center bg-dark>
+  <div w50rem h34rem flex="~ col" justify-center items-center bg-dark>
     <dv-active-ring-chart :config="conf" style="width:300px;height:300px" />
     <div>
       <div>

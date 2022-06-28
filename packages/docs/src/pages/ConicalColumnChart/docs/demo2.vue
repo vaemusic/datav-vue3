@@ -1,5 +1,5 @@
 <template>
-  <div style="width:800px;height:320px;" flex="~ col" justify-center items-center bg-dark>
+  <div w800px h320px flex="~ col" justify-center items-center bg-dark>
     <div>
       <dv-conical-column-chart :config="config" style="width:400px;height:200px;" />
     </div>
