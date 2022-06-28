@@ -49,3 +49,6 @@ import { Decoration1, Decoration2 } from '@kjgl77/datav-vue3'
 ```
 
 新的组件库开发根据大佬的 [MY-Kit](https://github.com/jrainlau/MY-Kit) 开发。支持脚本生成基础文件，文档，可使用Markdown一边开发源码一边写文档。详情可见MY-Kit文档。
+
+## 文档样式说明
+- 文档部分 demo 的 CSS 样式使用 [UnoCSS](https://github.com/unocss/unocss) 构建，文档里使用的一些 **UnoCSS** 的 **shortcuts**，例如：**`demo-bg`**、**`dv-bg`**、**`small-bg`**、 见 UnoCSS 配置文件：**`unocss.config.ts`**，路径：**`packages/docs/unocss.config.ts`**
