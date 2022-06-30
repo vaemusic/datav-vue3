@@ -3,8 +3,8 @@
   NODE_VERSION = "16"
 
 [build]
-  base = "docs-vp/"
-  publish = "docs/"
+  base = "packages/docs-vp/"
+  publish = "docs/.vitepress/dist"
   command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
 
 [[redirects]]
