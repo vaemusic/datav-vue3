@@ -1,1 +1,0 @@
-copy -r .\src\pages .\docs
