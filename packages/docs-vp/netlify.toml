@@ -3,8 +3,9 @@
   NODE_VERSION = "16"
 
 [build]
-  base = "docs/"
-  command = ""
+  base = "docs-vp/"
+  publish = "docs/"
+  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
 
 [[redirects]]
   from = "/*"
