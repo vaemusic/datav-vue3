@@ -4,8 +4,8 @@
 
 [build]
   base = "/"
-  publish = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build:docs"
-  command = ""
+  publish = "packages/docs-vp/docs/.vitepress/dist"
+  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build:docs"
 
 [[redirects]]
   from = "/*"
