@@ -7,10 +7,10 @@
   "private": "true",
   "homepage": "https://github.com/vaemusic/datav-vue3",
   "scripts": {
-    "dev": "pnpm run --filter @kjgl77/docs-vp docs:dev",
+    "dev": "pnpm run --filter @kjgl77/docs docs:dev",
     "dev:docs": "pnpm run --filter @kjgl77/docs dev",
     "build:docs": "pnpm run build:lib && pnpm run build",
-    "build": "pnpm run --filter @kjgl77/docs-vp build",
+    "build": "pnpm run --filter @kjgl77/docs build",
     "build:lib": "pnpm run --filter @kjgl77/datav-vue3 build:lib",
     "gen": "node ./script/genNewComp/index.js",
     "lint": "eslint .",

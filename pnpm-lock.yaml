@@ -91,7 +91,7 @@ importers:
       vite-plugin-pages: 0.22.0
       vue-tsc: 0.34.17
 
-  packages/docs-vp:
+  packages/docs:
     specifiers:
       '@kjgl77/datav-vue3': workspace:*
       '@vue/theme': ^1.0.2
