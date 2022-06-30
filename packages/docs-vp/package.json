@@ -1,0 +1,22 @@
+{
+  "name": "@kjgl77/docs-vp",
+  "version": "1.0.0",
+  "description": "datav-vue3 docs",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vue/theme": "^1.0.2",
+    "unocss": "^0.31.17",
+    "unplugin-auto-import": "^0.7.2",
+    "vitepress": "1.0.0-alpha.4"
+  },
+  "dependencies": {
+    "@kjgl77/datav-vue3": "workspace:*"
+  }
+}
