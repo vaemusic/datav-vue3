@@ -11,7 +11,9 @@ import demo from './demo.vue'
 装饰10
 
 ## 基础用法
-<demo />
+<ClientOnly>
+  <demo />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 

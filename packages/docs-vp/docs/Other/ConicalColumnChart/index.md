@@ -12,7 +12,9 @@ import demo2 from './demo2.vue'
 锥形柱图
 
 ## 基础用法
-<demo1 />
+<ClientOnly>
+  <demo1 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -21,7 +23,9 @@ import demo2 from './demo2.vue'
 </details>
 
 ## 数值显示
-<demo2 />
+<ClientOnly>
+  <demo2 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 

@@ -14,7 +14,9 @@ import demo4 from './demo4.vue'
 数字翻牌器
 
 ## 基础用法
-<demo />
+<ClientOnly>
+  <demo />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -23,7 +25,9 @@ import demo4 from './demo4.vue'
 </details>
 
 ## 浮点数
-<demo2 />
+<ClientOnly>
+  <demo2 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -32,7 +36,9 @@ import demo4 from './demo4.vue'
 </details>
 
 ## 多数值
-<demo3 />
+<ClientOnly>
+  <demo3 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -41,7 +47,9 @@ import demo4 from './demo4.vue'
 </details>
 
 ## 千分位分隔符
-<demo4 />
+<ClientOnly>
+  <demo4 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 

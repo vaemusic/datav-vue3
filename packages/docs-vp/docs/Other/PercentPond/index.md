@@ -15,7 +15,9 @@ import demo5 from './demo5.vue'
 进度池
 
 ## 基础用法
-<demo1 />
+<ClientOnly>
+  <demo1 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -24,7 +26,9 @@ import demo5 from './demo5.vue'
 </details>
 
 ## 调节边框
-<demo2 />
+<ClientOnly>
+  <demo2 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -33,7 +37,9 @@ import demo5 from './demo5.vue'
 </details>
 
 ## 线条间隙
-<demo3 />
+<ClientOnly>
+  <demo3 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -42,7 +48,9 @@ import demo5 from './demo5.vue'
 </details>
 
 ## 局部渐变
-<demo4 />
+<ClientOnly>
+  <demo4 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -51,7 +59,9 @@ import demo5 from './demo5.vue'
 </details>
 
 ## 定制块隙长度
-<demo5 />
+<ClientOnly>
+  <demo5 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 

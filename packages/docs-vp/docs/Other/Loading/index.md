@@ -11,7 +11,9 @@ import demo from './demo.vue'
 数据尚未加载完成时，可以显示Loading效果，增强用户体验。
 
 ## 基础用法
-<demo />
+<ClientOnly>
+  <demo />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 

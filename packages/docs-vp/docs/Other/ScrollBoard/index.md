@@ -13,7 +13,9 @@ import demo3 from './demo3.vue'
 轮播表
 
 ## 基础用法
-<demo1 />
+<ClientOnly>
+  <demo1 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -24,7 +26,9 @@ import demo3 from './demo3.vue'
 ## 往config.data里面push更新数据
 使用push更新数据因config watch到更新之后需要重新计算数据，故轮播表会先重置到第一行然后再继续按照刚才的进度轮播，介意的话可以用`updateRows`更新数据。
 
-<demo2 />
+<ClientOnly>
+  <demo2 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -37,7 +41,9 @@ import demo3 from './demo3.vue'
 
 `updateRows`更新数据需要替换掉整个config里的data数据，详情见下方demo代码
 
-<demo3 />
+<ClientOnly>
+  <demo3 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 

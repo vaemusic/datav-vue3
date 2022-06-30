@@ -13,7 +13,9 @@ import demo3 from './demo3.vue'
 水位图
 
 ## 矩形水位图
-<demo1 />
+<ClientOnly>
+  <demo1 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -22,7 +24,9 @@ import demo3 from './demo3.vue'
 </details>
 
 ## 圆角水位图
-<demo2 />
+<ClientOnly>
+  <demo2 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 
@@ -31,7 +35,9 @@ import demo3 from './demo3.vue'
 </details>
 
 ## 圆形水位图
-<demo3 />
+<ClientOnly>
+  <demo3 />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 

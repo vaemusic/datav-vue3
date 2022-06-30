@@ -19,7 +19,9 @@ import demo from './demo.vue'
 相关配置项请移步<a href="http://charts.jiaminghi.com/config/" target="_blank">Charts配置项</a>
 
 ## 基础用法
-<demo />
+<ClientOnly>
+  <demo />
+</ClientOnly>
 <details>
 <summary>查看代码</summary>
 

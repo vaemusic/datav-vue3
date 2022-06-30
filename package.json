@@ -10,6 +10,7 @@
     "dev": "pnpm run --filter @kjgl77/docs-vp docs:dev",
     "dev:docs": "pnpm run --filter @kjgl77/docs dev",
     "build:docs": "pnpm run --filter @kjgl77/docs build:doc",
+    "build": "pnpm run --filter @kjgl77/docs-vp docs:build",
     "build:lib": "pnpm run --filter @kjgl77/datav-vue3 build:lib",
     "gen": "node ./script/genNewComp/index.js",
     "lint": "eslint .",
