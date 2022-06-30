@@ -55,8 +55,16 @@ export default defineConfig({
   title: 'DataV - Vue3',
   themeConfig: {
     siteTitle: 'DataV - Vue3',
+    outlineTitle: '目录',
+    socialLinks: [
+      {
+        icon: 'github',
+        link: 'https://github.com/vaemusic/datav-vue3',
+      },
+    ],
     nav: [
-      { text: 'Guide', link: '/Guide/index' },
+      { text: '指引', link: '/Guide/index' },
+      { text: 'Demo', link: '/Demo/index' },
     ],
     sidebar:[
       {

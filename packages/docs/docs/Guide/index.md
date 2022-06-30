@@ -25,7 +25,7 @@ Demo Github地址：https://github.com/vaemusic/electronic-file
 ```shell
 pnpm install @kjgl77/datav-vue3
 ```
-### 全局引入
+## 全局引入
 
 ```js
 // main.ts中全局引入
@@ -37,7 +37,7 @@ Vue.use(DataVVue3)
 <dv-decoration-1 :color="['pink','yellow']" style="width:200px;height:50px;" />
 ```
 
-### 局部引入
+## 局部引入
 ```vue
 <!-- 在.vue文件的script中import部分组件 -->
 <script lang="ts" setup>
