@@ -20,11 +20,11 @@ module.exports = async() => {
       {
         type: 'list',
         name: 'compType',
-        message: '请选择组件类型(NoChildren代表没有分组组件):',
+        message: '请选择组件类型(Other代表没有分组组件):',
         choices: [
-          'NoChildren',
-          '边框',
-          '装饰',
+          'Other',
+          'Border',
+          'Decoration',
         ],
       },
       {

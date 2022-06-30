@@ -11,9 +11,15 @@ import demo from './demo.vue'
 {{ compDesc }}
 
 ## 基础用法
-<Preview comp-name="{{compName}}" demo-name="demo">
+<ClientOnly>
   <demo />
-</Preview>
+</ClientOnly>
+<details>
+<summary>查看代码</summary>
+
+<<< @/{{compType}}/{{compName}}/demo.vue
+
+</details>
 
 ## 属性
 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填
