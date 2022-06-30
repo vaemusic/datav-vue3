@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "pnpm run --filter @kjgl77/docs-vp docs:dev",
     "dev:docs": "pnpm run --filter @kjgl77/docs dev",
-    "build:docs": "pnpm run --filter @kjgl77/docs build:doc",
+    "build:docs": "pnpm run build:lib && pnpm run build",
     "build": "pnpm run --filter @kjgl77/docs-vp build",
     "build:lib": "pnpm run --filter @kjgl77/datav-vue3 build:lib",
     "gen": "node ./script/genNewComp/index.js",
