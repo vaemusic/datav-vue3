@@ -168,6 +168,7 @@ const y = computed(() => {
 
 watch(() => props.color, () => {
   mergeColor()
+  calcPathColor()
 })
 
 function init() {
@@ -205,8 +206,6 @@ function calcPathD() {
 }
 
 function calcPathColor() {
-  // const { mergedColor: [color], segment } = this
-
   const colorGap = 100 / (state.segment - 1)
 
   state.pathColor = new Array(state.segment)
