@@ -1,14 +1,16 @@
 <template>
   <div w50rem h34rem flex="~ col" justify-center items-center bg-dark>
     <dv-active-ring-chart :config="conf" style="width:300px;height:300px" />
-    <div>
+    <div flex="~ col" gap2 justify-center items-center>
       <div>
-        城市： <el-input v-model="cityName" />
+        <span text-white>城市：</span>
+        <input v-model="cityName" demo-input />
       </div>
       <div>
-        Value： <el-input v-model="cityValue" type="number" />
+        <span text-white>Value：</span>
+        <input v-model="cityValue" type="number" demo-input />
       </div>
-      <div pt5>
+      <div>
         <button btn @click="addData">
           添加数据
         </button>
@@ -18,7 +20,7 @@
 </template>
 <script setup>
 
-const cityName = ref('')
+const cityName = ref('测试')
 const cityValue = ref(58)
 
 const conf = reactive({
