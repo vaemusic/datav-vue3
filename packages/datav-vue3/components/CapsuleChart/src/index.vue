@@ -97,7 +97,6 @@ const state = reactive({
 })
 
 watch(() => props.config, () => {
-  console.log('change')
   calcData()
 }, {
   deep: true,

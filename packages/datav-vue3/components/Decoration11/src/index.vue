@@ -81,7 +81,6 @@ watch(() => props.color, () => {
 })
 
 onMounted(() => {
-  console.log(decoration11.value)
   mergeColor()
 })
 
