@@ -73,6 +73,10 @@ export default defineConfig({
           {
             text: '快速开始',
             link: '/Guide/index',
+          },
+          {
+            text: '边框组件注意事项',
+            link: '/Guide/BorderTip',
           }
         ],
       },
