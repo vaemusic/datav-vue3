@@ -142,7 +142,11 @@ const props = defineProps({
 const id = uuid()
 const borderBox9 = ref<HTMLElement | null>(null)
 
-const { width, height } = autoResize(borderBox9)
+const { width, height, initWH } = autoResize(borderBox9)
+
+defineExpose({
+  initWH,
+})
 
 const state = reactive({
   gradientId: `border-box-9-gradient-${id}`,

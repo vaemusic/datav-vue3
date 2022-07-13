@@ -56,7 +56,11 @@ watch(() => props.color, () => {
   mergeColor()
 })
 
-const { width, height } = autoResize(borderBox2)
+const { width, height, initWH } = autoResize(borderBox2)
+
+defineExpose({
+  initWH,
+})
 
 onMounted(() => {
   mergeColor()

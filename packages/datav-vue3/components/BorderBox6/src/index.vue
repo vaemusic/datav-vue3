@@ -53,7 +53,11 @@ const state = reactive({
   mergedColor: [],
 })
 
-const { width, height } = autoResize(borderBox6)
+const { width, height, initWH } = autoResize(borderBox6)
+
+defineExpose({
+  initWH,
+})
 
 watch(() => props.color, () => {
   mergeColor()

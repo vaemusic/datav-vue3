@@ -56,7 +56,11 @@ const props = defineProps({
 })
 
 const borderBox13 = ref<HTMLElement | null>(null)
-const { width, height } = autoResize(borderBox13)
+const { width, height, initWH } = autoResize(borderBox13)
+
+defineExpose({
+  initWH,
+})
 
 const state = reactive({
   defaultColor: ['#6586ec', '#2cf7fe'],

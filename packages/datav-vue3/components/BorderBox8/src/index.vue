@@ -100,7 +100,11 @@ const state = reactive({
   mergedColor: [],
 })
 
-const { width, height } = autoResize(borderBox8)
+const { width, height, initWH } = autoResize(borderBox8)
+
+defineExpose({
+  initWH,
+})
 
 const length = computed(() => {
   return (width.value + height.value - 5) * 2

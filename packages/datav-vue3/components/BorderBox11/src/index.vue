@@ -242,7 +242,11 @@ const props = defineProps({
 const id = uuid()
 const borderBox11 = ref(null)
 
-const { width, height } = autoResize(borderBox11)
+const { width, height, initWH } = autoResize(borderBox11)
+
+defineExpose({
+  initWH,
+})
 
 const state = reactive({
   filterId: `border-box-11-filterId-${id}`,

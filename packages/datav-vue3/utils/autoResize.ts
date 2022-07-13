@@ -69,6 +69,7 @@ const autoResize = (dom: Ref<HTMLElement | null>, onResize?: () => void, afterAu
   return {
     width,
     height,
+    initWH,
   }
 }
 

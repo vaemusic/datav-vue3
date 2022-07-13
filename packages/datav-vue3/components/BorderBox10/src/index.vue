@@ -45,7 +45,11 @@ const props = defineProps({
 
 const borderBox10 = ref<HTMLElement | null>(null)
 
-const { width, height } = autoResize(borderBox10)
+const { width, height, initWH } = autoResize(borderBox10)
+
+defineExpose({
+  initWH,
+})
 
 const state = reactive({
   border: ['left-top', 'right-top', 'left-bottom', 'right-bottom'],

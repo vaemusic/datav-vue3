@@ -73,7 +73,11 @@ const mergeColor = () => {
   state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
 }
 
-const { width, height } = autoResize(borderBox1)
+const { width, height, initWH } = autoResize(borderBox1)
+
+defineExpose({
+  initWH,
+})
 
 watch(() => props.color, () => {
   mergeColor()
