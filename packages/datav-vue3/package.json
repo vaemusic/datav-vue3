@@ -1,6 +1,6 @@
 {
   "name": "@kjgl77/datav-vue3",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Datav for vue3+vite",
   "packageManager": "pnpm@6.32.3",
   "author": "kjgl77 <745385015@qq.com>",
