@@ -78,7 +78,11 @@ export default defineConfig({
           {
             text: '边框组件注意事项',
             link: '/Guide/BorderTip',
-          }
+          },
+          {
+            text: '二次开发',
+            link: '/Guide/CONTRIBUTING',
+          },
         ],
       },
       {
