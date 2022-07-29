@@ -5,6 +5,7 @@ import highlight from './plugins/highlight'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import list from '../../../datav-vue3/list.json'
+import baseViteConfig from '../../../../build/base.config'
 
 const BorderDecorationList = list.filter(item => item.children && item.children.length > 0)
 const OtherList = list.filter(item => !item.children || item.children.length === 0)
@@ -98,6 +99,7 @@ export default defineConfig({
     ]
   },
   vite: {
+    ...baseViteConfig,
     plugins: [
       Unocss(),
       AutoImport({
