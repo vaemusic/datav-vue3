@@ -48,4 +48,6 @@ import { Decoration1, Decoration2 } from '@kjgl77/datav-vue3'
 </template>
 ```
 
-新的组件库开发根据大佬的 [MY-Kit](https://github.com/jrainlau/MY-Kit) 开发。支持脚本生成基础文件，文档，可使用Markdown一边开发源码一边写文档。详情可见MY-Kit文档。
+## 二次开发
+
+二次开发可见文档中[二次开发部分](https://datav-vue3.netlify.app/Guide/contribute.html)或[contribute](./packages/docs/docs/Guide/contribute.md)
