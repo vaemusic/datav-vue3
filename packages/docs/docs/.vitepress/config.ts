@@ -81,7 +81,7 @@ export default defineConfig({
           },
           {
             text: '二次开发',
-            link: '/Guide/CONTRIBUTING',
+            link: '/Guide/contribute',
           },
         ],
       },
