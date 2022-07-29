@@ -6,7 +6,7 @@
 
 - 后来觉得文档和源码融合在一块，不是很清晰，所以使用了 pnpm 的 `monorepo`，把文档和源码分离。
 
-- 文档的开发使用了 [Vitepress](https://vitepress.vuejs.org/) + [Unocss](https://github.com/unocss/unocss)
+- 文档的开发使用了 [Vitepress](https://vitepress.vuejs.org/) + [Unocss](https://github.com/unocss/unocss) 。
 
 ## 预览文档
 
