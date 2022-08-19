@@ -37,7 +37,8 @@
   },
   "dependencies": {
     "@jiaminghi/c-render": "^0.4.3",
-    "@jiaminghi/charts": "^0.2.18"
+    "@jiaminghi/charts": "^0.2.18",
+    "@vueuse/core": "^9.1.0"
   },
   "devDependencies": {
     "@jiaminghi/fs": "^0.1.1",
