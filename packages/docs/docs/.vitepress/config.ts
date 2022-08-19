@@ -1,10 +1,8 @@
-// @ts-expect-error missing type
-import base from '@vue/theme/config'
 import { defineConfig } from 'vitepress'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import list from '../../../datav-vue3/list.json'
-import baseViteConfig from '../../../../build/base.config'
+import path from 'path'
 
 const BorderDecorationList = list.filter(item => item.children && item.children.length > 0)
 const OtherList = list.filter(item => !item.children || item.children.length === 0)
@@ -101,7 +99,11 @@ export default defineConfig({
     ]
   },
   vite: {
-    ...baseViteConfig,
+    resolve: {
+      alias: {
+        'packages': `${path.resolve(__dirname, '../../../')}/`,
+      },
+    },
     plugins: [
       Unocss(),
       AutoImport({
