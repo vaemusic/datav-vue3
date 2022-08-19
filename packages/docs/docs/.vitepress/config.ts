@@ -1,7 +1,6 @@
 // @ts-expect-error missing type
 import base from '@vue/theme/config'
 import { defineConfig } from 'vitepress'
-import highlight from './plugins/highlight'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import list from '../../../datav-vue3/list.json'
@@ -45,15 +44,14 @@ const getOtherLinkList = ()=>{
   return links
 }
 
-const themeConfig = async() => {
-  const config = await base()
-  config.markdown.highlight = await highlight()
-  return config
-}
-
 export default defineConfig({
-  extends: themeConfig,
   title: 'DataV - Vue3',
+  markdown:{
+    theme: {
+      light: 'vitesse-light',
+      dark: 'vitesse-dark',
+    }
+  },
   themeConfig: {
     siteTitle: 'DataV - Vue3',
     outlineTitle: '目录',
