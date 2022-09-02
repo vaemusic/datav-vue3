@@ -101,7 +101,7 @@ const props = defineProps({
 })
 
 const id = uuid()
-const decoration9 = ref<HTMLElement | null>(null)
+const decoration9 = ref(null)
 const state = reactive({
   polygonId: `decoration-9-polygon-${id}`,
 
