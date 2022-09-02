@@ -1,5 +1,5 @@
 {
-  "extends": "@antfu",
+  "extends": "@antfu/eslint-config-vue",
   "rules": {
     "array-bracket-spacing": 0,
     "no-console": 0,

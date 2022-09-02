@@ -4,7 +4,7 @@
       <polygon
         :fill="fade(state.mergedColor[1] || state.defaultColor[1], 10)"
         :stroke="state.mergedColor[1]"
-        :points="`20 10, 25 4, 55 4 60 10`"
+        points="20 10, 25 4, 55 4 60 10"
       />
 
       <polygon

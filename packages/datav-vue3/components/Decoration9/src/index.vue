@@ -86,7 +86,6 @@
 <script setup>
 import autoResize from 'packages/datav-vue3/utils/autoResize'
 import { deepClone, deepMerge, uuid } from 'packages/datav-vue3/utils'
-
 import { fade } from '@jiaminghi/color'
 
 const props = defineProps({
@@ -101,7 +100,9 @@ const props = defineProps({
 })
 
 const id = uuid()
-const decoration9 = ref<HTMLElement | null>(null)
+
+const decoration9 = ref(null)
+
 const state = reactive({
   polygonId: `decoration-9-polygon-${id}`,
 
@@ -138,7 +139,6 @@ function onResize() {
 function mergeColor() {
   state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
 }
-
 </script>
 
 <style lang="less">

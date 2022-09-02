@@ -86,7 +86,6 @@ watch(() => props.color, () => {
 onMounted(() => {
   mergeColor()
 })
-
 </script>
 
 <style lang="less">
