@@ -15,7 +15,6 @@ export default defineConfig({
   },
   plugins: [
     Vue({
-      reactivityTransform: true,
       include: [/\.vue$/, /\.md$/],
     }),
     VueJsx(),
