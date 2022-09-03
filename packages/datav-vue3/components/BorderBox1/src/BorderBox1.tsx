@@ -1,22 +1,13 @@
 import { defineComponent, renderSlot } from 'vue'
+import type { BorderBoxProps } from 'packages/datav-vue3/types/BorderProps'
+import { borderBoxProps } from 'packages/datav-vue3/types/BorderProps'
 import autoResize from 'packages/datav-vue3/utils/autoResize'
 import { deepClone, deepMerge } from 'packages/datav-vue3/utils'
 import './index.less'
 
-const BorderBox1Props = {
-  color: {
-    type: Array,
-    default: () => ([]),
-  },
-  backgroundColor: {
-    type: String,
-    default: 'transparent',
-  },
-}
-
-const BorderBox1 = defineComponent({
-  props: BorderBox1Props,
-  setup(props) {
+export default defineComponent({
+  props: borderBoxProps,
+  setup(props: BorderBoxProps) {
     const borderBox1 = ref<HTMLElement | null>(null)
 
     const state = reactive({
@@ -105,5 +96,3 @@ const BorderBox1 = defineComponent({
     )
   },
 })
-
-export default BorderBox1
