@@ -127,6 +127,6 @@ export default defineConfig({
     }
   },
   vue: {
-    reactivityTransform: true,
+    reactivityTransform: path.resolve(__dirname, 'src'),
   }
 })
