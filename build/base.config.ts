@@ -21,7 +21,6 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue',
-        'vue/macros',
       ],
       dts: true,
     }),
