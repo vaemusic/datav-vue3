@@ -71,6 +71,12 @@ importers:
       unplugin-auto-import: 0.11.2
       vitepress: 1.0.0-alpha.8
 
+  packages/example:
+    specifiers:
+      '@kjgl77/datav-vue3': workspace:*
+    dependencies:
+      '@kjgl77/datav-vue3': link:../datav-vue3
+
 packages:
 
   /@algolia/autocomplete-core/1.7.1:
