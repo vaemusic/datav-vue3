@@ -16,4 +16,5 @@ let width = $ref(40)
 const handelClick = ()=>{
   width += 2
   borderRef.value?.initWH()
+}
 </script>
