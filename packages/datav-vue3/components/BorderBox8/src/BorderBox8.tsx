@@ -1,5 +1,5 @@
 import type { ExtractPropTypes } from 'vue'
-import { defineComponent, renderSlot } from 'vue'
+import { defineComponent, h, renderSlot } from 'vue'
 import { borderBoxProps } from 'packages/datav-vue3/types/BorderProps'
 import autoResize from 'packages/datav-vue3/utils/autoResize'
 import { deepClone, deepMerge, uuid } from 'packages/datav-vue3/utils'
@@ -98,12 +98,20 @@ export default defineComponent({
 
             <mask id={state.mask}>
               <circle cx="0" cy="0" r="150" fill={`url(#${state.gradient})`}>
-                <animateMotion
+                {
+                /* 报错：类型“ElementAttrs<SVGAttributes>”上不存在属性“path” */
+                /* <animateMotion
                   dur={`${dur}s`}
                   path={pathD}
                   rotate="auto"
                   repeatCount="indefinite"
-                />
+                /> */}
+                {h('animateMotion', {
+                  dur: `${dur}s`,
+                  path: pathD,
+                  rotate: 'auto',
+                  repeatCount: 'indefinite',
+                })}
               </circle>
             </mask>
           </defs>
