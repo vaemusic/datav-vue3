@@ -18,7 +18,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.2.39"
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.26.2",
