@@ -1,5 +1,5 @@
 import type { App, Plugin } from 'vue'
-import BorderBox9 from './src/index.vue'
+import BorderBox9 from './src/BorderBox9'
 
 export const BorderBox9Plugin: Plugin = {
   install(app: App) {
