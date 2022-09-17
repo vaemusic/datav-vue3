@@ -14,7 +14,6 @@ export function useMergedColor(defaultColors: string[], colors: Ref<string[]>) {
 
   onUnmounted(() => {
     stop()
-    console.log('stop')
   })
 
   return mergedColor
