@@ -13,7 +13,6 @@ const autoResize = (dom: Ref<HTMLElement | null>, onResize?: () => void, afterAu
   const initWH = (resize = true) => {
     return new Promise((resolve) => {
       nextTick(() => {
-        console.log(dom)
         domHtml = dom.value
         width.value = dom.value ? dom.value.clientWidth : 0
         height.value = dom.value ? dom.value.clientHeight : 0
