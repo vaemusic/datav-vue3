@@ -2,8 +2,11 @@ import { defineComponent, renderSlot } from 'vue'
 import type { BorderBoxProps } from 'packages/datav-vue3/types/BorderProps'
 import { borderBoxProps } from 'packages/datav-vue3/types/BorderProps'
 import autoResize from 'packages/datav-vue3/utils/autoResize'
-import { deepClone, deepMerge, uuid } from 'packages/datav-vue3/utils'
+import { uuid } from 'packages/datav-vue3/utils'
+import { useMergedColor } from 'packages/datav-vue3/composables/useMergedColor'
 import './index.less'
+
+const defaultColor = ['#11eefd', '#0078d2']
 
 export default defineComponent({
   props: borderBoxProps,
@@ -16,34 +19,21 @@ export default defineComponent({
     const state = reactive({
       gradientId: `border-box-9-gradient-${id}`,
       maskId: `border-box-9-mask-${id}`,
-
-      defaultColor: ['#11eefd', '#0078d2'],
-
-      mergedColor: [],
     })
 
-    watch(() => props.color, () => {
-      mergeColor()
-    })
-
-    onMounted(() => {
-      mergeColor()
-    })
-
-    function mergeColor() {
-      state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
-    }
+    const mergedColor = useMergedColor(defaultColor, toRef(props, 'color'))
 
     return {
       width,
       height,
       initWH,
       state,
+      mergedColor,
       borderBox9,
     }
   },
   render() {
-    const { $slots, width, height, state, backgroundColor } = this
+    const { $slots, width, height, state, mergedColor, backgroundColor } = this
     return (
       <div ref="borderBox9" class="dv-border-box-9">
         <svg class="dv-border-svg-container" width={width} height={height}>
@@ -65,19 +55,19 @@ export default defineComponent({
                 repeatCount="indefinite"
               />
 
-              <stop offset="0%" stop-color={state.mergedColor[0]}>
+              <stop offset="0%" stop-color={mergedColor[0]}>
                 <animate
                   attributeName="stop-color"
-                  values={`${state.mergedColor[0]};${state.mergedColor[1]};${state.mergedColor[0]}`}
+                  values={`${mergedColor[0]};${mergedColor[1]};${mergedColor[0]}`}
                   dur="10s"
                   begin="0s"
                   repeatCount="indefinite"
                 />
               </stop>
-              <stop offset="100%" stop-color={state.mergedColor[1]}>
+              <stop offset="100%" stop-color={mergedColor[1]}>
                 <animate
                   attributeName="stop-color"
-                  values={`${state.mergedColor[1]};${state.mergedColor[0]};${state.mergedColor[1]}`}
+                  values={`${mergedColor[1]};${mergedColor[0]};${mergedColor[1]}`}
                   dur="10s"
                   begin="0s"
                   repeatCount="indefinite"

@@ -2,8 +2,11 @@ import { defineComponent, renderSlot } from 'vue'
 import type { BorderBoxProps } from 'packages/datav-vue3/types/BorderProps'
 import { borderBoxProps } from 'packages/datav-vue3/types/BorderProps'
 import autoResize from 'packages/datav-vue3/utils/autoResize'
-import { deepClone, deepMerge } from 'packages/datav-vue3/utils'
+import { useMergedColor } from 'packages/datav-vue3/composables/useMergedColor'
 import './index.less'
+
+const border = ['left-top', 'right-top', 'left-bottom', 'right-bottom'] as const
+const defaultColor = ['#1d48c4', '#d3e1f8']
 
 export default defineComponent({
   props: borderBoxProps,
@@ -12,38 +15,20 @@ export default defineComponent({
 
     const { width, height, initWH } = autoResize(borderBox10)
 
-    const state = reactive({
-      border: ['left-top', 'right-top', 'left-bottom', 'right-bottom'],
-
-      defaultColor: ['#1d48c4', '#d3e1f8'],
-
-      mergedColor: [],
-    })
-
-    watch(() => props.color, () => {
-      mergeColor()
-    })
-
-    onMounted(() => {
-      mergeColor()
-    })
-
-    function mergeColor() {
-      state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
-    }
+    const mergedColor = useMergedColor(defaultColor, toRef(props, 'color'))
 
     return {
       width,
       height,
       initWH,
-      state,
+      mergedColor,
       borderBox10,
     }
   },
   render() {
-    const { $slots, width, height, state, backgroundColor } = this
+    const { $slots, width, height, mergedColor, backgroundColor } = this
     return (
-      <div ref="borderBox10" class="dv-border-box-10" style={`box-shadow: inset 0 0 25px 3px ${state.mergedColor[0]}`}>
+      <div ref="borderBox10" class="dv-border-box-10" style={`box-shadow: inset 0 0 25px 3px ${mergedColor[0]}`}>
         <svg class="dv-border-svg-container" width={width} height={height}>
           <polygon
             fill={backgroundColor} points={`
@@ -53,7 +38,7 @@ export default defineComponent({
           />
         </svg>
         {
-          state.border.map((item) => {
+          border.map((item) => {
             return (
               <svg
                 width="150px"
@@ -61,7 +46,7 @@ export default defineComponent({
                 class={`${item} dv-border-svg-container`}
               >
                 <polygon
-                  fill={state.mergedColor[1]}
+                  fill={mergedColor[1]}
                   points="40, 0 5, 0 0, 5 0, 16 3, 19 3, 7 7, 3 35, 3"
                 />
               </svg>

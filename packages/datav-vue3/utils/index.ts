@@ -11,7 +11,7 @@ export function randomExtend(minNum: number, maxNum: number) {
 
 export function debounce<T>(delay: number, callback: (...args: T[]) => void, vm: T) {
   let lastTime: NodeJS.Timeout
-  return function() {
+  return function () {
     clearTimeout(lastTime)
     lastTime = setTimeout(() => {
       callback.call(vm, ...arguments)
@@ -126,7 +126,7 @@ export function deepClone(object: any, recursion: boolean) {
   const { parse, stringify } = JSON
   if (!recursion)
     return parse(stringify(object))
-  const clonedObj: Record<string, any> = object instanceof Array ? [] : {}
+  const clonedObj: Record<string, any> = Array.isArray(object) ? [] : {}
 
   if (object && typeof object === 'object') {
     for (const key in object) {

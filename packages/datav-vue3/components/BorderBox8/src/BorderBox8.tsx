@@ -2,7 +2,8 @@ import type { ExtractPropTypes } from 'vue'
 import { defineComponent, h, renderSlot } from 'vue'
 import { borderBoxProps } from 'packages/datav-vue3/types/BorderProps'
 import autoResize from 'packages/datav-vue3/utils/autoResize'
-import { deepClone, deepMerge, uuid } from 'packages/datav-vue3/utils'
+import { uuid } from 'packages/datav-vue3/utils'
+import { useMergedColor } from 'packages/datav-vue3/composables/useMergedColor'
 import './index.less'
 
 const borderBox8Props = {
@@ -19,6 +20,8 @@ const borderBox8Props = {
 
 export type BorderBox8Props = ExtractPropTypes<typeof borderBox8Props>
 
+const defaultColor = ['#235fa7', '#4fd2dd']
+
 export default defineComponent({
   props: borderBox8Props,
   setup(props: BorderBox8Props) {
@@ -26,14 +29,9 @@ export default defineComponent({
     const borderBox8 = ref<HTMLElement | null>(null)
 
     const state = reactive({
-      ref: 'border-box-8',
       path: `border-box-8-path-${id}`,
       gradient: `border-box-8-gradient-${id}`,
       mask: `border-box-8-mask-${id}`,
-
-      defaultColor: ['#235fa7', '#4fd2dd'],
-
-      mergedColor: [],
     })
 
     const { width, height, initWH } = autoResize(borderBox8)
@@ -49,30 +47,21 @@ export default defineComponent({
       return `M2.5, 2.5 L${width.value - 2.5}, 2.5 L${width.value - 2.5}, ${height.value - 2.5} L2.5, ${height.value - 2.5} L2.5, 2.5`
     })
 
-    watch(() => props.color, () => {
-      mergeColor()
-    })
-
-    onMounted(() => {
-      mergeColor()
-    })
-
-    function mergeColor() {
-      state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
-    }
+    const mergedColor = useMergedColor(defaultColor, toRef(props, 'color'))
 
     return {
       width,
       height,
       initWH,
       state,
+      mergedColor,
       pathD,
       length,
       borderBox8,
     }
   },
   render() {
-    const { $slots, width, height, state, pathD, length, backgroundColor, dur } = this
+    const { $slots, width, height, state, mergedColor, pathD, length, backgroundColor, dur } = this
     return (
       <div ref="borderBox8" class="dv-border-box-8">
         <svg class="dv-border-svg-container" width={width} height={height}>
@@ -119,13 +108,13 @@ export default defineComponent({
           <polygon fill={backgroundColor} points={`5, 5 ${width - 5}, 5 ${width - 5} ${height - 5} 5, ${height - 5}`} />
 
           <use
-            stroke={state.mergedColor[0]}
+            stroke={mergedColor[0]}
             stroke-width="1"
             xlinkHref={`#${state.path}`}
           />
 
           <use
-            stroke={state.mergedColor[1]}
+            stroke={mergedColor[1]}
             stroke-width="3"
             xlinkHref={`#${state.path}`}
             mask={`url(#${state.mask})`}

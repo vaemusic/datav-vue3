@@ -2,7 +2,8 @@ import type { ExtractPropTypes } from 'vue'
 import { defineComponent, renderSlot } from 'vue'
 import { borderBoxProps } from 'packages/datav-vue3/types/BorderProps'
 import autoResize from 'packages/datav-vue3/utils/autoResize'
-import { deepClone, deepMerge, uuid } from 'packages/datav-vue3/utils'
+import { uuid } from 'packages/datav-vue3/utils'
+import { useMergedColor } from 'packages/datav-vue3/composables/useMergedColor'
 // @ts-expect-error: not ts version lib
 import { fade } from '@jiaminghi/color'
 import './index.less'
@@ -21,6 +22,8 @@ const borderBox11Props = {
 
 export type BorderBox11Props = ExtractPropTypes<typeof borderBox11Props>
 
+const defaultColor = ['#8aaafb', '#1f33a2']
+
 export default defineComponent({
   props: borderBox11Props,
   setup(props: BorderBox11Props) {
@@ -29,44 +32,29 @@ export default defineComponent({
 
     const { width, height, initWH } = autoResize(borderBox11)
 
-    const state = reactive({
-      filterId: `border-box-11-filterId-${id}`,
+    const filterId = ref(`border-box-11-filterId-${id}`)
 
-      defaultColor: ['#8aaafb', '#1f33a2'],
-
-      mergedColor: [],
-    })
-
-    watch(() => props.color, () => {
-      mergeColor()
-    })
-
-    onMounted(() => {
-      mergeColor()
-    })
-
-    function mergeColor() {
-      state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
-    }
+    const mergedColor = useMergedColor(defaultColor, toRef(props, 'color'))
 
     return {
       width,
       height,
       initWH,
-      state,
+      filterId,
+      mergedColor,
       borderBox11,
     }
   },
   render() {
-    const { $slots, width, height, state, backgroundColor, title, titleWidth } = this
+    const { $slots, width, height, filterId, mergedColor, backgroundColor, title, titleWidth } = this
     return (
       <div ref="borderBox11" class="dv-border-box-11">
         <svg class="dv-border-svg-container" width={width} height={height}>
           <defs>
-            <filter id={state.filterId} height="150%" width="150%" x="-25%" y="-25%">
+            <filter id={filterId} height="150%" width="150%" x="-25%" y="-25%">
               <feMorphology operator="dilate" radius="2" in="SourceAlpha" result="thicken" />
               <feGaussianBlur in="thicken" stdDeviation="3" result="blurred" />
-              <feFlood flood-color={state.mergedColor[1]} result="glowColor" />
+              <feFlood flood-color={mergedColor[1]} result="glowColor" />
               <feComposite in="glowColor" in2="blurred" operator="in" result="softGlowColored" />
               <feMerge>
                 <feMergeNode in="softGlowColored" />
@@ -85,8 +73,8 @@ export default defineComponent({
           />
 
           <polyline
-            stroke={state.mergedColor[0]}
-            filter={`url(#${state.filterId})`}
+            stroke={mergedColor[0]}
+            filter={`url(#${filterId})`}
             points={`
           ${(width - titleWidth) / 2}, 30
           20, 30 7, 50 7, ${50 + (height - 167) / 2}
@@ -103,7 +91,7 @@ export default defineComponent({
           />
 
           <polygon
-            stroke={state.mergedColor[0]}
+            stroke={mergedColor[0]}
             fill="transparent"
             points={`
           ${(width + titleWidth) / 2 - 5}, 30 ${(width + titleWidth) / 2 - 21}, 11
@@ -112,7 +100,7 @@ export default defineComponent({
           />
 
           <polygon
-            stroke={state.mergedColor[0]}
+            stroke={mergedColor[0]}
             fill="transparent"
             points={`
           ${(width - titleWidth) / 2 + 5}, 30 ${(width - titleWidth) / 2 + 22}, 49
@@ -121,9 +109,9 @@ export default defineComponent({
           />
 
           <polygon
-            stroke={state.mergedColor[0]}
-            fill={fade(state.mergedColor[1] || state.defaultColor[1], 30)}
-            filter={`url(#${state.filterId})`}
+            stroke={mergedColor[0]}
+            fill={fade(mergedColor[1] || defaultColor[1], 30)}
+            filter={`url(#${filterId})`}
             points={`
           ${(width + titleWidth) / 2 - 11}, 37 ${(width + titleWidth) / 2 - 32}, 11
           ${(width - titleWidth) / 2 + 23}, 11 ${(width - titleWidth) / 2 + 11}, 23
@@ -132,8 +120,8 @@ export default defineComponent({
           />
 
           <polygon
-            filter={`url(#${state.filterId})`}
-            fill={state.mergedColor[0]}
+            filter={`url(#${filterId})`}
+            fill={mergedColor[0]}
             opacity="1"
             points={`
           ${(width - titleWidth) / 2 - 10}, 37 ${(width - titleWidth) / 2 - 31}, 37
@@ -150,8 +138,8 @@ export default defineComponent({
           </polygon>
 
           <polygon
-            filter={`url(#${state.filterId})`}
-            fill={state.mergedColor[0]}
+            filter={`url(#${filterId})`}
+            fill={mergedColor[0]}
             opacity="0.7"
             points={`
           ${(width - titleWidth) / 2 - 40}, 37 ${(width - titleWidth) / 2 - 61}, 37
@@ -168,8 +156,8 @@ export default defineComponent({
           </polygon>
 
           <polygon
-            filter={`url(#${state.filterId})`}
-            fill={state.mergedColor[0]}
+            filter={`url(#${filterId})`}
+            fill={mergedColor[0]}
             opacity="0.5"
             points={`
           ${(width - titleWidth) / 2 - 70}, 37 ${(width - titleWidth) / 2 - 91}, 37
@@ -186,8 +174,8 @@ export default defineComponent({
           </polygon>
 
           <polygon
-            filter={`url(#${state.filterId})`}
-            fill={state.mergedColor[0]}
+            filter={`url(#${filterId})`}
+            fill={mergedColor[0]}
             opacity="1"
             points={`
           ${(width + titleWidth) / 2 + 30}, 37 ${(width + titleWidth) / 2 + 9}, 37
@@ -204,8 +192,8 @@ export default defineComponent({
           </polygon>
 
           <polygon
-            filter={`url(#${state.filterId})`}
-            fill={state.mergedColor[0]}
+            filter={`url(#${filterId})`}
+            fill={mergedColor[0]}
             opacity="0.7"
             points={`
           ${(width + titleWidth) / 2 + 60}, 37 ${(width + titleWidth) / 2 + 39}, 37
@@ -222,8 +210,8 @@ export default defineComponent({
           </polygon>
 
           <polygon
-            filter={`url(#${state.filterId})`}
-            fill={state.mergedColor[0]}
+            filter={`url(#${filterId})`}
+            fill={mergedColor[0]}
             opacity="0.5"
             points={`
           ${(width + titleWidth) / 2 + 90}, 37 ${(width + titleWidth) / 2 + 69}, 37
@@ -252,8 +240,8 @@ export default defineComponent({
           </text>
 
           <polygon
-            fill={state.mergedColor[0]}
-            filter={`url(#${state.filterId})`}
+            fill={mergedColor[0]}
+            filter={`url(#${filterId})`}
             points={`
           7, ${53 + (height - 167) / 2} 11, ${57 + (height - 167) / 2}
           11, ${133 + (height - 167) / 2} 7, ${137 + (height - 167) / 2}
@@ -261,8 +249,8 @@ export default defineComponent({
           />
 
           <polygon
-            fill={state.mergedColor[0]}
-            filter={`url(#${state.filterId})`}
+            fill={mergedColor[0]}
+            filter={`url(#${filterId})`}
             points={`
           ${width - 7}, ${53 + (height - 167) / 2} ${width - 11}, ${57 + (height - 167) / 2}
           ${width - 11}, ${133 + (height - 167) / 2} ${width - 7}, ${137 + (height - 167) / 2}
