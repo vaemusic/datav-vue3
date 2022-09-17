@@ -46,7 +46,7 @@ const autoResize = (dom: Ref<HTMLElement | null>, onResize?: () => void, afterAu
     domObserver = null
   }
 
-  const autoResizeMixinInit = async() => {
+  const autoResizeMixinInit = async () => {
     await initWH(false)
 
     getDebounceInitWHFun()

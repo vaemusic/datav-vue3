@@ -3,6 +3,7 @@
 import path from 'path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
+import VueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig({
@@ -14,16 +15,19 @@ export default defineConfig({
   },
   plugins: [
     Vue({
-      reactivityTransform: true,
       include: [/\.vue$/, /\.md$/],
     }),
-
+    VueJsx(),
     AutoImport({
       imports: [
         'vue',
-        'vue/macros',
       ],
       dts: true,
     }),
   ],
+  esbuild: {
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment',
+    jsxInject: 'import { h } from "vue"',
+  },
 })

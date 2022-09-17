@@ -1,0 +1,14 @@
+{
+  "name": "@kjgl77/example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@kjgl77/datav-vue3": "workspace:*"
+  }
+}

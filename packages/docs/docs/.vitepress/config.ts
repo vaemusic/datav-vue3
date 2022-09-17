@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import VueJsx from '@vitejs/plugin-vue-jsx'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import list from '../../../datav-vue3/list.json'
@@ -106,15 +107,26 @@ export default defineConfig({
     },
     plugins: [
       Unocss(),
+      VueJsx(),
       AutoImport({
         imports: [
           'vue',
         ],
         dts: true,
       }),
-    ]
+    ],
+    server:{
+      fs:{
+        allow: ['..'],
+      }
+    },
+    esbuild: {
+      jsxFactory: 'h',
+      jsxFragment: 'Fragment',
+      jsxInject: 'import { h } from "vue"',
+    }
   },
   vue: {
-    reactivityTransform: true,
+    reactivityTransform: path.resolve(__dirname, 'src'),
   }
 })
