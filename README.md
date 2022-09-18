@@ -4,19 +4,22 @@
 
 [![NPM](https://nodei.co/npm/@kjgl77/datav-vue3.png?mini=true)](https://www.npmjs.com/package/@kjgl77/datav-vue3)
 
+本库来源自 [DataV-Team/DataV](https://github.com/DataV-Team/DataV)，另外，大佬的 [DataV-Vue3](https://github.com/DataV-Team/DataV-Vue3) 项目也已经在开发中了，地址：https://github.com/DataV-Team/DataV-Vue3
+
+
 由于之前大佬写的 [DataV](http://datav.jiaminghi.com/) 不支持Vue3 Vite2.x，现部分代码用Vue3+TS重构。
 
-[文档地址](https://datav-vue3.netlify.app)：https://datav-vue3.netlify.app
+- [文档地址](https://datav-vue3.netlify.app)：https://datav-vue3.netlify.app
 
-[Gitee地址](https://gitee.com/kjgl77/datav-vue3)：https://gitee.com/kjgl77/datav-vue3
+- [Gitee地址](https://gitee.com/kjgl77/datav-vue3)：https://gitee.com/kjgl77/datav-vue3
 
-[Github地址](https://github.com/vaemusic/datav-vue3)：https://github.com/vaemusic/datav-vue3
+- [Github地址](https://github.com/vaemusic/datav-vue3)：https://github.com/vaemusic/datav-vue3
 
-[Demo预览地址](https://datav-vue3-demo.netlify.app/)：https://datav-vue3-demo.netlify.app/
+- [Demo预览地址](https://datav-vue3-demo.netlify.app/)：https://datav-vue3-demo.netlify.app/
 
-[Demo Gitee地址](https://gitee.com/kjgl77/electronic-file)：https://gitee.com/kjgl77/electronic-file
+- [Demo Gitee地址](https://gitee.com/kjgl77/electronic-file)：https://gitee.com/kjgl77/electronic-file
 
-[Demo Github地址](https://github.com/vaemusic/electronic-file)：https://github.com/vaemusic/electronic-file
+- [Demo Github地址](https://github.com/vaemusic/electronic-file)：https://github.com/vaemusic/electronic-file
 
 ## 使用方法
 - 安装，此处使用pnpm工具，也可以yarn,npm等
