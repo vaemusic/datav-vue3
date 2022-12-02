@@ -30,8 +30,13 @@ pnpm install @kjgl77/datav-vue3
 
 ```ts
 // main.ts中全局引入
+import { createApp } from 'vue'
 import DataVVue3 from '@kjgl77/datav-vue3'
-Vue.use(DataVVue3)
+
+const app = createApp(App)
+
+app.use(DataVVue3)
+app.mount('#app')
 ```
 引入后在.vue文件中可以直接使用
 ```html
