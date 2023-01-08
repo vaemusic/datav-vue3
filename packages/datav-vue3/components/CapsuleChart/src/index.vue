@@ -118,8 +118,11 @@ function mergeConfig() {
 function calcCapsuleLengthAndLabelData() {
   const { data } = state.mergedConfig
 
-  if (!data.length)
+  if (!data.length || data.length === 0) {
+    state.labelData = []
+    state.capsuleLength = []
     return
+  }
 
   const capsuleValue = data.map(({ value }) => value)
 
