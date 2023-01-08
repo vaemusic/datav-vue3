@@ -28,6 +28,8 @@ data  |	柱数据  |	`Array<Object>`  |	data属性  |	`[]`
 unit  |	单位  |	String  |	--- |	`''`
 colors  |	环颜色  |	`Array<String>`  |	`[1]`  |	`[2]`
 showValue  |	显示数值  |	Boolean  |	---  |	false
+textColor  |	文字颜色  |	String  |	---  |	'#fff'
+fontSize   |	文字大小  |	Number  |	---  |	12
 
 ## config注释
 - [1] 颜色支持` hex | rgb | rgba `颜色关键字等四种类型。
