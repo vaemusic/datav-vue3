@@ -86,6 +86,12 @@ const state = reactive({
          * @default showValue = false
          */
     showValue: false,
+    /**
+         * @description Text color
+         * @type {String}
+         * @default textColor = '#fff'
+         */
+    textColor: '#fff',
   },
 
   mergedConfig: null,
@@ -100,6 +106,10 @@ watch(() => props.config, () => {
   calcData()
 }, {
   deep: true,
+})
+
+const textColor = computed(() => {
+  return props.config.textColor ? props.config.textColor : state.defaultConfig.textColor
 })
 
 function calcData() {
@@ -156,7 +166,7 @@ onMounted(() => {
   flex-direction: row;
   box-sizing: border-box;
   padding: 10px;
-  color: #fff;
+  color: v-bind('textColor');
 
   .label-column {
     display: flex;
