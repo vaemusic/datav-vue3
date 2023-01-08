@@ -10,7 +10,6 @@
           :fill="state.mergedConfig.columnColor"
         />
         <text
-          :style="`fontSize:${state.mergedConfig.fontSize}px`"
           :fill="state.mergedConfig.textColor"
           :x="item.x"
           :y="height - 4"
@@ -27,7 +26,6 @@
         />
         <text
           v-if="state.mergedConfig.showValue"
-          :style="`fontSize:${state.mergedConfig.fontSize}px`"
           :fill="state.mergedConfig.textColor"
           :x="item.x"
           :y="item.textY"
@@ -104,6 +102,10 @@ const state = reactive({
 
 })
 
+const fontSize = computed(() => {
+  return `${props.config.fontSize ? props.config.fontSize : state.defaultConfig.fontSize}px`
+})
+
 watch(() => props.config, () => {
   calcData()
 }, {
@@ -146,10 +148,18 @@ function initData() {
 
   const max = data[0] ? data[0].value : 10
 
-  data = data.map(item => ({
-    ...item,
-    percent: item.value / max,
-  }))
+  if (max !== 0) {
+    data = data.map(item => ({
+      ...item,
+      percent: item.value / max,
+    }))
+  }
+  else {
+    data = data.map(item => ({
+      ...item,
+      percent: 0,
+    }))
+  }
 
   state.mergedConfig.data = data
 }
@@ -202,6 +212,7 @@ function calcSVGPath() {
 
   text {
     text-anchor: middle;
+    font-size: v-bind('fontSize');
   }
 }
 </style>
