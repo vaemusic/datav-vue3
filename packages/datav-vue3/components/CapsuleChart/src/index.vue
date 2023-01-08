@@ -92,6 +92,12 @@ const state = reactive({
          * @default textColor = '#fff'
          */
     textColor: '#fff',
+    /**
+         * @description Chart font size
+         * @type {Number}
+         * @default fontSize = 12
+         */
+    fontSize: 12,
   },
 
   mergedConfig: null,
@@ -106,6 +112,10 @@ watch(() => props.config, () => {
   calcData()
 }, {
   deep: true,
+})
+
+const fontSize = computed(() => {
+  return `${props.config.fontSize ? props.config.fontSize : state.defaultConfig.fontSize}px`
 })
 
 const textColor = computed(() => {
@@ -175,7 +185,7 @@ onMounted(() => {
     box-sizing: border-box;
     padding-right: 10px;
     text-align: right;
-    font-size: 12px;
+    font-size: v-bind('fontSize');
 
     div {
       height: 20px;
@@ -207,7 +217,7 @@ onMounted(() => {
       align-items: center;
 
       .capsule-item-value {
-        font-size: 12px;
+        font-size: v-bind('fontSize');
         transform: translateX(100%);
       }
     }
@@ -215,7 +225,7 @@ onMounted(() => {
 
   .unit-label {
     height: 20px;
-    font-size: 12px;
+    font-size: v-bind('fontSize');
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -226,7 +236,7 @@ onMounted(() => {
     text-align: right;
     display: flex;
     align-items: flex-end;
-    font-size: 12px;
+    font-size: v-bind('fontSize');
     line-height: 20px;
     margin-left: 10px;
   }
