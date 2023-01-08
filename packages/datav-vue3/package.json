@@ -38,6 +38,7 @@
   "dependencies": {
     "@jiaminghi/c-render": "^0.4.3",
     "@jiaminghi/charts": "^0.2.18",
+    "@jiaminghi/color": "^1.1.3",
     "@vueuse/core": "^9.1.0",
     "lodash-es": "^4.17.21"
   },

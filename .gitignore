@@ -7,3 +7,4 @@ dist-ssr
 node_modules
 .idea/
 *.log
+packages/docs/docs/.vitepress/cache

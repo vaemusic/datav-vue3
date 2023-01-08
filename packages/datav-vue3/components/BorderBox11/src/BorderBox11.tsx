@@ -4,7 +4,6 @@ import { borderBoxProps } from 'packages/datav-vue3/types/BorderProps'
 import autoResize from 'packages/datav-vue3/utils/autoResize'
 import { uuid } from 'packages/datav-vue3/utils'
 import { useMergedColor } from 'packages/datav-vue3/composables/useMergedColor'
-// @ts-expect-error: not ts version lib
 import { fade } from '@jiaminghi/color'
 import './index.less'
 
