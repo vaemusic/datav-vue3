@@ -148,18 +148,10 @@ function initData() {
 
   const max = data[0] ? data[0].value : 10
 
-  if (max !== 0) {
-    data = data.map(item => ({
-      ...item,
-      percent: item.value / max,
-    }))
-  }
-  else {
-    data = data.map(item => ({
-      ...item,
-      percent: 0,
-    }))
-  }
+  data = data.map(item => ({
+    ...item,
+    percent: max === 0 ? 0 : item.value / max,
+  }))
 
   state.mergedConfig.data = data
 }
