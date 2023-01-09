@@ -2,7 +2,7 @@
   <div class="dv-active-ring-chart">
     <div ref="activeRingChart" class="active-ring-chart-container" />
     <div class="active-ring-info">
-      <digital-flop :config="digitalFlop" />
+      <DigitalFlop :config="digitalFlop" />
       <div class="active-ring-name" :style="fontSize">
         {{ ringName }}
       </div>
@@ -63,6 +63,12 @@ const state = reactive({
          * @example color = ['#000', 'rgb(0, 0, 0)', 'rgba(0, 0, 0, 1)', 'red']
          */
     color: [],
+    /**
+         * @description Text color
+         * @type {String}
+         * @default textColor = '#fff'
+         */
+    textColor: '#fff',
     /**
          * @description Digital flop style
          * @type {Object}
@@ -154,6 +160,10 @@ const fontSize = computed(() => {
     return ''
 
   return `font-size: ${state.mergedConfig.digitalFlopStyle.fontSize}px;`
+})
+
+const textColor = computed(() => {
+  return props.config.textColor ? props.config.textColor : state.defaultConfig.textColor
 })
 
 watch(() => props.config, () => {
@@ -295,7 +305,7 @@ function ringAnimation() {
     .active-ring-name {
       width: 100px;
       height: 30px;
-      color: #fff;
+      color: v-bind('textColor');
       text-align: center;
       vertical-align: middle;
       text-overflow: ellipsis;
