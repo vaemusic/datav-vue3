@@ -30,7 +30,7 @@ data |	环数据 |	`Array<Object>` |	`data属性见下方表格` |	`[]`
 lineWidth |	环线条宽度 |	Number |	--- |	20
 activeTimeGap |	`切换间隔(ms)` |	Number |	--- |	3000
 color |	环颜色 |	`Array<String>` |	`[1]` |	`[]`
-textColor |	文字颜色 |	`String` |	--- |	`'#fff'`
+textColor<Badge type="tip" text="1.4.1" /> |	文字颜色 |	`String` |	--- |	`'#fff'`
 digitalFlopStyle |	数字翻牌器样式 |	Object |	--- |	`[2]`
 digitalFlopToFixed |	数字翻牌器小数位数 |	Numbe |	--- |	0
 digitalFlopUnit |	数字翻牌器单位 |	String |	--- |	`''`

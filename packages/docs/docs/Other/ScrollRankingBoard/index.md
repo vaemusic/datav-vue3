@@ -33,9 +33,9 @@ carousel |	轮播方式 |	`String` |	`'single'/'page'` |	`'single'`
 unit |	数值单位 |	`String` |	--- |	`''`
 sort |	自动排序 |	`Boolean` |	--- |	`true`
 valueFormatter |	数值格式化 |	`Function` |	--- |	`undefined`
-textColor |	文字颜色 |	`String` |	--- |	`#fff`
-color |	主要颜色，包括柱颜色和排名颜色 |	`String` |	--- |	`#1370fb`
-fontSize |	字体大小 |	`Number` |	--- |	`13`
+textColor<Badge type="tip" text="1.4.2" /> |	文字颜色 |	`String` |	--- |	`#fff`
+color<Badge type="tip" text="1.4.2" /> |	主要颜色，包括柱颜色和排名颜色 |	`String` |	--- |	`#1370fb`
+fontSize<Badge type="tip" text="1.4.2" /> |	字体大小 |	`Number` |	--- |	`13`
 
 ## data属性
 参数 | 说明 | 类型 | 可选值 | 默认值

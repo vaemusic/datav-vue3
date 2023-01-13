@@ -8,8 +8,9 @@ import DataVVue3Plugin from '../../../../datav-vue3/index'
 
 const theme: Theme = {
   ...DefaultTheme,
-  enhanceApp({ app }) {
-    app.use(DataVVue3Plugin)
+  enhanceApp(ctx) {
+    DefaultTheme.enhanceApp(ctx)
+    ctx.app.use(DataVVue3Plugin)
   }
 }
 

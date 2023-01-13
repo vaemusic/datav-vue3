@@ -43,7 +43,7 @@ imgSideLength |	图片边长 |	`Number` |	--- |	`30`
 columnColor |	柱颜色 |	`String` |	--- |	`'rgba(0, 194, 255, 0.4)'`
 textColor |	文字颜色 |	`String` |	--- |	`'#fff'`
 showValue |	显示数值 |	`Boolean` |	--- |	`false`
-sort |	自动排序 |	`Boolean` |	--- |	`true`
+sort<Badge type="tip" text="1.4.2" /> |	自动排序 |	`Boolean` |	--- |	`true`
 
 :::tip TIP
 将根据自动排序后的排名顺序使用img中的图片。

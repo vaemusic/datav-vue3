@@ -81,7 +81,7 @@ hoverPause |	悬浮暂停轮播 |	Boolean |	--- |	true
 :-: | :-: | :-: 
 `click` | 行或单元格点击事件 | 见下方表
 `mouseover` | 鼠标移入事件 | 同`click`
-`getFirstRow` | 轮播表第一条数据 | 见下方表
+`getFirstRow`<Badge type="tip" text="1.4.2" /> | 轮播表第一条数据 | 见下方表
 
 ### 事件参数说明
 参数 | 说明 | 类型 | 可选值 | 默认值 
