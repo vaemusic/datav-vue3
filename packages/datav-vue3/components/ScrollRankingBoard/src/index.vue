@@ -31,6 +31,7 @@
 <script setup>
 import autoResize from 'packages/datav-vue3/utils/autoResize'
 import { deepClone, deepMerge } from 'packages/datav-vue3/utils'
+import { fade } from '@jiaminghi/color'
 
 const props = defineProps({
   config: {
@@ -89,6 +90,24 @@ const state = reactive({
          * @default valueFormatter = null
          */
     valueFormatter: null,
+    /**
+         * @description Text color
+         * @type {String}
+         * @default textColor = '#fff'
+         */
+    textColor: '#fff',
+    /**
+         * @description Main theme color
+         * @type {String}
+         * @default color = '#1370fb'
+         */
+    color: '#1370fb',
+    /**
+         * @description Font size
+         * @type {Number}
+         * @default fontSize = 13
+         */
+    fontSize: 13,
   },
 
   mergedConfig: null,
@@ -114,6 +133,22 @@ watch(() => props.config, () => {
   calcData()
 }, {
   deep: true,
+})
+
+const textColor = computed(() => {
+  return props.config.textColor ? props.config.textColor : state.defaultConfig.textColor
+})
+
+const color = computed(() => {
+  return props.config.color ? props.config.color : state.defaultConfig.color
+})
+
+const fadeColor = computed(() => {
+  return fade(color.value, 50)
+})
+
+const fontSize = computed(() => {
+  return `${props.config.fontSize ? props.config.fontSize : state.defaultConfig.fontSize}px`
 })
 
 onUnmounted(() => {
@@ -246,13 +281,13 @@ function stopAnimation() {
 }
 </script>
 
-<style lang="less">
-@color: #1370fb;
+<style lang="less" scoped>
+@color: v-bind('color');
 
 .dv-scroll-ranking-board {
   width: 100%;
   height: 100%;
-  color: #fff;
+  color: v-bind('textColor');
   overflow: hidden;
 
   .row-item {
@@ -266,7 +301,7 @@ function stopAnimation() {
   .ranking-info {
     display: flex;
     width: 100%;
-    font-size: 13px;
+    font-size: v-bind('fontSize');
 
     .rank {
       width: 40px;
@@ -279,7 +314,7 @@ function stopAnimation() {
   }
 
   .ranking-column {
-    border-bottom: 2px solid fade(@color, 50);
+    border-bottom: 2px solid v-bind("fadeColor");
     margin-top: 5px;
 
     .inside-column {
