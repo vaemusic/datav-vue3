@@ -94,6 +94,12 @@ const state = reactive({
          * @default showValue = false
          */
     showValue: false,
+    /**
+         * @description Auto sort by value
+         * @type {Boolean}
+         * @default sort = true
+         */
+    sort: true,
   },
 
   mergedConfig: null,
@@ -134,10 +140,11 @@ function mergeConfig() {
 
 function initData() {
   let { data } = state.mergedConfig
+  const { sort } = state.mergedConfig
 
   data = deepClone(data, true)
 
-  data.sort(({ value: a }, { value: b }) => {
+  sort && data.sort(({ value: a }, { value: b }) => {
     if (a > b)
       return -1
     else if (a < b)
@@ -146,7 +153,7 @@ function initData() {
       return 0
   })
 
-  const max = data[0] ? data[0].value : 10
+  const max = Math.max(...data.map(x => x.value))
 
   data = data.map(item => ({
     ...item,
