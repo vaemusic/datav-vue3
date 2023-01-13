@@ -57,6 +57,8 @@ const props = defineProps({
   },
 })
 
+const emitEvent = defineEmits(['mouseover', 'click', 'getFirstRow'])
+
 const scrollBoard = ref(null)
 const { width, height } = autoResize(scrollBoard, onResize, afterAutoResizeMixinInit)
 
@@ -189,7 +191,6 @@ onUnmounted(() => {
   stopAnimation()
 })
 
-const emitEvent = defineEmits(['mouseover', 'click'])
 defineExpose({
   updateRows,
 })
@@ -387,6 +388,8 @@ async function animation(start = false) {
 
   // state.animationIndex = animationIndex
   state.animationHandler = setTimeout(animation, waitTime - 300)
+
+  emitEvent('getFirstRow', rows[1])
 }
 
 function stopAnimation() {
