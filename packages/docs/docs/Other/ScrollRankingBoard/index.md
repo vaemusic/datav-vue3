@@ -33,14 +33,17 @@ carousel |	轮播方式 |	`String` |	`'single'/'page'` |	`'single'`
 unit |	数值单位 |	`String` |	--- |	`''`
 sort |	自动排序 |	`Boolean` |	--- |	`true`
 valueFormatter |	数值格式化 |	`Function` |	--- |	`undefined`
+textColor |	文字颜色 |	`String` |	--- |	`#fff`
+color |	主要颜色，包括柱颜色和排名颜色 |	`String` |	--- |	`#1370fb`
+fontSize |	字体大小 |	`Number` |	--- |	`13`
 
-## config属性
+## data属性
 参数 | 说明 | 类型 | 可选值 | 默认值
 :-: | :-: | :-: | :-: | :-:
 name |	名称 |	`String` |	--- |	---
 value |	数值 |	`Number` |	--- |	---
 
-## config属性
+## valueFormatter属性
 参数 | 说明 | 类型 | 可选值 | 默认值
 :-: | :-: | :-: | :-: | :-:
 name |	名称 |	`String` |	--- |	---
@@ -48,4 +51,6 @@ value |	数值 |	`Number` |	--- |	---
 percent |	百分比 |	`Number` |	--- |	---
 ranking | 排名 |	`Number` |	--- |	---
 
-**`name`属性使用`v-html`进行渲染，因此你可以使用`html标签`来定制个性化的name展示效果。**
+:::tip TIP
+`name`属性使用`v-html`进行渲染，因此你可以使用`html标签`来定制个性化的name展示效果。
+:::
