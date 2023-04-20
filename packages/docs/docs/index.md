@@ -7,7 +7,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /Guide/index
+      link: /Guide/Guide
     - theme: brand
       text: Vue 2.x
       link: http://datav.jiaminghi.com/

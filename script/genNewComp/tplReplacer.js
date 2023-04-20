@@ -6,7 +6,7 @@ const getTplFilePath = meta => ({
   // docs 目录
   readme: {
     from: './.template/docs/index.md.tpl',
-    to: `../../packages/docs/docs/${meta.compType}/${meta.compName}/index.md`,
+    to: `../../packages/docs/docs/${meta.compType}/${meta.compName}/${meta.compName}.md`,
   },
   demo: {
     from: './.template/docs/demo.vue.tpl',
