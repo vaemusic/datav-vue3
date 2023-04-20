@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "unocss": "^0.48.3",
-    "vitepress": "1.0.0-alpha.35"
+    "unocss": "^0.51.5",
+    "vitepress": "1.0.0-alpha.72"
   },
   "dependencies": {
     "@kjgl77/datav-vue3": "workspace:*"
