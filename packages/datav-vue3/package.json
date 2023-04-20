@@ -1,6 +1,6 @@
 {
   "name": "@kjgl77/datav-vue3",
-  "version": "1.4.3",
+  "version": "1.4.5",
   "description": "Datav for vue3+vite",
   "packageManager": "pnpm@7.32.2",
   "author": "kjgl77 <745385015@qq.com>",
@@ -15,12 +15,12 @@
   "homepage": "https://github.com/vaemusic/datav-vue3",
   "main": "./dist/datav-vue3.es.js",
   "module": "./dist/datav-vue3.es.js",
-  "types": "./dist/packages/datav-vue3/index.d.ts",
+  "types": "./dist/datav-vue3/packages/datav-vue3/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/datav-vue3.es.js",
       "import": "./dist/datav-vue3.es.js",
-      "types": "./dist/packages/datav-vue3/index.d.ts"
+      "types": "./dist/datav-vue3/packages/datav-vue3/index.d.ts"
     },
     "./dist/style.css": {
       "import": "./dist/style.css",
