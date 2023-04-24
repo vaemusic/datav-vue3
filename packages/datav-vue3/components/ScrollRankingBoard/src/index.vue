@@ -231,10 +231,10 @@ function calcHeights(onresize = false) {
     state.heights = new Array(data.length).fill(avgHeight)
 }
 
-async function animation(start = false) {
-  // let { avgHeight, animationIndex, mergedConfig, rowsData, animation, updater } = this
+const isSingle = computed(() => state.mergedConfig.carousel === 'single')
 
-  const { waitTime, carousel, rowNum } = state.mergedConfig
+async function animation(start = false) {
+  const { waitTime, rowNum } = state.mergedConfig
 
   const rowLength = state.rowsData.length
 
@@ -248,7 +248,7 @@ async function animation(start = false) {
       return
   }
 
-  const animationNum = carousel === 'single' ? 1 : rowNum
+  const animationNum = isSingle.value ? 1 : rowNum
 
   const rows = state.rowsData.slice(state.animationIndex)
   rows.push(...state.rowsData.slice(0, state.animationIndex))
@@ -260,7 +260,7 @@ async function animation(start = false) {
   if (updater !== state.updater)
     return
 
-  state.heights.splice(0, animationNum, ...new Array(animationNum).fill(0))
+  state.heights.fill(0, isSingle.value ? 0 : animationNum, isSingle.value ? animationNum : animationNum * 2)
 
   state.animationIndex += animationNum
 
