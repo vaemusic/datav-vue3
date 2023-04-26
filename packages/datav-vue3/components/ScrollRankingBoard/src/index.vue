@@ -253,14 +253,14 @@ async function animation(start = false) {
   const rows = state.rowsData.slice(state.animationIndex)
   rows.push(...state.rowsData.slice(0, state.animationIndex))
 
-  state.rows = rows.slice(0, rowNum + 1)
+  state.rows = rows.slice(0, isSingle.value ? rowNum + 1 : rowNum * 2)
   state.heights = new Array(rowLength).fill(state.avgHeight)
 
   await new Promise(resolve => setTimeout(resolve, 300))
   if (updater !== state.updater)
     return
 
-  state.heights.fill(0, isSingle.value ? 0 : animationNum, isSingle.value ? animationNum : animationNum * 2)
+  state.heights.fill(0, 0, animationNum)
 
   state.animationIndex += animationNum
 
