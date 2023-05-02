@@ -27,3 +27,4 @@ import demo from './demo.vue'
 :-: | :-: | :-: | :-: | :-: | :-:
 title |	边框标题 |	String |	- |	'' | 否
 titleWidth |	标题宽度 |	Number |	- |	250 | 否
+animate<Badge type="tip" text="1.5.0" /> |	边框动画 |	Boolean |	- |	true | 否
