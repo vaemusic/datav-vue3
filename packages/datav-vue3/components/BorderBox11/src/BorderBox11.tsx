@@ -17,6 +17,10 @@ const borderBox11Props = {
     type: Number,
     default: 250,
   },
+  animate: {
+    type: Boolean,
+    default: true,
+  },
 }
 
 export type BorderBox11Props = ExtractPropTypes<typeof borderBox11Props>
@@ -45,7 +49,7 @@ export default defineComponent({
     }
   },
   render() {
-    const { $slots, width, height, filterId, mergedColor, backgroundColor, title, titleWidth } = this
+    const { $slots, width, height, filterId, mergedColor, backgroundColor, title, titleWidth, animate } = this
     return (
       <div ref="borderBox11" class="dv-border-box-11">
         <svg class="dv-border-svg-container" width={width} height={height}>
@@ -127,13 +131,15 @@ export default defineComponent({
           ${(width - titleWidth) / 2 - 25}, 46 ${(width - titleWidth) / 2 - 4}, 46
         `}
           >
-            <animate
-              attributeName="opacity"
-              values="1;0.7;1"
-              dur="2s"
-              begin="0s"
-              repeatCount="indefinite"
-            />
+            { animate
+              && <animate
+                attributeName="opacity"
+                values="1;0.7;1"
+                dur="2s"
+                begin="0s"
+                repeatCount="indefinite"
+              />
+            }
           </polygon>
 
           <polygon
@@ -145,13 +151,15 @@ export default defineComponent({
           ${(width - titleWidth) / 2 - 55}, 46 ${(width - titleWidth) / 2 - 34}, 46
         `}
           >
-            <animate
-              attributeName="opacity"
-              values="0.7;0.4;0.7"
-              dur="2s"
-              begin="0s"
-              repeatCount="indefinite"
-            />
+            { animate
+              && <animate
+                attributeName="opacity"
+                values="0.7;0.4;0.7"
+                dur="2s"
+                begin="0s"
+                repeatCount="indefinite"
+              />
+            }
           </polygon>
 
           <polygon
@@ -163,13 +171,15 @@ export default defineComponent({
           ${(width - titleWidth) / 2 - 85}, 46 ${(width - titleWidth) / 2 - 64}, 46
         `}
           >
-            <animate
-              attributeName="opacity"
-              values="0.5;0.2;0.5"
-              dur="2s"
-              begin="0s"
-              repeatCount="indefinite"
-            />
+            { animate
+              && <animate
+                attributeName="opacity"
+                values="0.5;0.2;0.5"
+                dur="2s"
+                begin="0s"
+                repeatCount="indefinite"
+              />
+            }
           </polygon>
 
           <polygon
@@ -181,13 +191,15 @@ export default defineComponent({
           ${(width + titleWidth) / 2 + 3}, 46 ${(width + titleWidth) / 2 + 24}, 46
         `}
           >
-            <animate
-              attributeName="opacity"
-              values="1;0.7;1"
-              dur="2s"
-              begin="0s"
-              repeatCount="indefinite"
-            />
+            { animate
+              && <animate
+                attributeName="opacity"
+                values="1;0.7;1"
+                dur="2s"
+                begin="0s"
+                repeatCount="indefinite"
+              />
+            }
           </polygon>
 
           <polygon
@@ -199,13 +211,15 @@ export default defineComponent({
           ${(width + titleWidth) / 2 + 33}, 46 ${(width + titleWidth) / 2 + 54}, 46
         `}
           >
-            <animate
-              attributeName="opacity"
-              values="0.7;0.4;0.7"
-              dur="2s"
-              begin="0s"
-              repeatCount="indefinite"
-            />
+            { animate
+              && <animate
+                attributeName="opacity"
+                values="0.7;0.4;0.7"
+                dur="2s"
+                begin="0s"
+                repeatCount="indefinite"
+              />
+            }
           </polygon>
 
           <polygon
@@ -217,13 +231,15 @@ export default defineComponent({
           ${(width + titleWidth) / 2 + 63}, 46 ${(width + titleWidth) / 2 + 84}, 46
         `}
           >
-            <animate
-              attributeName="opacity"
-              values="0.5;0.2;0.5"
-              dur="2s"
-              begin="0s"
-              repeatCount="indefinite"
-            />
+            { animate
+              && <animate
+                attributeName="opacity"
+                values="0.5;0.2;0.5"
+                dur="2s"
+                begin="0s"
+                repeatCount="indefinite"
+              />
+            }
           </polygon>
 
           <text
