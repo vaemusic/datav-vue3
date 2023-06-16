@@ -6,6 +6,7 @@
   "license": "MIT",
   "private": "true",
   "homepage": "https://github.com/vaemusic/datav-vue3",
+  "type": "module",
   "scripts": {
     "dev": "pnpm run --filter @kjgl77/docs docs:dev",
     "dev:docs": "pnpm run --filter @kjgl77/docs dev",
@@ -22,13 +23,13 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.38.5",
+    "@inquirer/prompts": "^2.1.1",
     "@types/node": "^18.15.12",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "eslint": "^8.38.0",
     "fs-extra": "^11.1.1",
     "handlebars": "^4.7.7",
-    "inquirer": "^9.1.5",
     "jsdom": "^21.1.1",
     "pnpm": "^7.32.2",
     "typescript": "^5.0.4",
