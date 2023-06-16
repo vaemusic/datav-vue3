@@ -118,7 +118,4 @@ export default defineConfig({
       jsxInject: 'import { h } from "vue"',
     }
   },
-  vue: {
-    reactivityTransform: path.resolve(__dirname, 'src'),
-  }
 })
