@@ -13,6 +13,7 @@
 
 <script lang="ts" setup>
 import { lighten } from '@jiaminghi/color'
+import type { Component } from 'vue'
 import Border1 from './BorderBox1.vue'
 import Border2 from './BorderBox2.vue'
 import Border3 from './BorderBox3.vue'
@@ -24,7 +25,7 @@ interface ButtonProps {
   color?: string
   fontColor?: string
   bg?: boolean
-  border?: string
+  border?: string | Component
   fontSize?: number
 }
 
