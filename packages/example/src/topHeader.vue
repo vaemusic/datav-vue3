@@ -20,7 +20,7 @@
     <Decoration5 absolute top="4%" :color="['#516AA6', '#516AA6']" style="width: 100%; height: 40px" :dur="5" />
   </div>
   <div w30 ml10>
-    <DvButton @click="changeColor">
+    <DvButton :border="BorderBox12" @click="changeColor">
       测试
     </DvButton>
   </div>
@@ -29,7 +29,7 @@
 <script lang="ts" setup>
 import { useDateFormat, useNow } from '@vueuse/core'
 import { reactive, ref } from 'vue'
-import { Decoration5, Button as DvButton } from '@kjgl77/datav-vue3'
+import { BorderBox12, Decoration5, Button as DvButton } from '@kjgl77/datav-vue3'
 
 const now = useDateFormat(useNow(), 'YYYY-MM-DD HH:mm:ss')
 
@@ -90,7 +90,7 @@ function changeColor() {
 
   .title {
     flex:2;
-    padding-left: v-bind("isIndex ? '800px' : '180px'");
+    padding-left: 180px;
     padding-top: 0.5%;
     font-size: 25px;
     color: #b4e4ff;
