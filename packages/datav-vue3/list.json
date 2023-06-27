@@ -1,6 +1,13 @@
 [
   {
     "compType": "Other",
+    "compName": "Button",
+    "compZhName": "按钮",
+    "compDesc": "按钮组件",
+    "compClassName": "button"
+  },
+  {
+    "compType": "Other",
     "compName": "ConicalColumnChart",
     "compZhName": "锥形柱图",
     "compDesc": "锥形柱图",
