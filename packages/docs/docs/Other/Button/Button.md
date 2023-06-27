@@ -6,7 +6,7 @@ import demo from './demo.vue'
 
 <!-- 正文开始 -->
 
-# 按钮
+# 按钮 <Badge type="tip" text="1.6.0" />
 
 按钮组件
 
