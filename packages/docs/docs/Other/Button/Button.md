@@ -29,3 +29,13 @@ import demo from './demo.vue'
 `fontSize` | 字体大小 | number | - | `14` | 否
 `bg` | 是否显示背景 | boolean | `true / false` | `true` | 否
 `border` | 边框类型 | string / Component | `Border1 到 Border6, 也可以传入自己的 svg 组件或 datav 的边框组件` | `Border1` | 否
+
+:::tip
+`border` 属性可以传入自己自定义的 svg 边框组件或者 datav 组件库的边框组件。
+
+自定义 svg 边框组件的实现可以参考 button 源码中 BorderBox1 ~ BorderBox6 的代码，
+
+svg 边框组件源码文件位置：https://github.com/vaemusic/datav-vue3/blob/master/packages/datav-vue3/components/Button/src/BorderBox1.vue
+
+示例代码文件地址：https://github.com/vaemusic/datav-vue3/blob/master/packages/example/src/topHeader.vue#L23
+:::
