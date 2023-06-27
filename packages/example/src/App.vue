@@ -1,27 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { BorderBox2 as DvBorderBox2 } from '@kjgl77/datav-vue3'
-
-const width = ref(20)
-const borderRef = ref<InstanceType<typeof DvBorderBox2>>()
-
-function handelClick() {
-  width.value += 2
-  borderRef.value?.initWH()
-}
+import topHeader from './topHeader.vue'
 </script>
 
 <template>
-  <div :style="`width:${width}rem;height:20rem`">
-    <DvBorderBox2 ref="borderRef">
-      <div style="padding-top:10rem;color:#fff">
-        test
-      </div>
-    </DvBorderBox2>
-  </div>
-  <button style="margin-top: 2rem;" @click="handelClick">
-    Add
-  </button>
+  <topHeader />
 </template>
 
 <style scoped>
