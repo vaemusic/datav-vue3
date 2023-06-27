@@ -28,4 +28,4 @@ import demo from './demo.vue'
 `fontColor` | 字体颜色 | string | - | `默认和 color 相同` | 否
 `fontSize` | 字体大小 | number | - | `14` | 否
 `bg` | 是否显示背景 | boolean | `true / false` | `true` | 否
-`border` | 边框类型 | string | `Border1 到 Border6` | `Border1` | 否
+`border` | 边框类型 | string / Component | `Border1 到 Border6, 也可以传入自己的 svg 组件或 datav 的边框组件` | `Border1` | 否
