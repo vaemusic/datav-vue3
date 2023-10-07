@@ -15,12 +15,12 @@
   "homepage": "https://github.com/vaemusic/datav-vue3",
   "main": "./dist/datav-vue3.es.js",
   "module": "./dist/datav-vue3.es.js",
-  "types": "./dist/datav-vue3/packages/datav-vue3/index.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/datav-vue3.es.js",
       "import": "./dist/datav-vue3.es.js",
-      "types": "./dist/datav-vue3/packages/datav-vue3/index.d.ts"
+      "types": "./dist/index.d.ts"
     },
     "./dist/style.css": {
       "import": "./dist/style.css",
