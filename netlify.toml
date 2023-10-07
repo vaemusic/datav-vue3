@@ -1,13 +1,13 @@
 [build.environment]
-  NPM_FLAGS = "--version"
-  NODE_VERSION = "16"
+NPM_FLAGS = "--version"
+NODE_VERSION = "18"
 
 [build]
-  base = "/"
-  publish = "packages/docs/docs/.vitepress/dist"
-  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build:docs"
+base = "/"
+publish = "packages/docs/docs/.vitepress/dist"
+command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build:docs"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+from = "/*"
+to = "/index.html"
+status = 200
