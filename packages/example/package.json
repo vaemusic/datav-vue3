@@ -12,6 +12,6 @@
     "@kjgl77/datav-vue3": "workspace:*"
   },
   "devDependencies": {
-    "unocss": "^0.53.1"
+    "unocss": "^0.56.5"
   }
 }
