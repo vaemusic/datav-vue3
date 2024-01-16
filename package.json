@@ -2,7 +2,7 @@
   "name": "datav-vue3-monorepo",
   "version": "0.1.7",
   "description": "Datav for vue3+vite",
-  "packageManager": "pnpm@8.8.0",
+  "packageManager": "pnpm@8.14.1",
   "license": "MIT",
   "private": "true",
   "homepage": "https://github.com/vaemusic/datav-vue3",
@@ -19,24 +19,24 @@
     "test": "vitest"
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.4.14"
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.43.1",
-    "@inquirer/prompts": "^3.2.0",
+    "@inquirer/prompts": "^3.3.0",
     "@types/node": "^18.18.4",
-    "@vitejs/plugin-vue": "^4.4.0",
-    "@vitejs/plugin-vue-jsx": "^3.0.2",
-    "eslint": "^8.51.0",
-    "fs-extra": "^11.1.1",
+    "@vitejs/plugin-vue": "^5.0.3",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "eslint": "^8.56.0",
+    "fs-extra": "^11.2.0",
     "handlebars": "^4.7.8",
-    "jsdom": "^22.1.0",
-    "pnpm": "^8.8.0",
-    "typescript": "^5.2.2",
-    "unplugin-auto-import": "^0.16.6",
-    "vite": "^4.4.11",
-    "vitest": "^0.34.6",
-    "vue-tsc": "^1.8.16"
+    "jsdom": "^23.2.0",
+    "pnpm": "^8.14.1",
+    "typescript": "^5.3.3",
+    "unplugin-auto-import": "^0.17.3",
+    "vite": "^5.0.11",
+    "vitest": "^1.2.0",
+    "vue-tsc": "^1.8.27"
   },
   "eslintConfig": {
     "extends": "@antfu"

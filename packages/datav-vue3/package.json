@@ -2,7 +2,7 @@
   "name": "@kjgl77/datav-vue3",
   "version": "1.7.1",
   "description": "Datav for vue3+vite",
-  "packageManager": "pnpm@8.8.0",
+  "packageManager": "pnpm@8.14.1",
   "author": "kjgl77 <745385015@qq.com>",
   "license": "MIT",
   "keywords": [
@@ -39,12 +39,12 @@
     "@jiaminghi/c-render": "^0.4.3",
     "@jiaminghi/charts": "^0.2.18",
     "@jiaminghi/color": "^1.1.3",
-    "@vueuse/core": "^10.4.1"
+    "@vueuse/core": "^10.7.2"
   },
   "devDependencies": {
     "@jiaminghi/fs": "^0.1.1",
     "less": "^4.2.0",
-    "vite-plugin-dts": "^3.6.0",
+    "vite-plugin-dts": "^3.7.1",
     "vite-plugin-libcss": "^1.1.1"
   },
   "eslintConfig": {

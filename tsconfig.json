@@ -3,7 +3,10 @@
     "baseUrl": ".",
     "module": "ESNext",
     "target": "es2016",
-    "lib": ["DOM", "ESNext"],
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
     "strict": true,
     "jsx": "preserve",
     "esModuleInterop": true,
@@ -14,16 +17,28 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
+    "noImplicitAny": false,
     "types": [
       "vite/client",
       "node"
     ],
     "paths": {
-      "@*": ["src/*"],
-      "@kjgl77/datav-vue3/*": ["packages/datav-vue3/*"],
-      "@kjgl77/docs/*": ["packages/docs/*"]
+      "@*": [
+        "src/*"
+      ],
+      "@kjgl77/datav-vue3/*": [
+        "packages/datav-vue3/*"
+      ],
+      "@kjgl77/docs/*": [
+        "packages/docs/*"
+      ]
     },
     "outDir": "./"
   },
-  "exclude": ["packages/datav-vue3/dist", "packages/docs/docs", "node_modules", "script"]
+  "exclude": [
+    "packages/datav-vue3/dist",
+    "packages/docs/docs",
+    "node_modules",
+    "script"
+  ]
 }
