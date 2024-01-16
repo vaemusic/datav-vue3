@@ -3,10 +3,16 @@
   "rules": {
     "array-bracket-spacing": 0,
     "no-console": 0,
-    "vue/component-tags-order": [
+    "vue/block-order": [
       "error",
       {
-        "order": [["template", "script"], "style"]
+        "order": [
+          [
+            "template",
+            "script"
+          ],
+          "style"
+        ]
       }
     ]
   },
