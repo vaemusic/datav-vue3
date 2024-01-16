@@ -1,6 +1,6 @@
 <template>
   <div w50rem h34rem flex="~ col" justify-center items-center bg-dark>
-    <dv-active-ring-chart :config="conf" style="width:300px;height:300px"/>
+    <dv-active-ring-chart :config="conf" style="width:300px;height:300px" :isDigitalFlop="false"/>
     <div flex="~ col" gap2 justify-center items-center>
       <div>
         <span text-white>城市：</span>
@@ -46,6 +46,7 @@ const conf = reactive({
       value: 54,
     },
   ],
+  numToFixed: 2,
 })
 
 const addData = () => {

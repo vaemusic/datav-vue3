@@ -2,7 +2,12 @@
   <div class="dv-active-ring-chart">
     <div ref="activeRingChart" class="active-ring-chart-container" />
     <div class="active-ring-info">
-      <DigitalFlop :config="digitalFlop" />
+      <div v-if="isDigitalFlop">
+        <DigitalFlop :config="digitalFlop" />
+      </div>
+      <div v-else class="active-ring-name" :style="fontSize">
+        {{ fixedDisplayValue }}
+      </div>
       <div class="active-ring-name" :style="fontSize">
         {{ ringName }}
       </div>
@@ -20,90 +25,99 @@ const props = defineProps({
     type: Object,
     default: () => ({}),
   },
+  isDigitalFlop: {
+    type: Boolean,
+    default: true,
+  },
 })
 const activeRingChart = ref(null)
 const state = reactive({
   defaultConfig: {
     /**
-         * @description Ring radius
-         * @type {String|Number}
-         * @default radius = '50%'
-         * @example radius = '50%' | 100
-         */
+     * @description Ring radius
+     * @type {string | number}
+     * @default radius = '50%'
+     * @example radius = '50%' | 100
+     */
     radius: '50%',
     /**
-         * @description Active ring radius
-         * @type {String|Number}
-         * @default activeRadius = '55%'
-         * @example activeRadius = '55%' | 110
-         */
+     * @description Active ring radius
+     * @type {string | number}
+     * @default activeRadius = '55%'
+     * @example activeRadius = '55%' | 110
+     */
     activeRadius: '55%',
     /**
-         * @description Ring data
-         * @type {Array<Object>}
-         * @default data = [{ name: '', value: 0 }]
-         */
+     * @description Ring data
+     * @type {Array<object>}
+     * @default data = [{ name: '', value: 0 }]
+     */
     data: [{ name: '', value: 0 }],
     /**
-         * @description Ring line width
-         * @type {Number}
-         * @default lineWidth = 20
-         */
+     * @description Ring line width
+     * @type {number}
+     * @default lineWidth = 20
+     */
     lineWidth: 20,
     /**
-         * @description Active time gap (ms)
-         * @type {Number}
-         * @default activeTimeGap = 3000
-         */
+     * @description Active time gap (ms)
+     * @type {number}
+     * @default activeTimeGap = 3000
+     */
     activeTimeGap: 3000,
     /**
-         * @description Ring color (hex|rgb|rgba|color keywords)
-         * @type {Array<String>}
-         * @default color = [Charts Default Color]
-         * @example color = ['#000', 'rgb(0, 0, 0)', 'rgba(0, 0, 0, 1)', 'red']
-         */
+     * @description Ring color (hex|rgb|rgba|color keywords)
+     * @type {Array<string>}
+     * @default color = [Charts Default Color]
+     * @example color = ['#000', 'rgb(0, 0, 0)', 'rgba(0, 0, 0, 1)', 'red']
+     */
     color: [],
     /**
-         * @description Text color
-         * @type {String}
-         * @default textColor = '#fff'
-         */
+     * @description Text color
+     * @type {string}
+     * @default textColor = '#fff'
+     */
     textColor: '#fff',
     /**
-         * @description Digital flop style
-         * @type {Object}
-         */
+     * @description Digital flop style
+     * @type {object}
+     */
     digitalFlopStyle: {
       fontSize: 25,
       fill: '#fff',
     },
     /**
-         * @description Digital flop toFixed
-         * @type {Number}
-         */
+     * @description Digital flop toFixed
+     * @type {number}
+     */
     digitalFlopToFixed: 0,
     /**
-         * @description Digital flop unit
-         * @type {String}
-         */
+     * @description percent number toFixed
+     * @type {number}
+     */
+    numToFixed: 0,
+    /**
+     * @description Digital flop unit
+     * @type {string}
+     */
     digitalFlopUnit: '',
     /**
-         * @description CRender animationCurve
-         * @type {String}
-         * @default animationCurve = 'easeOutCubic'
-         */
+     * @description CRender animationCurve
+     * @type {string}
+     * @default animationCurve = 'easeOutCubic'
+     */
     animationCurve: 'easeOutCubic',
     /**
-         * @description CRender animationFrame
-         * @type {String}
-         * @default animationFrame = 50
-         */
+     * @description CRender animationFrame
+     * @type {string}
+     * @default animationFrame = 50
+     */
     animationFrame: 50,
     /**
-         * @description showOriginValue
-         * @type {Boolean}
-         * @default showOriginValue = false
-         */
+     * @description showOriginValue
+     * @type {boolean}
+     * @default showOriginValue = false
+     */
     showOriginValue: false,
   },
 
@@ -116,6 +130,37 @@ const state = reactive({
   animationHandler: '',
 })
 
+const displayValue = computed(() => {
+  if (!state.mergedConfig)
+    return 0
+
+  const { data, showOriginValue } = state.mergedConfig
+
+  const value = data.map(({ value }) => value)
+
+  let displayValueTemp
+
+  if (showOriginValue) {
+    displayValueTemp = value[state.activeIndex]
+  }
+  else {
+    const sum = value.reduce((all, v) => all + v, 0)
+
+    const percent = Number.parseFloat((value[state.activeIndex] / sum) * 100) || 0
+
+    displayValueTemp = percent
+  }
+
+  return displayValueTemp
+})
+
+const fixedDisplayValue = computed(() => {
+  if (!state.mergedConfig)
+    return displayValue.value.toFixed(state.defaultConfig.numToFixed)
+  const { numToFixed, showOriginValue } = state.mergedConfig
+  return `${showOriginValue ? displayValue.value.toFixed(numToFixed) : `${displayValue.value.toFixed(numToFixed)}%`}`
+})
+
 const digitalFlop = computed(() => {
   if (!state.mergedConfig)
     return {}
@@ -123,28 +168,13 @@ const digitalFlop = computed(() => {
   const {
     digitalFlopStyle,
     digitalFlopToFixed,
-    data,
     showOriginValue,
     digitalFlopUnit,
   } = state.mergedConfig
-  const value = data.map(({ value }) => value)
-
-  let displayValue
-
-  if (showOriginValue) {
-    displayValue = value[state.activeIndex]
-  }
-  else {
-    const sum = value.reduce((all, v) => all + v, 0)
-
-    const percent = parseFloat((value[state.activeIndex] / sum) * 100) || 0
-
-    displayValue = percent
-  }
 
   return {
     content: showOriginValue ? `{nt}${digitalFlopUnit}` : `{nt}${digitalFlopUnit || '%'}`,
-    number: [displayValue],
+    number: [displayValue.value],
     style: digitalFlopStyle,
     toFixed: digitalFlopToFixed,
   }
@@ -241,7 +271,7 @@ function getRealRadius(active = false) {
   let realRadius = active ? activeRadius : radius
 
   if (typeof realRadius !== 'number')
-    realRadius = (parseInt(realRadius) / 100) * maxRadius
+    realRadius = (Number.parseInt(realRadius) / 100) * maxRadius
 
   const insideRadius = realRadius - halfLineWidth
   const outSideRadius = realRadius + halfLineWidth
