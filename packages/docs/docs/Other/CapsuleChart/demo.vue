@@ -41,6 +41,7 @@ const config = reactive({
     },
   ],
   colors: ['#e062ae', '#fb7293', '#e690d1', '#32c5e9', '#96bfff'],
-  unit: '万元'
+  unit: '万元',
+  labelNum: 8,
 })
 </script>

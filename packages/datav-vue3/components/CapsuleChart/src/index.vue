@@ -53,18 +53,18 @@ const props = defineProps({
 const state = reactive({
   defaultConfig: {
     /**
-         * @description Capsule chart data
-         * @type {Array<Object>}
-         * @default data = []
-         * @example data = [{ name: 'foo1', value: 100 }, { name: 'foo2', value: 100 }]
-         */
+     * @description Capsule chart data
+     * @type {Array<object>}
+     * @default data = []
+     * @example data = [{ name: 'foo1', value: 100 }, { name: 'foo2', value: 100 }]
+     */
     data: [],
     /**
-         * @description Colors (hex|rgb|rgba|color keywords)
-         * @type {Array<String>}
-         * @default color = ['#37a2da', '#32c5e9', '#67e0e3', '#9fe6b8', '#ffdb5c', '#ff9f7f', '#fb7293']
-         * @example color = ['#000', 'rgb(0, 0, 0)', 'rgba(0, 0, 0, 1)', 'red']
-         */
+     * @description Colors (hex|rgb|rgba|color keywords)
+     * @type {Array<string>}
+     * @default color = ['#37a2da', '#32c5e9', '#67e0e3', '#9fe6b8', '#ffdb5c', '#ff9f7f', '#fb7293']
+     * @example color = ['#000', 'rgb(0, 0, 0)', 'rgba(0, 0, 0, 1)', 'red']
+     */
     colors: [
       '#37a2da',
       '#32c5e9',
@@ -75,29 +75,35 @@ const state = reactive({
       '#fb7293',
     ],
     /**
-         * @description Chart unit
-         * @type {String}
-         * @default unit = ''
-         */
+     * @description Chart unit
+     * @type {string}
+     * @default unit = ''
+     */
     unit: '',
     /**
-         * @description Show item value
-         * @type {Boolean}
-         * @default showValue = false
-         */
+     * @description Show item value
+     * @type {boolean}
+     * @default showValue = false
+     */
     showValue: false,
     /**
-         * @description Text color
-         * @type {String}
-         * @default textColor = '#fff'
-         */
+     * @description Text color
+     * @type {string}
+     * @default textColor = '#fff'
+     */
     textColor: '#fff',
     /**
-         * @description Chart font size
-         * @type {Number}
-         * @default fontSize = 12
-         */
+     * @description Chart font size
+     * @type {number}
+     * @default fontSize = 12
+     */
     fontSize: 12,
+    /**
+     * @description num of labels
+     * @type {number}
+     * @default labelNum = 6
+     */
+    labelNum: 6,
   },
 
   mergedConfig: null,
@@ -136,7 +142,7 @@ function mergeConfig() {
 }
 
 function calcCapsuleLengthAndLabelData() {
-  const { data } = state.mergedConfig
+  const { data, labelNum } = state.mergedConfig
 
   if (!data.length || data.length === 0) {
     state.labelData = []
@@ -155,7 +161,7 @@ function calcCapsuleLengthAndLabelData() {
   const oneFifth = maxValue / 5
 
   const labelData = Array.from(
-    new Set(new Array(6).fill(0).map((v, i) => Math.ceil(i * oneFifth)))
+    new Set(Array.from({ length: labelNum }).fill(0).map((v, i) => Math.ceil(i * oneFifth)))
   )
 
   state.labelData = labelData
