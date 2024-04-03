@@ -13,7 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "unocss": "^0.58.3",
-    "vitepress": "1.0.0-rc.37"
+    "vitepress": "1.0.2"
   },
   "dependencies": {
     "@kjgl77/datav-vue3": "workspace:*"
