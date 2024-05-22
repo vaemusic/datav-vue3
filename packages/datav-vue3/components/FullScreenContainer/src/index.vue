@@ -18,7 +18,7 @@ const state = reactive({
   ready: false,
 })
 
-const initConfig = () => {
+function initConfig() {
   const { width, height } = screen
 
   state.allWidth = width
@@ -29,17 +29,17 @@ const initConfig = () => {
   }
 }
 
-const setAppScale = () => {
+function setAppScale() {
   const currentWidth = document.body.clientWidth
   if (fullScreenContainer.value)
     fullScreenContainer.value.style.transform = `scale(${currentWidth / state.allWidth})`
 }
 
-const onResize = () => {
+function onResize() {
   setAppScale()
 }
 
-const afterAutoResizeMixinInit = () => {
+function afterAutoResizeMixinInit() {
   initConfig()
   setAppScale()
 
@@ -47,7 +47,6 @@ const afterAutoResizeMixinInit = () => {
 }
 
 autoResize(fullScreenContainer, onResize, afterAutoResizeMixinInit)
-
 </script>
 
 <style lang="less">

@@ -61,49 +61,49 @@ const state = reactive({
 
   defaultConfig: {
     /**
-         * @description Data
-         * @type {Array<Number>}
-         * @default data = []
-         * @example data = [60, 40]
-         */
+     * @description Data
+     * @type {Array<number>}
+     * @default data = []
+     * @example data = [60, 40]
+     */
     data: [],
     /**
-         * @description Shape of wanter level pond
-         * @type {String}
-         * @default shape = 'rect'
-         * @example shape = 'rect' | 'roundRect' | 'round'
-         */
+     * @description Shape of wanter level pond
+     * @type {string}
+     * @default shape = 'rect'
+     * @example shape = 'rect' | 'roundRect' | 'round'
+     */
     shape: 'rect',
     /**
-         * @description Water wave number
-         * @type {Number}
-         * @default waveNum = 3
-         */
+     * @description Water wave number
+     * @type {number}
+     * @default waveNum = 3
+     */
     waveNum: 3,
     /**
-         * @description Water wave height (px)
-         * @type {Number}
-         * @default waveHeight = 40
-         */
+     * @description Water wave height (px)
+     * @type {number}
+     * @default waveHeight = 40
+     */
     waveHeight: 40,
     /**
-         * @description Wave opacity
-         * @type {Number}
-         * @default waveOpacity = 0.4
-         */
+     * @description Wave opacity
+     * @type {number}
+     * @default waveOpacity = 0.4
+     */
     waveOpacity: 0.4,
     /**
-         * @description Colors (hex|rgb|rgba|color keywords)
-         * @type {Array<String>}
-         * @default colors = ['#00BAFF', '#3DE7C9']
-         * @example colors = ['#000', 'rgb(0, 0, 0)', 'rgba(0, 0, 0, 1)', 'red']
-         */
+     * @description Colors (hex|rgb|rgba|color keywords)
+     * @type {Array<string>}
+     * @default colors = ['#00BAFF', '#3DE7C9']
+     * @example colors = ['#000', 'rgb(0, 0, 0)', 'rgba(0, 0, 0, 1)', 'red']
+     */
     colors: ['#3DE7C9', '#00BAFF'],
     /**
-         * @description Formatter
-         * @type {String}
-         * @default formatter = '{value}%'
-         */
+     * @description Formatter
+     * @type {string}
+     * @default formatter = '{value}%'
+     */
     formatter: '{value}%',
   },
 
@@ -240,7 +240,7 @@ function getWaveShapes() {
   const pointXGap = w / waveNum / 2
 
   return data.map((v) => {
-    let points = new Array(pointsNum).fill(0).map((foo, j) => {
+    let points = Array.from({ length: pointsNum }).fill(0).map((foo, j) => {
       const x = w - pointXGap * j
 
       const startY = (1 - v / 100) * h

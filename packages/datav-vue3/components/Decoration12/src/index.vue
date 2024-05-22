@@ -110,15 +110,15 @@ const props = defineProps({
     default: () => ([]),
   },
   /**
-     * @description Scan animation dur
-     */
+   * @description Scan animation dur
+   */
   scanDur: {
     type: Number,
     default: 3,
   },
   /**
-     * @description Halo animation dur
-     */
+   * @description Halo animation dur
+   */
   haloDur: {
     type: Number,
     default: 2,
@@ -195,10 +195,10 @@ function calcPathD() {
   const r = width.value / 4
   let lastEndPoints = getCircleRadianPoint(x.value, y.value, r, startAngle)
 
-  state.pathD = new Array(state.segment)
+  state.pathD = Array.from({ length: state.segment })
     .fill('')
     .map((_, i) => {
-      const endPoints = getCircleRadianPoint(x.value, y.value, r, startAngle - (i + 1) * angleGap).map(_ => parseFloat(_.toFixed(5)))
+      const endPoints = getCircleRadianPoint(x.value, y.value, r, startAngle - (i + 1) * angleGap).map(_ => Number.parseFloat(_.toFixed(5)))
       const d = `M${lastEndPoints.join(',')} A${r}, ${r} 0 0 0 ${endPoints.join(',')}`
       lastEndPoints = endPoints
       return d
@@ -208,7 +208,7 @@ function calcPathD() {
 function calcPathColor() {
   const colorGap = 100 / (state.segment - 1)
 
-  state.pathColor = new Array(state.segment)
+  state.pathColor = Array.from({ length: state.segment })
     .fill(state.mergedColor[0])
     .map((_, i) => fade(state.mergedColor[0], 100 - i * colorGap))
 }
@@ -216,7 +216,7 @@ function calcPathColor() {
 function calcCircleR() {
   const radiusGap = (width.value / 2 - state.ringWidth / 2) / state.ringNum
 
-  state.circleR = new Array(state.ringNum)
+  state.circleR = Array.from({ length: state.ringNum })
     .fill(0)
     .map((_, i) => radiusGap * (i + 1))
 }
@@ -225,7 +225,7 @@ function calcSplitLinePoints() {
   const angleGap = Math.PI / 6
   const r = width.value / 2
 
-  state.splitLinePoints = new Array(6)
+  state.splitLinePoints = Array.from({ length: 6 })
     .fill('')
     .map((_, i) => {
       const startAngle = angleGap * (i + 1)
@@ -241,7 +241,7 @@ function calcArcD() {
   const angleGap = Math.PI / 6
   const r = width.value / 2 - 1
 
-  state.arcD = new Array(4)
+  state.arcD = Array.from({ length: 4 })
     .fill('')
     .map((_, i) => {
       const startAngle = angleGap * (3 * i + 1)

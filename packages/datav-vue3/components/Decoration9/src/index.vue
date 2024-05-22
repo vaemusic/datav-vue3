@@ -138,7 +138,6 @@ function onResize() {
 function mergeColor() {
   state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
 }
-
 </script>
 
 <style lang="less">

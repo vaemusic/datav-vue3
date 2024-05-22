@@ -47,7 +47,7 @@ import { BorderBox13Plugin } from './components/BorderBox13'
 
 const DataVVue3Plugin: Plugin = {
   install(app: App) {
-        ButtonPlugin.install?.(app)
+    ButtonPlugin.install?.(app)
     ConicalColumnChartPlugin.install?.(app)
     PercentPondPlugin.install?.(app)
     WaterLevelPondPlugin.install?.(app)

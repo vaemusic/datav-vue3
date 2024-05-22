@@ -3,10 +3,10 @@ import type { Point } from '../types'
 /* eslint-disable prefer-rest-params */
 export function randomExtend(minNum: number, maxNum: number) {
   if (arguments.length === 1)
-    return parseInt((Math.random() * minNum + 1).toString(), 10)
+    return Number.parseInt((Math.random() * minNum + 1).toString(), 10)
 
   else
-    return parseInt((Math.random() * (maxNum - minNum + 1) + minNum).toString(), 10)
+    return Number.parseInt((Math.random() * (maxNum - minNum + 1) + minNum).toString(), 10)
 }
 
 export function debounce<T>(delay: number, callback: (...args: T[]) => void, vm: T) {
@@ -38,10 +38,10 @@ export function getPointDistance(pointOne: number[], pointTwo: number[]) {
 
 /**
  * @description Get the coordinates of the specified radian on the circle
- * @param {Number} x      Circle x coordinate
- * @param {Number} y      Circle y coordinate
- * @param {Number} radius Circle radius
- * @param {Number} radian Specfied radian
+ * @param {number} x      Circle x coordinate
+ * @param {number} y      Circle y coordinate
+ * @param {number} radius Circle radius
+ * @param {number} radian Specfied radian
  * @return {Array} Postion of point
  */
 
@@ -69,7 +69,7 @@ function getTwoPointDistance(pointOne: Point, pointTwo: Point) {
 }
 
 export function getPolylineLength(points: Array<Point>) {
-  const lineSegments = new Array(points.length - 1).fill(0).map((foo, i) => {
+  const lineSegments = Array.from({ length: points.length - 1 }).fill(0).map((foo, i) => {
     return [points[i], points[i + 1]]
   })
   const lengths = lineSegments.map((item) => {
@@ -116,9 +116,9 @@ export function deepMerge(target: any, merged: any) {
 
 /**
  * @description Clone an object or array
- * @param {Object|Array} object Cloned object
- * @param {Boolean} recursion   Whether to use recursive cloning
- * @return {Object|Array} Clone object
+ * @param {object | Array} object Cloned object
+ * @param {boolean} recursion   Whether to use recursive cloning
+ * @return {object | Array} Clone object
  */
 export function deepClone(object: any, recursion: boolean) {
   if (!object)

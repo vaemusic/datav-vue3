@@ -47,23 +47,21 @@ const state = reactive({
   mergedColor: [],
 })
 
-const mergeColor = () => {
+function mergeColor() {
   state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
 }
 
-const onResize = () => {
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+function onResize() {
   calcSVGData()
 }
 
-const afterAutoResizeMixinInit = () => {
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+function afterAutoResizeMixinInit() {
   calcSVGData()
 }
 
 const { width, height } = autoResize(decoration2, onResize, afterAutoResizeMixinInit)
 
-const calcSVGData = () => {
+function calcSVGData() {
   if (props.reverse) {
     state.w = 1
     state.h = height.value
@@ -89,7 +87,6 @@ watch(() => props.reverse, () => {
 onMounted(() => {
   mergeColor()
 })
-
 </script>
 
 <style lang="less">

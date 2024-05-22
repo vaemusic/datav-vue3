@@ -53,52 +53,52 @@ const { width, height } = autoResize(conicalColumnChart, onResize, afterAutoResi
 const state = reactive({
   defaultConfig: {
     /**
-         * @description Chart data
-         * @type {Array<Object>}
-         * @default data = []
-         */
+     * @description Chart data
+     * @type {Array<object>}
+     * @default data = []
+     */
     data: [],
     /**
-         * @description Chart img
-         * @type {Array<String>}
-         * @default img = []
-         */
+     * @description Chart img
+     * @type {Array<string>}
+     * @default img = []
+     */
     img: [],
     /**
-         * @description Chart font size
-         * @type {Number}
-         * @default fontSize = 12
-         */
+     * @description Chart font size
+     * @type {number}
+     * @default fontSize = 12
+     */
     fontSize: 12,
     /**
-         * @description Img side length
-         * @type {Number}
-         * @default imgSideLength = 30
-         */
+     * @description Img side length
+     * @type {number}
+     * @default imgSideLength = 30
+     */
     imgSideLength: 30,
     /**
-         * @description Column color
-         * @type {String}
-         * @default columnColor = 'rgba(0, 194, 255, 0.4)'
-         */
+     * @description Column color
+     * @type {string}
+     * @default columnColor = 'rgba(0, 194, 255, 0.4)'
+     */
     columnColor: 'rgba(0, 194, 255, 0.4)',
     /**
-         * @description Text color
-         * @type {String}
-         * @default textColor = '#fff'
-         */
+     * @description Text color
+     * @type {string}
+     * @default textColor = '#fff'
+     */
     textColor: '#fff',
     /**
-         * @description Show value
-         * @type {Boolean}
-         * @default showValue = false
-         */
+     * @description Show value
+     * @type {boolean}
+     * @default showValue = false
+     */
     showValue: false,
     /**
-         * @description Auto sort by value
-         * @type {Boolean}
-         * @default sort = true
-         */
+     * @description Auto sort by value
+     * @type {boolean}
+     * @default sort = true
+     */
     sort: true,
   },
 

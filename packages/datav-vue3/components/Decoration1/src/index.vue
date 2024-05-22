@@ -77,51 +77,49 @@ const state = reactive({
   svgScale: [1, 1],
 })
 
-const onResize = () => {
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+function onResize() {
   calcSVGData()
 }
 
-const afterAutoResizeMixinInit = () => {
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+function afterAutoResizeMixinInit() {
   calcSVGData()
 }
 
 const { width, height } = autoResize(dvDecoration1, onResize, afterAutoResizeMixinInit)
 
-const calcPointsPosition = () => {
+function calcPointsPosition() {
   const [w, h] = svgWH
   const horizontalGap = w / (rowPoints.value + 1)
   const verticalGap = h / (rowNum.value + 1)
 
-  const newPoints: Array<any> = new Array(rowNum.value).fill(0).map((foo, i) =>
-    new Array(rowPoints.value).fill(0).map((foo, j) => [
+  const newPoints: Array<any> = Array.from({ length: rowNum.value }).fill(0).map((foo, i) =>
+    Array.from({ length: rowPoints.value }).fill(0).map((foo, j) => [
       horizontalGap * (j + 1), verticalGap * (i + 1),
     ]))
 
   state.points = newPoints.reduce((all, item) => [...all, ...item], [])
 }
 
-const calcRectsPosition = () => {
+function calcRectsPosition() {
   const rect1 = state.points[rowPoints.value * 2 - 1]
   const rect2 = state.points[rowPoints.value * 2 - 3]
 
   state.rects = [rect1, rect2]
 }
 
-const calcScale = () => {
+function calcScale() {
   const [w, h] = svgWH
 
   state.svgScale = [width.value / w, height.value / h]
 }
 
-const calcSVGData = () => {
+function calcSVGData() {
   calcPointsPosition()
   calcRectsPosition()
   calcScale()
 }
 
-const mergeColor = () => {
+function mergeColor() {
   state.mergedColor = deepMerge(deepClone(defaultColor, true), props.color || [])
 }
 
@@ -132,7 +130,6 @@ watch(() => props.color, () => {
 onMounted(() => {
   mergeColor()
 })
-
 </script>
 
 <style lang="less">

@@ -23,62 +23,62 @@ const state = reactive({
 
   defaultConfig: {
     /**
-         * @description Number for digital flop
-         * @type {Array<Number>}
-         * @default number = []
-         * @example number = [10]
-         */
+     * @description Number for digital flop
+     * @type {Array<number>}
+     * @default number = []
+     * @example number = [10]
+     */
     number: [],
     /**
-         * @description Content formatter
-         * @type {String}
-         * @default content = ''
-         * @example content = '{nt}个'
-         */
+     * @description Content formatter
+     * @type {string}
+     * @default content = ''
+     * @example content = '{nt}个'
+     */
     content: '',
     /**
-         * @description Number toFixed
-         * @type {Number}
-         * @default toFixed = 0
-         */
+     * @description Number toFixed
+     * @type {number}
+     * @default toFixed = 0
+     */
     toFixed: 0,
     /**
-         * @description Text align
-         * @type {String}
-         * @default textAlign = 'center'
-         * @example textAlign = 'center' | 'left' | 'right'
-         */
+     * @description Text align
+     * @type {string}
+     * @default textAlign = 'center'
+     * @example textAlign = 'center' | 'left' | 'right'
+     */
     textAlign: 'center',
     /**
-         * @description rowGap
-         * @type {Number}
+     * @description rowGap
+     * @type {number}
          @default rowGap = 0
-         */
+     */
     rowGap: 0,
     /**
-         * @description Text style configuration
-         * @type {Object} {CRender Class Style}
-         */
+     * @description Text style configuration
+     * @type {object} {CRender Class Style}
+     */
     style: {
       fontSize: 30,
       fill: '#3de7c9',
     },
     /**
-         * @description Number formatter
-         * @type {Null|Function}
-         */
+     * @description Number formatter
+     * @type {null | Function}
+     */
     formatter: undefined,
     /**
-         * @description CRender animationCurve
-         * @type {String}
-         * @default animationCurve = 'easeOutCubic'
-         */
+     * @description CRender animationCurve
+     * @type {string}
+     * @default animationCurve = 'easeOutCubic'
+     */
     animationCurve: 'easeOutCubic',
     /**
-         * @description CRender animationFrame
-         * @type {String}
-         * @default animationFrame = 50
-         */
+     * @description CRender animationFrame
+     * @type {string}
+     * @default animationFrame = 50
+     */
     animationFrame: 50,
   },
 
@@ -87,7 +87,7 @@ const state = reactive({
   graph: null,
 })
 
-watch(() => props.config, (newVal) => {
+watch(() => props.config, () => {
   update()
 }, { deep: true })
 

@@ -42,71 +42,71 @@ const props = defineProps({
 
 const scrollRankingBoard = ref(null)
 
-const { width, height } = autoResize(scrollRankingBoard, onResize, afterAutoResizeMixinInit)
+const { height } = autoResize(scrollRankingBoard, onResize, afterAutoResizeMixinInit)
 
 const state = reactive({
   defaultConfig: {
     /**
-         * @description Board data
-         * @type {Array<Object>}
-         * @default data = []
-         */
+     * @description Board data
+     * @type {Array<object>}
+     * @default data = []
+     */
     data: [],
     /**
-         * @description Row num
-         * @type {Number}
-         * @default rowNum = 5
-         */
+     * @description Row num
+     * @type {number}
+     * @default rowNum = 5
+     */
     rowNum: 5,
     /**
-         * @description Scroll wait time
-         * @type {Number}
-         * @default waitTime = 2000
-         */
+     * @description Scroll wait time
+     * @type {number}
+     * @default waitTime = 2000
+     */
     waitTime: 2000,
     /**
-         * @description Carousel type
-         * @type {String}
-         * @default carousel = 'single'
-         * @example carousel = 'single' | 'page'
-         */
+     * @description Carousel type
+     * @type {string}
+     * @default carousel = 'single'
+     * @example carousel = 'single' | 'page'
+     */
     carousel: 'single',
     /**
-         * @description Value unit
-         * @type {String}
-         * @default unit = ''
-         * @example unit = 'ton'
-         */
+     * @description Value unit
+     * @type {string}
+     * @default unit = ''
+     * @example unit = 'ton'
+     */
     unit: '',
     /**
-         * @description Auto sort by value
-         * @type {Boolean}
-         * @default sort = true
-         */
+     * @description Auto sort by value
+     * @type {boolean}
+     * @default sort = true
+     */
     sort: true,
     /**
-         * @description Value formatter
-         * @type {Function}
-         * @default valueFormatter = null
-         */
+     * @description Value formatter
+     * @type {Function}
+     * @default valueFormatter = null
+     */
     valueFormatter: null,
     /**
-         * @description Text color
-         * @type {String}
-         * @default textColor = '#fff'
-         */
+     * @description Text color
+     * @type {string}
+     * @default textColor = '#fff'
+     */
     textColor: '#fff',
     /**
-         * @description Main theme color
-         * @type {String}
-         * @default color = '#1370fb'
-         */
+     * @description Main theme color
+     * @type {string}
+     * @default color = '#1370fb'
+     */
     color: '#1370fb',
     /**
-         * @description Font size
-         * @type {Number}
-         * @default fontSize = 13
-         */
+     * @description Font size
+     * @type {number}
+     * @default fontSize = 13
+     */
     fontSize: 13,
   },
 
@@ -202,9 +202,6 @@ function calcRowsData() {
 
   const max = Math.max(...value) || 0
 
-  // abs of max
-  const maxAbs = Math.abs(max)
-
   const total = max + minAbs
 
   data = data.map((row, i) => ({ ...row, ranking: i + 1, percent: (row.value + minAbs) / total * 100 }))
@@ -228,7 +225,7 @@ function calcHeights(onresize = false) {
   state.avgHeight = avgHeight
 
   if (!onresize)
-    state.heights = new Array(data.length).fill(avgHeight)
+    state.heights = Array.from({ length: data.length }).fill(avgHeight)
 }
 
 const isSingle = computed(() => state.mergedConfig.carousel === 'single')
@@ -254,7 +251,7 @@ async function animation(start = false) {
   rows.push(...state.rowsData.slice(0, state.animationIndex))
 
   state.rows = rows.slice(0, isSingle.value ? rowNum + 1 : rowNum * 2)
-  state.heights = new Array(rowLength).fill(state.avgHeight)
+  state.heights = Array.from({ length: rowLength }).fill(state.avgHeight)
 
   await new Promise(resolve => setTimeout(resolve, 300))
   if (updater !== state.updater)

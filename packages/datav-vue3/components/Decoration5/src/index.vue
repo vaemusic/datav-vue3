@@ -72,19 +72,17 @@ const state = reactive({
   mergedColor: [],
 })
 
-const afterAutoResizeMixinInit = () => {
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+function afterAutoResizeMixinInit() {
   calcSVGData()
 }
 
-const onResize = () => {
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+function onResize() {
   calcSVGData()
 }
 
 const { width, height } = autoResize(decoration5, onResize, afterAutoResizeMixinInit)
 
-const calcSVGData = () => {
+function calcSVGData() {
   const line1Points: Array<Point> = [
     { x: 0, y: height.value * 0.2 }, { x: width.value * 0.18, y: height.value * 0.2 },
     { x: width.value * 0.2, y: height.value * 0.4 }, { x: width.value * 0.25, y: height.value * 0.4 },
@@ -107,7 +105,7 @@ const calcSVGData = () => {
   state.line2Length = line2Length
 }
 
-const mergeColor = () => {
+function mergeColor() {
   state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
 }
 

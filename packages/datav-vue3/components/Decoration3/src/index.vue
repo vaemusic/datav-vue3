@@ -17,7 +17,7 @@
             v-if="Math.random() > 0.6"
             attributeName="fill"
             :values="`${state.mergedColor.join(';')}`"
-            :dur="Math.random() + 1 + 's'"
+            :dur="`${Math.random() + 1}s`"
             :begin="Math.random() * 2"
             repeatCount="indefinite"
           />
@@ -52,44 +52,43 @@ const state = reactive({
   mergedColor: [],
 })
 
-const calcPointsPosition = () => {
+function calcPointsPosition() {
   const [w, h] = state.svgWH
 
   const horizontalGap = w / (state.rowPoints + 1)
   const verticalGap = h / (state.rowNum + 1)
 
-  const points = new Array(state.rowNum).fill(0).map((foo, i) =>
-    new Array(state.rowPoints).fill(0).map((foo, j) => [
+  const points = Array.from({ length: state.rowNum }).fill(0).map((foo, i) =>
+    Array.from({ length: state.rowPoints }).fill(0).map((foo, j) => [
       horizontalGap * (j + 1), verticalGap * (i + 1),
     ]))
 
   state.points = points.reduce((all, item) => [...all, ...item], [])
 }
 
-const afterAutoResizeMixinInit = () => {
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+function afterAutoResizeMixinInit() {
   calcSVGData()
 }
 
-const calcSVGData = () => {
+function calcSVGData() {
   calcPointsPosition()
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
+
   calcScale()
 }
 
-const onResize = () => {
+function onResize() {
   calcSVGData()
 }
 
 const { width, height } = autoResize(decoration3, onResize, afterAutoResizeMixinInit)
 
-const calcScale = () => {
+function calcScale() {
   const [w, h] = state.svgWH
 
   state.svgScale = [width.value / w, height.value / h]
 }
 
-const mergeColor = () => {
+function mergeColor() {
   state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
 }
 

@@ -67,60 +67,60 @@ const state = reactive({
 
   defaultConfig: {
     /**
-         * @description Value
-         * @type {Number}
-         * @default value = 0
-         */
+     * @description Value
+     * @type {number}
+     * @default value = 0
+     */
     value: 0,
     /**
-         * @description Colors (hex|rgb|rgba|color keywords)
-         * @type {Array<String>}
-         * @default colors = ['#00BAFF', '#3DE7C9']
-         * @example colors = ['#000', 'rgb(0, 0, 0)', 'rgba(0, 0, 0, 1)', 'red']
-         */
+     * @description Colors (hex|rgb|rgba|color keywords)
+     * @type {Array<string>}
+     * @default colors = ['#00BAFF', '#3DE7C9']
+     * @example colors = ['#000', 'rgb(0, 0, 0)', 'rgba(0, 0, 0, 1)', 'red']
+     */
     colors: ['#3DE7C9', '#00BAFF'],
     /**
-         * @description Border width
-         * @type {Number}
-         * @default borderWidth = 3
-         */
+     * @description Border width
+     * @type {number}
+     * @default borderWidth = 3
+     */
     borderWidth: 3,
     /**
-         * @description Gap between border and pond
-         * @type {Number}
-         * @default borderGap = 3
-         */
+     * @description Gap between border and pond
+     * @type {number}
+     * @default borderGap = 3
+     */
     borderGap: 3,
     /**
-         * @description Line dash
-         * @type {Array<Number>}
-         * @default lineDash = [5, 1]
-         */
+     * @description Line dash
+     * @type {Array<number>}
+     * @default lineDash = [5, 1]
+     */
     lineDash: [5, 1],
     /**
-         * @description Text color
-         * @type {String}
-         * @default textColor = '#fff'
-         */
+     * @description Text color
+     * @type {string}
+     * @default textColor = '#fff'
+     */
     textColor: '#fff',
     /**
-         * @description Border radius
-         * @type {Number}
-         * @default borderRadius = 5
-         */
+     * @description Border radius
+     * @type {number}
+     * @default borderRadius = 5
+     */
     borderRadius: 5,
     /**
-         * @description Local Gradient
-         * @type {Boolean}
-         * @default localGradient = false
-         * @example localGradient = false | true
-         */
+     * @description Local Gradient
+     * @type {boolean}
+     * @default localGradient = false
+     * @example localGradient = false | true
+     */
     localGradient: false,
     /**
-         * @description Formatter
-         * @type {String}
-         * @default formatter = '{value}%'
-         */
+     * @description Formatter
+     * @type {string}
+     * @default formatter = '{value}%'
+     */
     formatter: '{value}%',
   },
 

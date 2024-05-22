@@ -29,14 +29,6 @@ interface ButtonProps {
   fontSize?: number
 }
 
-const props = withDefaults(defineProps<ButtonProps>(), {
-  color: '#2058c7',
-  fontColor: '',
-  bg: true,
-  border: 'Border1',
-  fontSize: 14,
-})
-
 defineOptions({
   components: {
     Border1,
@@ -46,6 +38,14 @@ defineOptions({
     Border5,
     Border6,
   },
+})
+
+const props = withDefaults(defineProps<ButtonProps>(), {
+  color: '#2058c7',
+  fontColor: '',
+  bg: true,
+  border: 'Border1',
+  fontSize: 14,
 })
 
 const hoverColor = computed(() => lighten(props.color, 40))

@@ -44,13 +44,13 @@
           <animate
             attributeName="r"
             :values="`1;${state.mergedConfig.halo.radius}`"
-            :dur="state.mergedConfig.halo.duration / 10 + 's'"
+            :dur="`${state.mergedConfig.halo.duration / 10}s`"
             repeatCount="indefinite"
           />
           <animate
             attributeName="opacity"
             values="1;0"
-            :dur="state.mergedConfig.halo.duration / 10 + 's'"
+            :dur="`${state.mergedConfig.halo.duration / 10}s`"
             repeatCount="indefinite"
           />
         </circle>
@@ -177,176 +177,176 @@ const state = reactive({
 
   defaultConfig: {
     /**
-         * @description Flyline chart center point
-         * @type {Array<Number>}
-         * @default centerPoint = [0, 0]
-         */
+     * @description Flyline chart center point
+     * @type {Array<number>}
+     * @default centerPoint = [0, 0]
+     */
     centerPoint: [0, 0],
     /**
-         * @description Flyline start points
-         * @type {Array<Array<Number>>}
-         * @default points = []
-         * @example points = [[10, 10], [100, 100]]
-         */
+     * @description Flyline start points
+     * @type {Array<Array<number>>}
+     * @default points = []
+     * @example points = [[10, 10], [100, 100]]
+     */
     points: [],
     /**
-         * @description Flyline width
-         * @type {Number}
-         * @default lineWidth = 1
-         */
+     * @description Flyline width
+     * @type {number}
+     * @default lineWidth = 1
+     */
     lineWidth: 1,
     /**
-         * @description Orbit color
-         * @type {String}
-         * @default orbitColor = 'rgba(103, 224, 227, .2)'
-         */
+     * @description Orbit color
+     * @type {string}
+     * @default orbitColor = 'rgba(103, 224, 227, .2)'
+     */
     orbitColor: 'rgba(103, 224, 227, .2)',
     /**
-         * @description Flyline color
-         * @type {String}
-         * @default orbitColor = '#ffde93'
-         */
+     * @description Flyline color
+     * @type {string}
+     * @default orbitColor = '#ffde93'
+     */
     flylineColor: '#ffde93',
     /**
-         * @description K value
-         * @type {Number}
-         * @default k = -0.5
-         * @example k = -1 ~ 1
-         */
+     * @description K value
+     * @type {number}
+     * @default k = -0.5
+     * @example k = -1 ~ 1
+     */
     k: -0.5,
     /**
-         * @description Flyline curvature
-         * @type {Number}
-         * @default curvature = 5
-         */
+     * @description Flyline curvature
+     * @type {number}
+     * @default curvature = 5
+     */
     curvature: 5,
     /**
-         * @description Flyline radius
-         * @type {Number}
-         * @default flylineRadius = 100
-         */
+     * @description Flyline radius
+     * @type {number}
+     * @default flylineRadius = 100
+     */
     flylineRadius: 100,
     /**
-         * @description Flyline animation duration
-         * @type {Array<Number>}
-         * @default duration = [20, 30]
-         */
+     * @description Flyline animation duration
+     * @type {Array<number>}
+     * @default duration = [20, 30]
+     */
     duration: [20, 30],
     /**
-         * @description Relative points position
-         * @type {Boolean}
-         * @default relative = true
-         */
+     * @description Relative points position
+     * @type {boolean}
+     * @default relative = true
+     */
     relative: true,
     /**
-         * @description Back ground image url
-         * @type {String}
-         * @default bgImgUrl = ''
-         * @example bgImgUrl = './img/bg.jpg'
-         */
+     * @description Back ground image url
+     * @type {string}
+     * @default bgImgUrl = ''
+     * @example bgImgUrl = './img/bg.jpg'
+     */
     bgImgUrl: '',
     /**
-         * @description Text configuration
-         * @type {Object}
-         */
+     * @description Text configuration
+     * @type {object}
+     */
     text: {
       /**
-           * @description Text offset
-           * @type {Array<Number>}
-           * @default offset = [0, 15]
-           */
+       * @description Text offset
+       * @type {Array<number>}
+       * @default offset = [0, 15]
+       */
       offset: [0, 15],
       /**
-           * @description Text color
-           * @type {String}
-           * @default color = '#ffdb5c'
-           */
+       * @description Text color
+       * @type {string}
+       * @default color = '#ffdb5c'
+       */
       color: '#ffdb5c',
       /**
-           * @description Text font size
-           * @type {Number}
-           * @default fontSize = 12
-           */
+       * @description Text font size
+       * @type {number}
+       * @default fontSize = 12
+       */
       fontSize: 12,
     },
     /**
-         * @description Halo configuration
-         * @type {Object}
-         */
+     * @description Halo configuration
+     * @type {object}
+     */
     halo: {
       /**
-           * @description Weather to show halo
-           * @type {Boolean}
-           * @default show = true
-           * @example show = true | false
-           */
+       * @description Weather to show halo
+       * @type {boolean}
+       * @default show = true
+       * @example show = true | false
+       */
       show: true,
       /**
-           * @description Halo animation duration (10 = 1s)
-           * @type {Number}
-           * @default duration = 30
-           */
+       * @description Halo animation duration (10 = 1s)
+       * @type {number}
+       * @default duration = 30
+       */
       duration: 30,
       /**
-           * @description Halo color
-           * @type {String}
-           * @default color = '#fb7293'
-           */
+       * @description Halo color
+       * @type {string}
+       * @default color = '#fb7293'
+       */
       color: '#fb7293',
       /**
-           * @description Halo max radius
-           * @type {Number}
-           * @default radius = 120
-           */
+       * @description Halo max radius
+       * @type {number}
+       * @default radius = 120
+       */
       radius: 120,
     },
     /**
-         * @description Center point img configuration
-         * @type {Object}
-         */
+     * @description Center point img configuration
+     * @type {object}
+     */
     centerPointImg: {
       /**
-           * @description Center point img width
-           * @type {Number}
-           * @default width = 40
-           */
+       * @description Center point img width
+       * @type {number}
+       * @default width = 40
+       */
       width: 40,
       /**
-           * @description Center point img height
-           * @type {Number}
-           * @default height = 40
-           */
+       * @description Center point img height
+       * @type {number}
+       * @default height = 40
+       */
       height: 40,
       /**
-           * @description Center point img url
-           * @type {String}
-           * @default url = ''
-           */
+       * @description Center point img url
+       * @type {string}
+       * @default url = ''
+       */
       url: '',
     },
     /**
-         * @description Points img configuration
-         * @type {Object}
-         * @default radius = 120
-         */
+     * @description Points img configuration
+     * @type {object}
+     * @default radius = 120
+     */
     pointsImg: {
       /**
-           * @description Points img width
-           * @type {Number}
-           * @default width = 15
-           */
+       * @description Points img width
+       * @type {number}
+       * @default width = 15
+       */
       width: 15,
       /**
-           * @description Points img height
-           * @type {Number}
-           * @default height = 15
-           */
+       * @description Points img height
+       * @type {number}
+       * @default height = 15
+       */
       height: 15,
       /**
-           * @description Points img url
-           * @type {String}
-           * @default url = ''
-           */
+       * @description Points img url
+       * @type {string}
+       * @default url = ''
+       */
       url: '',
     },
   },
@@ -397,7 +397,7 @@ function mergeConfig() {
   const { points } = mergedConfig
 
   mergedConfig.points = points.map((item) => {
-    if (item instanceof Array)
+    if (Array.isArray(item))
       return { position: item, text: '' }
 
     return item
@@ -460,7 +460,7 @@ async function calcLineLengths() {
 function calcTimes() {
   const { duration, points } = state.mergedConfig
 
-  state.times = points.map(foo => randomExtend(...duration) / 10)
+  state.times = points.map(() => randomExtend(...duration) / 10)
 }
 
 function calcTexts() {

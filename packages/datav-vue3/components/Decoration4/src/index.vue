@@ -48,7 +48,7 @@ const state = reactive({
   mergedColor: [],
 })
 
-const mergeColor = () => {
+function mergeColor() {
   state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
 }
 
@@ -61,7 +61,6 @@ watch(() => props.color, () => {
 onMounted(() => {
   mergeColor()
 })
-
 </script>
 
 <style lang="less">

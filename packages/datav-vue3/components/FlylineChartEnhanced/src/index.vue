@@ -174,236 +174,236 @@ const state = reactive({
   flylineGradientId: `flyline-gradient-id-${id}`,
   haloGradientId: `halo-gradient-id-${id}`,
   /**
-       * @description Type Declaration
-       *
-       * interface Halo {
-       *    show?: boolean
-       *    duration?: [number, number]
-       *    color?: string
-       *    radius?: number
-       * }
-       *
-       * interface Text {
-       *    show?: boolean
-       *    offset?: [number, number]
-       *    color?: string
-       *    fontSize?: number
-       * }
-       *
-       * interface Icon {
-       *    show?: boolean
-       *    src?: string
-       *    width?: number
-       *    height?: number
-       * }
-       *
-       * interface Point {
-       *    name: string
-       *    coordinate: [number, number]
-       *    halo?: Halo
-       *    text?: Text
-       *    icon?: Icon
-       * }
-       *
-       * interface Line {
-       *    width?: number
-       *    color?: string
-       *    orbitColor?: string
-       *    duration?: [number, number]
-       *    radius?: string
-       * }
-       *
-       * interface Flyline extends Line {
-       *    source: string
-       *    target: string
-       * }
-       *
-       * interface FlylineWithPath extends Flyline {
-       *    d: string
-       *    path: [[number, number], [number, number], [number, number]]
-       *    key: string
-       * }
-       */
+   * @description Type Declaration
+   *
+   * interface Halo {
+   *    show?: boolean
+   *    duration?: [number, number]
+   *    color?: string
+   *    radius?: number
+   * }
+   *
+   * interface Text {
+   *    show?: boolean
+   *    offset?: [number, number]
+   *    color?: string
+   *    fontSize?: number
+   * }
+   *
+   * interface Icon {
+   *    show?: boolean
+   *    src?: string
+   *    width?: number
+   *    height?: number
+   * }
+   *
+   * interface Point {
+   *    name: string
+   *    coordinate: [number, number]
+   *    halo?: Halo
+   *    text?: Text
+   *    icon?: Icon
+   * }
+   *
+   * interface Line {
+   *    width?: number
+   *    color?: string
+   *    orbitColor?: string
+   *    duration?: [number, number]
+   *    radius?: string
+   * }
+   *
+   * interface Flyline extends Line {
+   *    source: string
+   *    target: string
+   * }
+   *
+   * interface FlylineWithPath extends Flyline {
+   *    d: string
+   *    path: [[number, number], [number, number], [number, number]]
+   *    key: string
+   * }
+   */
   defaultConfig: {
     /**
-         * @description Flyline chart points
-         * @type {FlylineChartPoint[]}
-         * @default points = []
-         */
+     * @description Flyline chart points
+     * @type {FlylineChartPoint[]}
+     * @default points = []
+     */
     points: [],
     /**
-         * @description Lines
-         * @type {Flyline[]}
-         * @default lines = []
-         */
+     * @description Lines
+     * @type {Flyline[]}
+     * @default lines = []
+     */
     lines: [],
     /**
-         * @description Global halo configuration
-         * @type {Halo}
-         */
+     * @description Global halo configuration
+     * @type {Halo}
+     */
     halo: {
       /**
-           * @description Whether to show halo
-           * @type {Boolean}
-           * @default show = false
-           */
+       * @description Whether to show halo
+       * @type {boolean}
+       * @default show = false
+       */
       show: false,
       /**
-           * @description Halo animation duration (1s = 10)
-           * @type {[number, number]}
-           */
+       * @description Halo animation duration (1s = 10)
+       * @type {[number, number]}
+       */
       duration: [20, 30],
       /**
-           * @description Halo color
-           * @type {String}
-           * @default color = '#fb7293'
-           */
+       * @description Halo color
+       * @type {string}
+       * @default color = '#fb7293'
+       */
       color: '#fb7293',
       /**
-           * @description Halo radius
-           * @type {Number}
-           * @default radius = 120
-           */
+       * @description Halo radius
+       * @type {number}
+       * @default radius = 120
+       */
       radius: 120,
     },
     /**
-         * @description Global text configuration
-         * @type {Text}
-         */
+     * @description Global text configuration
+     * @type {Text}
+     */
     text: {
       /**
-           * @description Whether to show text
-           * @type {Boolean}
-           * @default show = false
-           */
+       * @description Whether to show text
+       * @type {boolean}
+       * @default show = false
+       */
       show: false,
       /**
-           * @description Text offset
-           * @type {[number, number]}
-           * @default offset = [0, 15]
-           */
+       * @description Text offset
+       * @type {[number, number]}
+       * @default offset = [0, 15]
+       */
       offset: [0, 15],
       /**
-           * @description Text color
-           * @type {String}
-           * @default color = '#ffdb5c'
-           */
+       * @description Text color
+       * @type {string}
+       * @default color = '#ffdb5c'
+       */
       color: '#ffdb5c',
       /**
-           * @description Text font size
-           * @type {Number}
-           * @default fontSize = 12
-           */
+       * @description Text font size
+       * @type {number}
+       * @default fontSize = 12
+       */
       fontSize: 12,
     },
     /**
-         * @description Global icon configuration
-         * @type {Icon}
-         */
+     * @description Global icon configuration
+     * @type {Icon}
+     */
     icon: {
       /**
-           * @description Whether to show icon
-           * @type {Boolean}
-           * @default show = false
-           */
+       * @description Whether to show icon
+       * @type {boolean}
+       * @default show = false
+       */
       show: false,
       /**
-           * @description Icon src
-           * @type {String}
-           * @default src = ''
-           */
+       * @description Icon src
+       * @type {string}
+       * @default src = ''
+       */
       src: '',
       /**
-           * @description Icon width
-           * @type {Number}
-           * @default width = 15
-           */
+       * @description Icon width
+       * @type {number}
+       * @default width = 15
+       */
       width: 15,
       /**
-           * @description Icon height
-           * @type {Number}
-           * @default width = 15
-           */
+       * @description Icon height
+       * @type {number}
+       * @default width = 15
+       */
       height: 15,
     },
     /**
-         * @description Global line configuration
-         * @type {Line}
-         */
+     * @description Global line configuration
+     * @type {Line}
+     */
     line: {
       /**
-           * @description Line width
-           * @type {Number}
-           * @default width = 1
-           */
+       * @description Line width
+       * @type {number}
+       * @default width = 1
+       */
       width: 1,
       /**
-           * @description Flyline color
-           * @type {String}
-           * @default color = '#ffde93'
-           */
+       * @description Flyline color
+       * @type {string}
+       * @default color = '#ffde93'
+       */
       color: '#ffde93',
       /**
-           * @description Orbit color
-           * @type {String}
-           * @default orbitColor = 'rgba(103, 224, 227, .2)'
-           */
+       * @description Orbit color
+       * @type {string}
+       * @default orbitColor = 'rgba(103, 224, 227, .2)'
+       */
       orbitColor: 'rgba(103, 224, 227, .2)',
       /**
-           * @description Flyline animation duration
-           * @type {[number, number]}
-           * @default duration = [20, 30]
-           */
+       * @description Flyline animation duration
+       * @type {[number, number]}
+       * @default duration = [20, 30]
+       */
       duration: [20, 30],
       /**
-           * @description Flyline radius
-           * @type {Number}
-           * @default radius = 100
-           */
+       * @description Flyline radius
+       * @type {number}
+       * @default radius = 100
+       */
       radius: 100,
     },
     /**
-         * @description Back ground image url
-         * @type {String}
-         * @default bgImgSrc = ''
-         */
+     * @description Back ground image url
+     * @type {string}
+     * @default bgImgSrc = ''
+     */
     bgImgSrc: '',
     /**
-         * @description K value
-         * @type {Number}
-         * @default k = -0.5
-         * @example k = -1 ~ 1
-         */
+     * @description K value
+     * @type {number}
+     * @default k = -0.5
+     * @example k = -1 ~ 1
+     */
     k: -0.5,
     /**
-         * @description Flyline curvature
-         * @type {Number}
-         * @default curvature = 5
-         */
+     * @description Flyline curvature
+     * @type {number}
+     * @default curvature = 5
+     */
     curvature: 5,
     /**
-         * @description Relative points position
-         * @type {Boolean}
-         * @default relative = true
-         */
+     * @description Relative points position
+     * @type {boolean}
+     * @default relative = true
+     */
     relative: true,
   },
   /**
-       * @description Fly line data
-       * @type {FlylineWithPath[]}
-       * @default flylines = []
-       */
+   * @description Fly line data
+   * @type {FlylineWithPath[]}
+   * @default flylines = []
+   */
   flylines: [],
   /**
-       * @description Fly line lengths
-       * @type {Number[]}
-       * @default flylineLengths = []
-       */
+   * @description Fly line lengths
+   * @type {number[]}
+   * @default flylineLengths = []
+   */
   flylineLengths: [],
   /**
-       * @description Fly line points
-       * @default flylinePoints = []
-       */
+   * @description Fly line points
+   * @default flylinePoints = []
+   */
   flylinePoints: [],
 
   mergedConfig: null,
@@ -493,7 +493,7 @@ function calcLinePaths() {
     const sourcePoint = points.find(({ name }) => name === source).coordinate
     const targetPoint = points.find(({ name }) => name === target).coordinate
 
-    const path = getPath(sourcePoint, targetPoint).map(item => item.map(v => parseFloat(v.toFixed(10))))
+    const path = getPath(sourcePoint, targetPoint).map(item => item.map(v => Number.parseFloat(v.toFixed(10))))
     const d = `M${path[0].toString()} Q${path[1].toString()} ${path[2].toString()}`
     const key = `path${path.toString()}`
     const time = randomExtend(...duration) / 10

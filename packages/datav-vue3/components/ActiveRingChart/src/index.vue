@@ -296,7 +296,7 @@ function ringAnimation() {
   state.chart.setOption(option, true)
 
   const { activeTimeGap } = option.series[0]
-  state.animationHandler = setTimeout((foo) => {
+  state.animationHandler = setTimeout(() => {
     state.activeIndex += 1
 
     if (state.activeIndex >= data.length)

@@ -96,21 +96,21 @@ function calcPointsPosition() {
   const horizontalGap = w / (state.rowPoints + 1)
   const verticalGap = h / (state.rowNum + 1)
 
-  const points = new Array(state.rowNum).fill(0).map((foo, i) =>
-    new Array(state.rowPoints).fill(0).map((foo, j) => [
+  const points = Array.from({ length: state.rowNum }).fill(0).map((foo, i) =>
+    Array.from({ length: state.rowPoints }).fill(0).map((foo, j) => [
       horizontalGap * (j + 1), verticalGap * (i + 1),
     ]))
 
   state.points = points.reduce((all, item) => [...all, ...item], [])
-  const heights = state.heights = new Array(state.rowNum * state.rowPoints)
-    .fill(0).map(foo =>
+  const heights = state.heights = Array.from({ length: state.rowNum * state.rowPoints })
+    .fill(0).map(() =>
       Math.random() > 0.8 ? randomExtend(0.7 * h, h) : randomExtend(0.2 * h, 0.5 * h))
 
-  state.minHeights = new Array(state.rowNum * state.rowPoints)
+  state.minHeights = Array.from({ length: state.rowNum * state.rowPoints })
     .fill(0).map((foo, i) => heights[i] * Math.random())
 
-  state.randoms = new Array(state.rowNum * state.rowPoints)
-    .fill(0).map(foo => Math.random() + 1.5)
+  state.randoms = Array.from({ length: state.rowNum * state.rowPoints })
+    .fill(0).map(() => Math.random() + 1.5)
 }
 function calcScale() {
   const [w, h] = state.svgWH
@@ -124,7 +124,6 @@ function onResize() {
 function mergeColor() {
   state.mergedColor = deepMerge(deepClone(state.defaultColor, true), props.color || [])
 }
-
 </script>
 
 <style lang="less">

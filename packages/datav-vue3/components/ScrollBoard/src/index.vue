@@ -65,92 +65,92 @@ const { width, height } = autoResize(scrollBoard, onResize, afterAutoResizeMixin
 const state = reactive({
   defaultConfig: {
     /**
-         * @description Board header
-         * @type {Array<String>}
-         * @default header = []
-         * @example header = ['column1', 'column2', 'column3']
-         */
+     * @description Board header
+     * @type {Array<string>}
+     * @default header = []
+     * @example header = ['column1', 'column2', 'column3']
+     */
     header: [],
     /**
-         * @description Board data
-         * @type {Array<Array>}
-         * @default data = []
-         */
+     * @description Board data
+     * @type {Array<Array>}
+     * @default data = []
+     */
     data: [],
     /**
-         * @description Row num
-         * @type {Number}
-         * @default rowNum = 5
-         */
+     * @description Row num
+     * @type {number}
+     * @default rowNum = 5
+     */
     rowNum: 5,
     /**
-         * @description Header background color
-         * @type {String}
-         * @default headerBGC = '#00BAFF'
-         */
+     * @description Header background color
+     * @type {string}
+     * @default headerBGC = '#00BAFF'
+     */
     headerBGC: '#00BAFF',
     /**
-         * @description Odd row background color
-         * @type {String}
-         * @default oddRowBGC = '#003B51'
-         */
+     * @description Odd row background color
+     * @type {string}
+     * @default oddRowBGC = '#003B51'
+     */
     oddRowBGC: '#003B51',
     /**
-         * @description Even row background color
-         * @type {String}
-         * @default evenRowBGC = '#003B51'
-         */
+     * @description Even row background color
+     * @type {string}
+     * @default evenRowBGC = '#003B51'
+     */
     evenRowBGC: '#0A2732',
     /**
-         * @description Scroll wait time
-         * @type {Number}
-         * @default waitTime = 2000
-         */
+     * @description Scroll wait time
+     * @type {number}
+     * @default waitTime = 2000
+     */
     waitTime: 2000,
     /**
-         * @description Header height
-         * @type {Number}
-         * @default headerHeight = 35
-         */
+     * @description Header height
+     * @type {number}
+     * @default headerHeight = 35
+     */
     headerHeight: 35,
     /**
-         * @description Column width
-         * @type {Array<Number>}
-         * @default columnWidth = []
-         */
+     * @description Column width
+     * @type {Array<number>}
+     * @default columnWidth = []
+     */
     columnWidth: [],
     /**
-         * @description Column align
-         * @type {Array<String>}
-         * @default align = []
-         * @example align = ['left', 'center', 'right']
-         */
+     * @description Column align
+     * @type {Array<string>}
+     * @default align = []
+     * @example align = ['left', 'center', 'right']
+     */
     align: [],
     /**
-         * @description Show index
-         * @type {Boolean}
-         * @default index = false
-         */
+     * @description Show index
+     * @type {boolean}
+     * @default index = false
+     */
     index: false,
     /**
-         * @description index Header
-         * @type {String}
-         * @default indexHeader = '#'
-         */
+     * @description index Header
+     * @type {string}
+     * @default indexHeader = '#'
+     */
     indexHeader: '#',
     /**
-         * @description Carousel type
-         * @type {String}
-         * @default carousel = 'single'
-         * @example carousel = 'single' | 'page'
-         */
+     * @description Carousel type
+     * @type {string}
+     * @default carousel = 'single'
+     * @example carousel = 'single' | 'page'
+     */
     carousel: 'single',
     /**
-         * @description Pause scroll when mouse hovered
-         * @type {Boolean}
-         * @default hoverPause = true
-         * @example hoverPause = true | false
-         */
+     * @description Pause scroll when mouse hovered
+     * @type {boolean}
+     * @default hoverPause = true
+     * @example hoverPause = true | false
+     */
     hoverPause: true,
   },
 
@@ -179,7 +179,7 @@ const state = reactive({
   needCalc: false,
 })
 
-watch(() => props.config, (v) => {
+watch(() => props.config, () => {
   stopAnimation()
   // 此处打开后，config发生变化时，会从第一行开始重新轮播
   // state.animationIndex = 0
@@ -315,7 +315,7 @@ function calcWidths() {
 
   const avgWidth = (width.value - usedWidth) / (columnNum - columnWidth.length)
 
-  const widths = new Array(columnNum).fill(avgWidth)
+  const widths = Array.from({ length: columnNum }).fill(avgWidth)
 
   state.widths = deepMerge(widths, columnWidth)
 }
@@ -333,13 +333,13 @@ function calcHeights(onresize = false) {
   state.avgHeight = avgHeight
 
   if (!onresize)
-    state.heights = new Array(data.length).fill(avgHeight)
+    state.heights = Array.from({ length: data.length }).fill(avgHeight)
 }
 
 function calcAligns() {
   const columnNum = state.header.length
 
-  const aligns = new Array(columnNum).fill('left')
+  const aligns = Array.from({ length: columnNum }).fill('left')
 
   const { align } = state.mergedConfig
 
@@ -372,13 +372,13 @@ async function animation(start = false) {
   rows.push(...state.rowsData.slice(0, state.animationIndex))
 
   state.rows = rows.slice(0, carousel === 'page' ? rowNum * 2 : rowNum + 1)
-  state.heights = new Array(rowLength).fill(state.avgHeight)
+  state.heights = Array.from({ length: rowLength }).fill(state.avgHeight)
 
   await new Promise(resolve => setTimeout(resolve, 300))
   if (updater !== state.updater)
     return
 
-  state.heights.splice(0, animationNum, ...new Array(animationNum).fill(0))
+  state.heights.splice(0, animationNum, ...Array.from({ length: animationNum }).fill(0))
 
   state.animationIndex += animationNum
 
