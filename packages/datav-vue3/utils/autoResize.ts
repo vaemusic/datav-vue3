@@ -1,8 +1,9 @@
 import type { Ref } from 'vue'
 import { useDebounceFn, useEventListener } from '@vueuse/core'
-import { nextTick, onMounted, onUnmounted, ref } from 'vue'
+import { nextTick, onActivated, onDeactivated, onMounted, onUnmounted, ref } from 'vue'
 import { observerDomResize } from './index'
-const autoResize = (dom: Ref<HTMLElement | null>, onResize?: () => void, afterAutoResizeMixinInit?: () => void) => {
+
+function autoResize(dom: Ref<HTMLElement | null>, onResize?: () => void, afterAutoResizeMixinInit?: () => void) {
   const width = ref(0)
   const height = ref(0)
 
@@ -64,6 +65,10 @@ const autoResize = (dom: Ref<HTMLElement | null>, onResize?: () => void, afterAu
   onUnmounted(() => {
     unbindDomResizeCallback()
   })
+
+  onActivated(autoResizeMixinInit)
+
+  onDeactivated(unbindDomResizeCallback)
 
   return {
     width,
