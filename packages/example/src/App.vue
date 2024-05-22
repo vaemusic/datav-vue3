@@ -1,43 +1,54 @@
 <script setup lang="ts">
+import { reactive, shallowRef } from 'vue'
 import topHeader from './topHeader.vue'
-import { reactive } from 'vue'
+import ComponentA from './components/componentA.vue'
+import componentB from './components/componentB.vue'
 
 const config = reactive({
   data: [
     {
       name: '南阳',
-      value: 167
+      value: 167,
     },
     {
       name: '周口',
-      value: 123
+      value: 123,
     },
     {
       name: '漯河',
-      value: 98
+      value: 98,
     },
     {
       name: '郑州',
-      value: 75
+      value: 75,
     },
     {
       name: '西峡',
-      value: 66
+      value: 66,
     },
   ],
   colors: ['#e062ae', '#fb7293', '#e690d1', '#32c5e9', '#96bfff'],
   unit: '万元',
   textColor: 'red',
 })
+
+const currentComponent = shallowRef(ComponentA)
+
+function changeComponent() {
+  currentComponent.value = currentComponent.value === ComponentA ? componentB : ComponentA
+}
 </script>
 
 <template>
   <topHeader />
   <div flex>
     <div h100 w80>
-      <dv-border-box4 :color="['red', 'purple']">
-        11
-      </dv-border-box4>
+      <dv-button w20 @click="changeComponent">
+        切换
+      </dv-button>
+      <KeepAlive>
+        <component :is="currentComponent" />
+      </KeepAlive>
     </div>
     <div h100 w80>
       <dv-border-box4 :color="['blue', 'yellow']">
@@ -60,7 +71,9 @@ const config = reactive({
       </dv-border-box12>
     </div>
     <div h100 w80>
-      <dv-border-box11 title="测试标题">11</dv-border-box11>
+      <dv-border-box11 title="测试标题">
+        11
+      </dv-border-box11>
     </div>
     <div>
       <dv-capsule-chart :config="config" style="width:25rem;height:15rem" />
