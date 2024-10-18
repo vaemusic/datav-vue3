@@ -111,7 +111,7 @@ function mergeColor() {
 
 watch(() => props.color, () => {
   mergeColor()
-})
+}, { deep: true })
 
 onMounted(() => {
   mergeColor()

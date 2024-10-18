@@ -116,7 +116,7 @@ const state = reactive({
 
 watch(() => props.color, () => {
   mergeColor()
-})
+}, { deep: true })
 
 onMounted(() => {
   mergeColor()

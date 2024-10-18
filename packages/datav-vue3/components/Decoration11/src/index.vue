@@ -78,7 +78,7 @@ const { width, height } = autoResize(decoration11)
 
 watch(() => props.color, () => {
   mergeColor()
-})
+}, { deep: true })
 
 onMounted(() => {
   mergeColor()
