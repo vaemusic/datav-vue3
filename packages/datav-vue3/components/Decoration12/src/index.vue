@@ -169,7 +169,7 @@ const y = computed(() => {
 watch(() => props.color, () => {
   mergeColor()
   calcPathColor()
-})
+}, { deep: true })
 
 function init() {
   mergeColor()
