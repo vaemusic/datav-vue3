@@ -78,7 +78,7 @@ function calcSVGData() {
 
 watch(() => props.color, () => {
   mergeColor()
-})
+}, { deep: true })
 
 watch(() => props.reverse, () => {
   calcSVGData()
